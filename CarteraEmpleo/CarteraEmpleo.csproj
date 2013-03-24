@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\Images.css" />
+    <Content Include="CSS\sRegistrar.css" />
     <Content Include="CSS\Styles.css" />
     <Content Include="Images\btns-active.png" />
     <Content Include="Images\btns-hover.png" />

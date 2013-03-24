@@ -22,7 +22,7 @@ namespace CarteraEmpleo
         {
             if (p_nombre.Equals("") | p_correo.Equals("") | p_telefono.Equals("") | p_contrasena.Equals("") | p_confContrasena.Equals(""))
             {
-                return("Existen campos vacíos que son requeridos");
+                return("Existen campos vacíos que son requeridos.");
             } 
             String[] _sFracmentar;
             char[] _cSeparadorCorreo1 = { ' ',',','!','#','$','%','^','&','*','(',')','+','/',';',':','"','/' };
@@ -30,28 +30,28 @@ namespace CarteraEmpleo
             _sFracmentar = Fragmentar(p_correo, _cSeparadorCorreo1);
             if (_sFracmentar.Length > 1) 
             {
-                return("Correo inválido");
+                return("Correo inválido.");
             }
             _sFracmentar = Fragmentar(p_correo, _cSeparadorCorreo2);
             if (_sFracmentar.Length < 3 | _sFracmentar[2].Equals(""))
             {
-                return ("Correo inválido");
+                return ("Correo inválido.");
             }
             char[] _cSeparadorTelefono = { '-' };
             _sFracmentar = Fragmentar(p_telefono, _cSeparadorTelefono);
             if (p_telefono.Length < 9 | p_telefono.Length > 9 | _sFracmentar.Length != 2 | _sFracmentar[0].Length != _sFracmentar[1].Length) 
             {
-                return ("Teléfono inválido");
+                return ("Teléfono inválido.");
             }
             if (p_contrasena.Length >= 9)
             {
                 if (!p_contrasena.Equals(p_confContrasena))
                 {
-                    return ("Las contraseñas no coinciden");
+                    return ("Las contraseñas no coinciden.");
                 }
             } 
             else {
-                return ("Contraseña inválida");
+                return ("Contraseña inválida.");
             }
             char _cCondicion = ' ';
             if (p_condicion.Equals("Desempleado"))
@@ -82,12 +82,9 @@ namespace CarteraEmpleo
             try
             {
                 webservice.Insert_Persona(p_correo, p_contrasena, " ", p_direccion, _sNombre[0], _sNombre[1],
-                                            _sNombre[2], _cCondicion, " ");
+                                          _sNombre[2], _cCondicion, " ");
             }
             catch (Exception e) { }
-                
-            
-            
             return ("");
         }
 

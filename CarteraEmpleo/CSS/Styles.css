@@ -143,14 +143,17 @@
 	position: relative;
 }
 
-.asterisco{
-    color: #B90000;
-}
-
 .error{
     color: #B90000;
     font-weight:bold;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 13px;
+}
+
+.imgError
+{
+    position: relative;
+    top: 5px;
+    float: left;
 }
 

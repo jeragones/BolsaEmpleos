@@ -59,7 +59,8 @@
             </tr>-->
             <tr>
                 <td></td>
-                <td><asp:Label ID="msgError" class="error" runat="server" Text="" /></td>
+                <td><asp:Image ID="imgError" Visible="false" class="imgError" runat="server" ImageUrl="/Images/error1.png" />
+                    &nbsp;<asp:Label ID="msgError" class="error" runat="server" Text="" /></td>
             </tr>
             <tr>
                 <td><br /><asp:Button class="btn" runat="server" Text="Registrarse" ID="btnRegistrar" OnClick="btnRegistrar_Click" /></td>

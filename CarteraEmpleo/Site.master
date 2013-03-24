@@ -6,10 +6,10 @@
     <head runat="server">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
-        <title>Sitio de datos dinámicos</title>
+        <title>Empleos TEC</title>
         <link href="CSS/Styles.css" rel="stylesheet" />
         <link href="CSS/Images.css" rel="stylesheet" />
-        <link href="~/Site.css" rel="stylesheet" type="text/css" />
+        <link href="CSS/sRegistrar.css" rel="stylesheet" />
         <asp:ContentPlaceHolder ID="head" runat="server">
         </asp:ContentPlaceHolder>
     </head>
