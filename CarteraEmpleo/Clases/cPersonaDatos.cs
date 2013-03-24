@@ -17,21 +17,42 @@ namespace CarteraEmpleo
     {
         cDBService webservice = new cDBService();
         // idioma, cedula, telefono
-        public void insertar(String p_nombre, String p_cedula, String p_correo, String p_telefono, String p_idioma, 
-                             String p_condicion,  String p_contrasena, String p_direccion, String p_experiencia) 
+        public String insertar(String p_nombre, String p_correo, String p_telefono, String p_condicion, String p_contrasena, 
+                               String p_confContrasena, String p_direccion) 
         {
-
-            char[] _cSeparadorNombre = { ' ' };
-            String[] _sNombre = Fragmentar(p_nombre, _cSeparadorNombre);
-            char[] _cSeparadorIdioma = { ',' };
-            String[] _sIdioma = Fragmentar(p_idioma, _cSeparadorIdioma);
-            int _iContador=0;
-            while (_iContador < _sIdioma.Length) {
-                _sIdioma[_iContador] = _sIdioma[_iContador].Trim();
-                // insertar en la tabla de idiomas
-                _iContador++;
+            if (p_nombre.Equals("") | p_correo.Equals("") | p_telefono.Equals("") | p_contrasena.Equals("") | p_confContrasena.Equals(""))
+            {
+                return("Existen campos vacíos que son requeridos");
+            } 
+            String[] _sFracmentar;
+            char[] _cSeparadorCorreo1 = { ' ',',','!','#','$','%','^','&','*','(',')','+','/',';',':','"','/' };
+            char[] _cSeparadorCorreo2 = { '@','.' };
+            _sFracmentar = Fragmentar(p_correo, _cSeparadorCorreo1);
+            if (_sFracmentar.Length > 1) 
+            {
+                return("Correo inválido");
             }
-            
+            _sFracmentar = Fragmentar(p_correo, _cSeparadorCorreo2);
+            if (_sFracmentar.Length < 3 | _sFracmentar[2].Equals(""))
+            {
+                return ("Correo inválido");
+            }
+            char[] _cSeparadorTelefono = { '-' };
+            _sFracmentar = Fragmentar(p_telefono, _cSeparadorTelefono);
+            if (p_telefono.Length < 9 | p_telefono.Length > 9 | _sFracmentar.Length != 2 | _sFracmentar[0].Length != _sFracmentar[1].Length) 
+            {
+                return ("Teléfono inválido");
+            }
+            if (p_contrasena.Length >= 9)
+            {
+                if (!p_contrasena.Equals(p_confContrasena))
+                {
+                    return ("Las contraseñas no coinciden");
+                }
+            } 
+            else {
+                return ("Contraseña inválida");
+            }
             char _cCondicion = ' ';
             if (p_condicion.Equals("Desempleado"))
             {
@@ -41,14 +62,33 @@ namespace CarteraEmpleo
             {
                 _cCondicion = 'E';
             }
-            if (p_contrasena.Length >= 9) {
-                try
+            String[] _sNombre = new String[3];
+            char[] _cSeparadorNombre = { ' ' };
+            _sFracmentar = Fragmentar(p_nombre, _cSeparadorNombre);
+            if (_sFracmentar.Length < 3) 
+            {
+                for (int i = 0; i < 3; i++) 
                 {
-                    webservice.Insert_Persona(p_correo, p_contrasena, "Idioma", p_direccion, _sNombre[0], _sNombre[1],
-                                              _sNombre[2], _cCondicion, p_experiencia);
+                    if (i < _sFracmentar.Length)
+                    {
+                        _sNombre[i] = _sFracmentar[i];
+                    }
+                    else 
+                    {
+                        _sNombre[i] = " ";
+                    }
                 }
-                catch (Exception e) { }
             }
+            try
+            {
+                webservice.Insert_Persona(p_correo, p_contrasena, " ", p_direccion, _sNombre[0], _sNombre[1],
+                                            _sNombre[2], _cCondicion, " ");
+            }
+            catch (Exception e) { }
+                
+            
+            
+            return ("");
         }
 
         public void modificar(String p_nombre, String p_cedula, String p_correo, String p_telefono, String p_idioma,

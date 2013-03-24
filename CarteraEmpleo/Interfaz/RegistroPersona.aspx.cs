@@ -17,37 +17,25 @@ namespace CarteraEmpleo
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             cPersonaDatos persona = new cPersonaDatos();
-            String _sCondicion;
-            if (rbDesempleado.Checked == true)
-            {
-                _sCondicion = rbDesempleado.Text;
-            }
-            else {
-                _sCondicion = rbEmpleado.Text;
-            }
-            persona.insertar(txtNombre.Text, txtCedula.Text, txtCorreo.Text, txtTelefono.Text, "idioma", 
-                             _sCondicion,  txtContrasena.Text, txtDireccion.Text, txtExperiencia.Text);
+            msgError.Text = persona.insertar(txtNombre.Text, txtCorreo.Text, txtTelefono.Text, cmbCondicion.Text, 
+                                             txtContrasena.Text, txtConfirmarContrasena.Text, txtDireccion.Text);
             Limpiar();
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/Interfaz/Default.aspx");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/Interfaz/Default.aspx");
         }
 
         protected void Limpiar()
         {
             txtNombre.Text = "";
-            txtCedula.Text = "";
             txtCorreo.Text = "";
             txtTelefono.Text = "";
-            //txtIdioma.Text = "";
-            rbDesempleado.Checked = true;
-            txtContrasena.Text = "";
+            cmbCondicion.SelectedIndex = 0;
             txtDireccion.Text = "";
-            txtExperiencia.Text = "";
         }
     }
 

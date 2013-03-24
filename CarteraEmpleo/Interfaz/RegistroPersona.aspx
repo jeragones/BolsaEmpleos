@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="RegistroPersona.aspx.cs" Inherits="CarteraEmpleo.RegistroPersona" %>
 <asp:Content ContentPlaceHolderID="head" runat="server"></asp:Content>
 <asp:Content ContentPlaceHolderID="Body" runat="server">
-    <form runat="server">
-        <table class="registrar">
+    <form class="registrar" runat="server">
+        <div class="titulo">Registrar Usuario</div>
+        <br/>
+        <table>
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Nombre Completo:" /></td>
                 <td><asp:TextBox ID="txtNombre" class="txt" runat="server" /></td>
@@ -39,7 +41,7 @@
             </tr>
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Contraseña:" /></td>
-                <td><asp:TextBox class="txt" runat="server" ID="txtContrasena" TextMode="Password" /></td>
+                <td><asp:TextBox class="txt" runat="server" ID="txtContrasena" TextMode="Password" ToolTip="La contraseña debe tiener un mínimo de 9 caracteres."/></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <tr>
@@ -56,8 +58,12 @@
                 <td><asp:TextBox Class="txta" runat="server" TextMode="MultiLine" ID="txtExperiencia" /></td>
             </tr>-->
             <tr>
-                <td><asp:Button class="btn" runat="server" Text="Registrarse" ID="btnRegistrar" OnClick="btnRegistrar_Click" /></td>
-                <td><asp:Button class="btn" runat="server" Text="Cancelar" ID="btnCancelar" OnClick="btnCancelar_Click" NavigateUrl="~/Default.aspx" /></td>
+                <td></td>
+                <td><asp:Label ID="msgError" class="error" runat="server" Text="" /></td>
+            </tr>
+            <tr>
+                <td><br /><asp:Button class="btn" runat="server" Text="Registrarse" ID="btnRegistrar" OnClick="btnRegistrar_Click" /></td>
+                <td><br /><asp:Button class="btn" runat="server" Text="Cancelar" ID="btnCancelar" OnClick="btnCancelar_Click" NavigateUrl="~/Default.aspx" /></td>
             </tr>
         </table>
     </form>
