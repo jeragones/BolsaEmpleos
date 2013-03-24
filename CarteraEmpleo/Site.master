@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" CodeBehind="Site.master.cs" Inherits="CarteraEmpleo.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+    <head runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <title>Sitio de datos dinámicos</title>
+        <link href="CSS/Styles.css" rel="stylesheet" />
+        <link href="CSS/Images.css" rel="stylesheet" />
+        <link href="~/Site.css" rel="stylesheet" type="text/css" />
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body class="fondo">
+        <div class="body">
+            <div class="imgp">
+                <asp:Image ID="Image1" runat="server" ImageUrl="/Images/head2.jpg" />
+            </div>  
+            <asp:ContentPlaceHolder ID="Body" runat="server">
+        
+            </asp:ContentPlaceHolder>
+            <footer>
+
+            </footer>
+        </div> 
+    </body>
+</html>
