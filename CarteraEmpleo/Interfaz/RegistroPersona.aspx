@@ -46,12 +46,12 @@
             </tr>
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Confirmar contraseña:" /></td>
-                <td><asp:TextBox class="txt" runat="server" ID="txtConfirmarContrasena" TextMode="Password" /></td>
+                <td><asp:TextBox ID="txtConfirmarContrasena" class="txt" runat="server" TextMode="Password" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Dirección:" /></td>
-                <td><asp:TextBox class="txta" runat="server" TextMode="MultiLine" ID="txtDireccion"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtDireccion" class="txta" runat="server" TextMode="MultiLine" /></td>
             </tr>
             <!--<tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Experiencia Laboral:" /></td>

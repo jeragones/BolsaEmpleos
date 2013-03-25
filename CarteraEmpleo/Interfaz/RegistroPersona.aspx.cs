@@ -12,16 +12,19 @@ namespace CarteraEmpleo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Limpiar();
+            
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             cPersonaDatos persona = new cPersonaDatos();
+            String algo = txtNombre.Text;
             msgError.Text = persona.insertar(txtNombre.Text, txtCorreo.Text, txtTelefono.Text, cmbCondicion.Text, 
                                              txtContrasena.Text, txtConfirmarContrasena.Text, txtDireccion.Text);
             if (msgError.Text.Equals(""))
             {
+                //persona.EnviarCorreo();
                 Response.Redirect("~/Interfaz/Default.aspx");
+                Limpiar();
             }
             else 
             {
@@ -32,6 +35,7 @@ namespace CarteraEmpleo
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Interfaz/Default.aspx");
+            Limpiar();
         }
 
         protected void Limpiar()

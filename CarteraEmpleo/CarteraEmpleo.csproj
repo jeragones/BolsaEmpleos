@@ -75,6 +75,7 @@
     <Content Include="Images\Usuario.png" />
     <Content Include="Images\Usuario2.png" />
     <Content Include="Interfaz\Default.aspx" />
+    <Compile Include="Clases\cCorreoComunicacion.cs" />
     <Compile Include="Clases\cDBService.cs" />
     <Compile Include="Clases\cEmpresaDatos.cs" />
     <Compile Include="Clases\cPersonaDatos.cs" />
