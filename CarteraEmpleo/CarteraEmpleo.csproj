@@ -91,7 +91,7 @@
     </Compile>
     <Content Include="Interfaz\RegistroEmpresa.aspx" />
     <Content Include="Interfaz\RegistroPersona.aspx" />
-    <Content Include="Site.css" />
+    <Content Include="CSS\Site.css" />
     <Content Include="Site.master" />
     <Compile Include="Interfaz\RegistroEmpresa.aspx.cs">
       <DependentUpon>RegistroEmpresa.aspx</DependentUpon>
