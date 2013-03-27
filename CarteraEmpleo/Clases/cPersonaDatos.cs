@@ -18,7 +18,6 @@ namespace CarteraEmpleo
     {
         cCorreoComunicacion insCorreo = new cCorreoComunicacion();
         cDBService webservice = new cDBService();
-        // idioma, cedula, telefono
         public String insertar(String p_nombre, String p_correo, String p_telefono, String p_condicion, String p_contrasena, 
                                String p_confContrasena, String p_direccion) 
         {
@@ -39,10 +38,6 @@ namespace CarteraEmpleo
             {
                 return ("Correo inválido.");
             }
-            /*if (!insCorreo.ComprobarCorreo(p_correo, "txtCorreo")) 
-            {
-                return ("La dirección de correo no existe.");
-            }*/
             char[] _cSeparadorTelefono = { '-' };
             _sFracmentar = Fragmentar(p_telefono, _cSeparadorTelefono);
             if (p_telefono.Length < 9 | p_telefono.Length > 9 | _sFracmentar.Length != 2 | _sFracmentar[0].Length != _sFracmentar[1].Length) 
