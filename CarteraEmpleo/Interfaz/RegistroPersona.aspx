@@ -30,7 +30,7 @@
             </tr>-->
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Condicion Laboral:" /></td>
-                <td><asp:DropDownList ID="cmbCondicion" class="txt" runat="server" >
+                <td><asp:DropDownList ID="cmbCondicion" class="txt" runat="server" Height="16px" Width="108px" >
                         <asp:ListItem Selected="True" Text="Desempleado" />
                         <asp:ListItem Text="Empleado" />
                     </asp:DropDownList></td>

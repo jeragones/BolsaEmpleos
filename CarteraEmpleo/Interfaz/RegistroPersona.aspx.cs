@@ -17,7 +17,6 @@ namespace CarteraEmpleo
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             cPersonaDatos persona = new cPersonaDatos();
-            String algo = txtNombre.Text;
             msgError.Text = persona.insertar(txtNombre.Text, txtCorreo.Text, txtTelefono.Text, cmbCondicion.Text, 
                                              txtContrasena.Text, txtConfirmarContrasena.Text, txtDireccion.Text);
             if (msgError.Text.Equals(""))

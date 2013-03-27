@@ -17,10 +17,17 @@ namespace CarteraEmpleo
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             cEmpresaDatos empresa = new cEmpresaDatos();
-            empresa.insertar(txtNombre.Text, txtCedula.Text, txtCorreo.Text, txtTelefono.Text, txtWeb.Text, 
-                             txtContrasena.Text, txtDescripcion.Text, txtDireccion.Text);
-            Limpiar();
-            Response.Redirect("~/Default.aspx");
+            msgError.Text = empresa.insertar(txtNombre.Text, txtCedula1.Text, txtCorreo.Text, txtWeb.Text);
+            if (msgError.Text.Equals(""))
+            {
+                //persona.EnviarCorreo();
+                Response.Redirect("~/Interfaz/Default.aspx");
+                Limpiar();
+            }
+            else
+            {
+                imgError.Visible = true;
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -31,7 +38,7 @@ namespace CarteraEmpleo
 
         protected void Limpiar() {
             txtNombre.Text = "";
-            txtCedula.Text = "";
+            txtCedula1.Text = "";
             txtCorreo.Text = "";
             txtTelefono.Text = "";
             txtWeb.Text = "";
