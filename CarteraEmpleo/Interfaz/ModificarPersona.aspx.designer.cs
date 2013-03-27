@@ -7,10 +7,19 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CarteraEmpleo {
+namespace CarteraEmpleo.Interfaz {
     
     
-    public partial class RegistroEmpresa {
+    public partial class ModificarPersona {
+        
+        /// <summary>
+        /// Control Form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
         /// Control txtNombre.
@@ -31,15 +40,6 @@ namespace CarteraEmpleo {
         protected global::System.Web.UI.WebControls.TextBox txtCedula;
         
         /// <summary>
-        /// Control txtCorreo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
-        
-        /// <summary>
         /// Control txtTelefono.
         /// </summary>
         /// <remarks>
@@ -49,13 +49,22 @@ namespace CarteraEmpleo {
         protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
-        /// Control txtWeb.
+        /// Control cmbIdioma.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWeb;
+        protected global::System.Web.UI.WebControls.DropDownList cmbIdioma;
+        
+        /// <summary>
+        /// Control cmbCondicion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cmbCondicion;
         
         /// <summary>
         /// Control txtContrasena.
@@ -67,13 +76,13 @@ namespace CarteraEmpleo {
         protected global::System.Web.UI.WebControls.TextBox txtContrasena;
         
         /// <summary>
-        /// Control txtDescripcion.
+        /// Control txtConfirmarContrasena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmarContrasena;
         
         /// <summary>
         /// Control txtDireccion.
@@ -83,6 +92,24 @@ namespace CarteraEmpleo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDireccion;
+        
+        /// <summary>
+        /// Control txtExperiencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtExperiencia;
+        
+        /// <summary>
+        /// Control imgError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgError;
         
         /// <summary>
         /// Control msgError.
