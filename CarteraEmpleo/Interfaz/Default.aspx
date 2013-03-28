@@ -6,15 +6,15 @@
             <nav class="menu" runat="server">
                 <ul>
                     <li><a href="Default.aspx">Inicio</a></li>
-                    <li><a href="Default.aspx">Perfil</a></li>
+                    <!--<li><a href="Default.aspx">Perfil</a></li>-->
                     <li><a href="Default.aspx">Buscar</a></li>
                     <li><a href="Default.aspx">Contactar</a></li>
                     <li><a href="Default.aspx">Acerca</a></li>              
                 </ul>
             </nav>
             <div class="login">
-                <asp:TextBox class="txtLogin" ID="txtCorreo" TextMode="SingleLine" Placeholder="Correo" runat="server" />
-                <asp:TextBox class="txtLogin" ID="txtContrasena" TextMode="Password" Placeholder="Contraseña" runat="server" />
+                <asp:TextBox class="txtLogin" ID="txtCorreo" TextMode="SingleLine" Placeholder="Correo" runat="server" Height="15px" />
+                <asp:TextBox class="txtLogin" ID="txtContrasena" TextMode="Password" Placeholder="Contraseña" runat="server" Height="15px" />
                 <asp:Button class="btn" ID="btnIniciarSesion" Text="Iniciar Sesión" runat="server" />            
             </div>
         </div>

@@ -106,10 +106,12 @@
 .txtLogin{
     width: 120px;
     height: 20px;
-    margin-top: 4px;
+    top: -1px;
+    margin-top: 3px;
     font-size: 11px;
     border-radius:5px;  
     padding-left: 2px;
+    position: relative;
 }
 
 .txt{
