@@ -17,7 +17,8 @@ namespace CarteraEmpleo
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             cEmpresaDatos empresa = new cEmpresaDatos();
-            msgError.Text = empresa.insertar(txtNombre.Text, txtCedula1.Text, txtCorreo.Text, txtWeb.Text);
+            String _sCedula = txtCedula1.Text + "-" + txtCedula2.Text + "-" + txtCedula3.Text;
+            msgError.Text = empresa.insertar(txtNombre.Text, _sCedula, txtCorreo.Text, txtWeb.Text);
             if (msgError.Text.Equals(""))
             {
                 //persona.EnviarCorreo();
@@ -39,6 +40,8 @@ namespace CarteraEmpleo
         protected void Limpiar() {
             txtNombre.Text = "";
             txtCedula1.Text = "";
+            txtCedula2.Text = "";
+            txtCedula3.Text = "";
             txtCorreo.Text = "";
             txtTelefono.Text = "";
             txtWeb.Text = "";

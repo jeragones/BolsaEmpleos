@@ -17,22 +17,37 @@ namespace CarteraEmpleo
     {
         cDBService webservice = new cDBService();
         // telefono
-        public String insertar(String p_nombre, String p_cedula, String p_correo, String p_sitio)
+        public String insertar(String p_nombre, String p_cedula, String p_correo, 
+                               String p_sitio)
         {
-            if (p_nombre.Equals("") | p_correo.Equals("") | p_cedula.Equals(""))
+            String[] _sFracmentar;
+            char[] _cSeparadorCedula = { '-' };
+            _sFracmentar = Fragmentar(p_cedula, _cSeparadorCedula);
+            if (p_nombre.Equals("") | p_correo.Equals("") | _sFracmentar[0].Equals("") | 
+                _sFracmentar[1].Equals("") | _sFracmentar[2].Equals(""))
             {
                 return ("Existen campos vacíos que son requeridos.");
             }
-            String[] _sFracmentar;
-            char[] _cSeparadorCorreo1 = { ' ', ',', '!', '#', '$', '%', '^', '&', '*', '(', ')', '+', '/', ';', ':', '"', '/' };
+            
+            if (_sFracmentar.Length != 3 | !Numero(_sFracmentar[0]) | !Numero(_sFracmentar[1]) |
+               !Numero(_sFracmentar[2]) | p_cedula.Length != 12) 
+            {
+                return ("Cedula jurídica inválida.");
+            }
+            char[] _cSeparadorCorreo1 = { ' ', ',', '!', '#', '$', '%', '^', '&', '*', 
+                                          '(', ')', '+', '/', ';', ':', '"', '/' };
             char[] _cSeparadorCorreo2 = { '@', '.' };
             _sFracmentar = Fragmentar(p_correo, _cSeparadorCorreo1);
-            if (_sFracmentar.Length > 1)
+            if (_sFracmentar.Length != 1)
             {
                 return ("Correo inválido.");
             }
             _sFracmentar = Fragmentar(p_correo, _cSeparadorCorreo2);
-            if (_sFracmentar.Length < 3 | _sFracmentar[2].Equals(""))
+            if (_sFracmentar.Length != 3)
+            {
+                return ("Correo inválido.");
+            }
+            if (_sFracmentar[0].Equals("") | _sFracmentar[1].Equals("") | _sFracmentar[2].Equals(""))
             {
                 return ("Correo inválido.");
             }
@@ -49,7 +64,8 @@ namespace CarteraEmpleo
         {
             try
             {
-                webservice.Update_Empresa(p_correo, p_contrasena, p_descripcion, p_direccion, p_nombre, p_cedula, p_sitio);
+                webservice.Update_Empresa(p_correo, p_contrasena, p_descripcion, p_direccion, 
+                                          p_nombre, p_cedula, p_sitio);
             } 
             catch(Exception e) {}
         }
@@ -62,6 +78,12 @@ namespace CarteraEmpleo
         {
             String[] vector = p_cadena.Split(p_separador);
             return vector;
+        }
+
+        protected Boolean Numero(String p_numero)
+        {
+            int _iNumero = 0;
+            return (int.TryParse(p_numero, out _iNumero));
         }
     }
 }

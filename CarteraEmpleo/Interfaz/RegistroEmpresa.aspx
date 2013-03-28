@@ -13,7 +13,7 @@
         <br/>
         <table>
             <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Nombre de la empresa:" /></td>
+                <td><asp:Label class="lblRegistrar" runat="server" Text="Nombre de empresa:" /></td>
                 <td class="auto-style1"><asp:TextBox class="txt" runat="server" ID="txtNombre" Height="20px" Width="200px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
