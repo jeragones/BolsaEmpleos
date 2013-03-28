@@ -90,25 +90,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Content Include="Interfaz\ModificarEmpresa.aspx" />
-    <Content Include="Interfaz\ModificarPersona.aspx" />
+    <Content Include="Interfaz\PerfilEmpresa.aspx" />
+    <Content Include="Interfaz\PerfilPersona.aspx" />
     <Content Include="Interfaz\RegistroEmpresa.aspx" />
     <Content Include="Interfaz\RegistroPersona.aspx" />
     <Content Include="CSS\Site.css" />
     <Content Include="Site.master" />
-    <Compile Include="Interfaz\ModificarEmpresa.aspx.cs">
-      <DependentUpon>ModificarEmpresa.aspx</DependentUpon>
+    <Compile Include="Interfaz\PerfilEmpresa.aspx.cs">
+      <DependentUpon>PerfilEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interfaz\ModificarEmpresa.aspx.designer.cs">
-      <DependentUpon>ModificarEmpresa.aspx</DependentUpon>
+    <Compile Include="Interfaz\PerfilEmpresa.aspx.designer.cs">
+      <DependentUpon>PerfilEmpresa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\ModificarPersona.aspx.cs">
-      <DependentUpon>ModificarPersona.aspx</DependentUpon>
+    <Compile Include="Interfaz\PerfilPersona.aspx.cs">
+      <DependentUpon>PerfilPersona.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interfaz\ModificarPersona.aspx.designer.cs">
-      <DependentUpon>ModificarPersona.aspx</DependentUpon>
+    <Compile Include="Interfaz\PerfilPersona.aspx.designer.cs">
+      <DependentUpon>PerfilPersona.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\RegistroEmpresa.aspx.cs">
       <DependentUpon>RegistroEmpresa.aspx</DependentUpon>
