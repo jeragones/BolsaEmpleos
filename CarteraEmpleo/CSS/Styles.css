@@ -4,7 +4,6 @@
     font-family: Verdana, Geneva, sans-serif;
     font-size: 18px;
     font-weight:bold;
-    /*color: #00552B;*/
     color: #00366C;
 }
 
@@ -127,8 +126,6 @@
     border-radius:10px;
     resize:none;
 }
-
-
 
 .error{
     color: #B90000;
