@@ -7,7 +7,7 @@
         <table>
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Nombre Completo:" /></td>
-                <td><asp:TextBox ID="txtNombre" class="txt" runat="server" /></td>
+                <td><asp:TextBox ID="txtNombre" class="txt" runat="server" Height="20px" Width="200px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <!--<tr>
@@ -16,12 +16,12 @@
             </tr>-->
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Correo electrónico:" /></td>
-                <td><asp:TextBox ID="txtCorreo" Class="txt" runat="server" placeholder="example@mail.com" /></td>
+                <td><asp:TextBox ID="txtCorreo" Class="txt" runat="server" placeholder="example@mail.com" Height="20px" Width="200px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Teléfono:" /></td>
-                <td><asp:TextBox ID="txtTelefono" class="txt" runat="server" placeholder="1111-1111" /></td>
+                <td><asp:TextBox ID="txtTelefono" class="txt" runat="server" placeholder="0000-0000" Height="20px" Width="200px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <!--<tr>
@@ -30,7 +30,7 @@
             </tr>-->
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Condicion Laboral:" /></td>
-                <td><asp:DropDownList ID="cmbCondicion" class="txt" runat="server" Height="16px" Width="108px" >
+                <td><asp:DropDownList ID="cmbCondicion" class="txt" runat="server" Height="20px" Width="200px" >
                         <asp:ListItem Selected="True" Text="Desempleado" />
                         <asp:ListItem Text="Empleado" />
                     </asp:DropDownList></td>
@@ -41,17 +41,17 @@
             </tr>
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Contraseña:" /></td>
-                <td><asp:TextBox class="txt" runat="server" ID="txtContrasena" TextMode="Password" ToolTip="La contraseña debe tiener un mínimo de 9 caracteres."/></td>
+                <td><asp:TextBox class="txt" runat="server" ID="txtContrasena" TextMode="Password" ToolTip="La contraseña debe tiener un mínimo de 9 caracteres." Height="20px" Width="200px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Confirmar contraseña:" /></td>
-                <td><asp:TextBox ID="txtConfirmarContrasena" class="txt" runat="server" TextMode="Password" /></td>
+                <td><asp:TextBox ID="txtConfirmarContrasena" class="txt" runat="server" TextMode="Password" Height="20px" Width="200px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Dirección:" /></td>
-                <td><asp:TextBox ID="txtDireccion" class="txta" runat="server" TextMode="MultiLine" /></td>
+                <td><asp:TextBox ID="txtDireccion" class="txta" runat="server" TextMode="MultiLine" Width="200px" /></td>
             </tr>
             <!--<tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Experiencia Laboral:" /></td>

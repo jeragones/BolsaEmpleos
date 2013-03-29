@@ -20,8 +20,8 @@
             <tr>
                 <td><asp:Label class="lblRegistrar" runat="server" Text="Cédula Jurídica:" /></td>
                 <td><asp:TextBox class="txt" runat="server" placeholder="0" ID="txtCedula1" MaxLength="1" Height="20px" Width="15px" />
-                                        <asp:TextBox class="txt" runat="server" placeholder="000" ID="txtCedula2" MaxLength="3" Height="20px" Width="55px" />
-                                        <asp:TextBox class="txt" runat="server" placeholder="000000" ID="txtCedula3" MaxLength="6" Height="20px" Width="110px" /></td>
+                    <asp:TextBox class="txt" runat="server" placeholder="000" ID="txtCedula2" MaxLength="3" Height="20px" Width="55px" />
+                    <asp:TextBox class="txt" runat="server" placeholder="000000" ID="txtCedula3" MaxLength="6" Height="20px" Width="110px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <tr>

@@ -31,22 +31,22 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// Control lblRegistrarActual.
+        /// Control lblNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRegistrarActual;
+        protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
-        /// Control lblNombreEditar.
+        /// Control hplNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lblNombreEditar;
+        protected global::System.Web.UI.WebControls.LinkButton hplNombre;
         
         /// <summary>
         /// Control txtCedula.
@@ -58,22 +58,22 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.TextBox txtCedula;
         
         /// <summary>
-        /// Control Label1.
+        /// Control lblCedula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblCedula;
         
         /// <summary>
-        /// Control HyperLink1.
+        /// Control hplCedula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.LinkButton hplCedula;
         
         /// <summary>
         /// Control txtTelefono.
@@ -85,22 +85,22 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
-        /// Control Label2.
+        /// Control lblTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblTelefono;
         
         /// <summary>
-        /// Control HyperLink2.
+        /// Control hplTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        protected global::System.Web.UI.WebControls.LinkButton hplTelefono;
         
         /// <summary>
         /// Control cmbIdioma.
@@ -112,22 +112,22 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.DropDownList cmbIdioma;
         
         /// <summary>
-        /// Control Label3.
+        /// Control lblIdioma.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lblIdioma;
         
         /// <summary>
-        /// Control HyperLink3.
+        /// Control hplIdioma.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
+        protected global::System.Web.UI.WebControls.LinkButton hplIdioma;
         
         /// <summary>
         /// Control cmbCondicion.
@@ -139,76 +139,94 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.DropDownList cmbCondicion;
         
         /// <summary>
-        /// Control Label4.
+        /// Control lblCondicion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label lblCondicion;
         
         /// <summary>
-        /// Control HyperLink4.
+        /// Control hplCondicion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
+        protected global::System.Web.UI.WebControls.LinkButton hplCondicion;
         
         /// <summary>
-        /// Control txtContrasena.
+        /// Control lblContrasena1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContrasena;
+        protected global::System.Web.UI.WebControls.Label lblContrasena1;
         
         /// <summary>
-        /// Control Label5.
+        /// Control txtContrasena1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.TextBox txtContrasena1;
         
         /// <summary>
-        /// Control HyperLink5.
+        /// Control lblContrasena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink5;
+        protected global::System.Web.UI.WebControls.Label lblContrasena;
         
         /// <summary>
-        /// Control txtConfirmarContrasena.
+        /// Control hplContrasena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmarContrasena;
+        protected global::System.Web.UI.WebControls.LinkButton hplContrasena;
         
         /// <summary>
-        /// Control Label6.
+        /// Control lblContrasena2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label lblContrasena2;
         
         /// <summary>
-        /// Control HyperLink6.
+        /// Control txtContrasena2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink6;
+        protected global::System.Web.UI.WebControls.TextBox txtContrasena2;
+        
+        /// <summary>
+        /// Control lblContrasena3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContrasena3;
+        
+        /// <summary>
+        /// Control txtContrasena3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtContrasena3;
         
         /// <summary>
         /// Control txtDireccion.
@@ -220,22 +238,22 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.TextBox txtDireccion;
         
         /// <summary>
-        /// Control Label7.
+        /// Control lblDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label lblDireccion;
         
         /// <summary>
-        /// Control HyperLink7.
+        /// Control hplDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink7;
+        protected global::System.Web.UI.WebControls.LinkButton hplDireccion;
         
         /// <summary>
         /// Control txtExperiencia.
@@ -256,13 +274,13 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// Control HyperLink8.
+        /// Control hplExperiencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink8;
+        protected global::System.Web.UI.WebControls.LinkButton hplExperiencia;
         
         /// <summary>
         /// Control imgError.
@@ -283,13 +301,13 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.Label msgError;
         
         /// <summary>
-        /// Control btnRegistrar.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
         
         /// <summary>
         /// Control btnCancelar.
