@@ -15,14 +15,17 @@ namespace CarteraEmpleo.Clases
         public String SendMail(String from, String to, String subject, String body)
         {
             MailMessage msg = new MailMessage();
-            msg.From = new MailAddress("jeragones@gmail.com","Sender's Name");
+            msg.From = new MailAddress("jeragones@hotmail.com","Administrador");
             msg.To.Add(new MailAddress("jeragones@gmail.com"));
             msg.Subject = "Prueba";
             msg.Body = "Hola";
             msg.IsBodyHtml = true;
 
             SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
+            //smtp.Host = "smtp.gmail.com";
+            smtp.Host = "localhost";
+            smtp.Port = 25;
+
             smtp.Credentials = new NetworkCredential("jeragones@gmail.com","Contraseña");
             smtp.EnableSsl = true;
             try
