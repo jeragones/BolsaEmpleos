@@ -47,9 +47,8 @@ namespace CarteraEmpleo
             }
             char[] _cSeparadorTelefono = { '-' };
             _sFracmentar = Fragmentar(p_telefono, _cSeparadorTelefono);
-            if (p_telefono.Length < 9 | p_telefono.Length > 9 | _sFracmentar.Length != 2 |
-                _sFracmentar[0].Length != _sFracmentar[1].Length | !Numero(_sFracmentar[0]) |
-                !Numero(_sFracmentar[1])) 
+            if (p_telefono.Length != 9 | _sFracmentar.Length != 2 | !Numero(_sFracmentar[0]) |
+                !Numero(_sFracmentar[1]) | _sFracmentar[0].Length != _sFracmentar[1].Length) 
             {
                 return ("Teléfono inválido.");
             }
