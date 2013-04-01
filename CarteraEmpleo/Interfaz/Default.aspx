@@ -15,7 +15,7 @@
             <div class="login">
                 <asp:TextBox class="txtLogin" ID="txtCorreo" TextMode="SingleLine" Placeholder="Correo" runat="server" Height="15px" />
                 <asp:TextBox class="txtLogin" ID="txtContrasena" TextMode="Password" Placeholder="Contraseña" runat="server" Height="15px" />
-                <asp:Button class="btn" ID="btnIniciarSesion" Text="Iniciar Sesión" runat="server" />            
+                <asp:Button class="btn" ID="btnIniciarSesion" Text="Iniciar Sesión" runat="server" OnClick="btnIniciarSesion_Click" />            
             </div>
         </div>
         <div class="register">

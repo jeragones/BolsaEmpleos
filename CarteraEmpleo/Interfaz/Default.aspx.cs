@@ -11,6 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using System.Web.DynamicData;
+using CarteraEmpleo.Clases;
 
 namespace CarteraEmpleo
 {
@@ -18,6 +19,12 @@ namespace CarteraEmpleo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
+
+        protected void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            cCorreoComunicacion ins = new cCorreoComunicacion();
+            txtCorreo.Text = ins.SendMail("jeragones@hotmail.com", "jeragones@gmail.com", "Hola", "Si funciona !!!");
         }
 
     }
