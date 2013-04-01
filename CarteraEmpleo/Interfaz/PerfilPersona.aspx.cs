@@ -170,6 +170,8 @@ namespace CarteraEmpleo.Interfaz
             DesactivarCondicion();
             DesactivarContrasena();
             DesactivarDireccion();
+            cPersonaDatos ins = new cPersonaDatos();
+            ins.modificar();
             Response.Redirect("~/Interfaz/Default.aspx");
         }
     }
