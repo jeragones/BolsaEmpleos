@@ -11,6 +11,7 @@
         <link href="CSS/Images.css" rel="stylesheet" />
         <link href="CSS/sRegistrar.css" rel="stylesheet" />
         <link href="CSS/Site.css" rel="stylesheet" />
+
         <asp:ContentPlaceHolder ID="head" runat="server">
         </asp:ContentPlaceHolder>
     </head>
