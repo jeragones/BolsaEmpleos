@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CarteraEmpleo.Interfaz
 {
-    public partial class PerfilPersona : System.Web.UI.Page
+    public partial class Persona : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

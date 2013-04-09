@@ -10,7 +10,7 @@
 namespace CarteraEmpleo.Interfaz {
     
     
-    public partial class PerfilEmpresa {
+    public partial class Empresa {
         
         /// <summary>
         /// Control lbl_NombreEmpresa.
@@ -22,102 +22,75 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.Label lbl_NombreEmpresa;
         
         /// <summary>
-        /// Control Form1.
+        /// Control CedulaJuridica1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
+        protected global::System.Web.UI.WebControls.Label CedulaJuridica1;
         
         /// <summary>
-        /// Control btModificarEmpresa.
+        /// Control Mail1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btModificarEmpresa;
+        protected global::System.Web.UI.WebControls.Label Mail1;
         
         /// <summary>
-        /// Control CedulaJuridica2.
+        /// Control Telefonos1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CedulaJuridica2;
+        protected global::System.Web.UI.WebControls.Label Telefonos1;
         
         /// <summary>
-        /// Control Mail2.
+        /// Control fax1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Mail2;
+        protected global::System.Web.UI.WebControls.Label fax1;
         
         /// <summary>
-        /// Control Telefonos2.
+        /// Control Ubicación1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Telefonos2;
+        protected global::System.Web.UI.WebControls.Label Ubicación1;
         
         /// <summary>
-        /// Control fax2.
+        /// Control PaginaWeb1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fax2;
+        protected global::System.Web.UI.WebControls.Label PaginaWeb1;
         
         /// <summary>
-        /// Control Ubicación2.
+        /// Control Descripcion1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Ubicación2;
+        protected global::System.Web.UI.WebControls.Label Descripcion1;
         
         /// <summary>
-        /// Control PaginaWeb2.
+        /// Control ListBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PaginaWeb2;
-        
-        /// <summary>
-        /// Control Descripcion2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Descripcion2;
-        
-        /// <summary>
-        /// Control GridView1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// Control btEliminarOfertasEmpleo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btEliminarOfertasEmpleo;
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
     }
 }

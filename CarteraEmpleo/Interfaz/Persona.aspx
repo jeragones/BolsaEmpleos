@@ -1,14 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="PerfilPersona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.PerfilPersona" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Persona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.Persona" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-         <div id="3" class="borderPerfilEmpresaPersona" >
+     <div id="3">
         <div class="titulo">Candidato</div>
-        <br/>
-        Nombre:
+        <br />
+         Nombre:
         <asp:Label runat="server" ID="lbl_NombreEmpresa">Nombre del Candidato</asp:Label>
         <form id="Form1" runat="server">
-        <asp:Button ID="Button1" runat="server" CssClass="" Text="Editar Información" />
+        <asp:Button ID="Button1" runat="server" CssClass="" Text="Enviar Mensaje" />
                
         <table>
             <tr>

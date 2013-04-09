@@ -1,70 +1,66 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="PerfilEmpresa.aspx.cs" Inherits="CarteraEmpleo.Interfaz.ModificarEmpresa" %>
-<asp:Content ContentPlaceHolderID="head" runat="server"></asp:Content>
-<asp:Content ContentPlaceHolderID="Body" runat="server">
-    <form id="Form1" class="registrar" runat="server">
-        <div class="titulo">Perfil</div>
-        <br/>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="PerfilEmpresa.aspx.cs" Inherits="CarteraEmpleo.Interfaz.PerfilEmpresa" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
+        <div id="2" class="borderPerfilEmpresaPersona">
+        <div class="titulo">Perfil Empresa</div>
+        <br />
+        Nombre:
+        <asp:Label runat="server" ID="lbl_NombreEmpresa">Nombre de la empresa</asp:Label>
+        <br />        
+        <form id="Form1" runat="server">
+        <br />        
+        
+         <div id="DatosBasicosEmpresa2" class="datosBasicosEmpresa">
+         <asp:Button ID="btModificarEmpresa" runat="server" CssClass="btmodificarEmpr" Text="Editar Información" />
+        <h4>Datos Básicos</h4>
+        
+        <hr/>        
         <table>
             <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Nombre de empresa:" /></td>
-                <td><asp:TextBox class="txt" runat="server" ID="txtNombre" Visible="False" Height="20px" Width="175px"/>
-                    <asp:Label ID="lblNombre" class="lblRegistrar" runat="server" Text="Nombre" /></td>
-                <td><asp:LinkButton class="Link" runat="server" ID="hplNombre" text="Editar" OnClick="hplNombre_Click" /></td>
-            </tr>
-            <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Cédula Jurídica:" /></td>
-                <td><asp:TextBox class="txt" runat="server" placeholder="0" ID="txtCedula1" MaxLength="1" Height="20px" Width="15px" Visible="False" />
-                    <asp:TextBox class="txt" runat="server" placeholder="000" ID="txtCedula2" MaxLength="3" Height="20px" Width="40px" Visible="False" />
-                    <asp:TextBox class="txt" runat="server" placeholder="000000" ID="txtCedula3" MaxLength="6" Height="20px" Width="100px" Visible="False" />
-                    <asp:Label ID="lblCedula" class="lblRegistrar" runat="server" Text="No-mb-re" /></td>
-                <td><asp:LinkButton class="Link" runat="server" ID="hplCedula" text="Editar" OnClick="hplCedula_Click" /></td>
-            </tr>            
-            <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Teléfono:" /></td>
-                <td><asp:TextBox class="txt" runat="server" placeholder="8888-8888" ID="txtTelefono" Visible="False" Height="20px" Width="175px" />
-                    <asp:Label ID="lblTelefono" class="lblRegistrar" runat="server" Text="Nombre" /></td>
-                <td><asp:LinkButton class="Link" runat="server" ID="hplTelefono" text="Editar" OnClick="hplTelefono_Click" /></td>
-            </tr>
-            <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Sitio Web:" /></td>
-                <td><asp:TextBox class="txt" runat="server" placeholder="example.com" ID="txtSitio" Visible="False" Height="20px" Width="175px" />
-                    <asp:Label ID="lblSitio" class="lblRegistrar" runat="server" Text="Nombre" /></td>
-                <td><asp:LinkButton class="Link" runat="server" ID="hplSitio" text="Editar" OnClick="hplSitio_Click" /></td>
-            </tr>
-            <tr>
-                <td><asp:Label ID="lblContrasena1" class="lblRegistrar" runat="server" Text="Contraseña:" /></td>
-                <td><asp:TextBox ID="txtContrasena1" class="txt" runat="server"  TextMode="Password" Visible="False" Height="20px" Width="167px" />
-                    <asp:Label ID="lblContrasena" class="lblRegistrar" runat="server" Text="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" /></td>
-                <td><asp:LinkButton ID="hplContrasena" class="Link" runat="server"  text="Editar" OnClick="hplContrasena_Click" /></td>
-            </tr>
-            <tr>
-                <td><asp:Label ID="lblContrasena2" class="lblRegistrar" runat="server" Text="Nueva contraseña:" visible="false" /></td>
-                 <td><asp:TextBox ID="txtContrasena2" class="txt" runat="server"  TextMode="Password" Visible="False" Height="20px" Width="167px" /></td>
-            </tr>
-            <tr>
-                <td><asp:Label ID="lblContrasena3" class="lblRegistrar" runat="server" Text="Confirmar contraseña:" visible="false" /></td>
-                <td><asp:TextBox ID="txtContrasena3" class="txt" runat="server"  TextMode="Password" Visible="False" Height="20px" Width="167px" /></td>
-            </tr>
-            <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Descripción:" TextMode="MultiLine" /></td>
-                <td><asp:TextBox class="txta" runat="server" TextMode="MultiLine" ID="txtDescripcion" Visible="False" Width="175px" />
-                    <asp:Label ID="lblDescripcion" class="lblRegistrar" runat="server" Text="Nombre" /></td>
-                <td><asp:LinkButton class="Link" runat="server" ID="hplDescripcion" text="Editar" OnClick="hplDescripcion_Click" /></td>
-            </tr>
-            <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Dirección:" /></td>
-                <td><asp:TextBox class="txta" runat="server" TextMode="MultiLine" ID="txtDireccion" Visible="False" Width="175px" />
-                    <asp:Label ID="lblDireccion" class="lblRegistrar" runat="server" Text="Nombre" /></td>
-                <td><asp:LinkButton class="Link" runat="server" ID="hplDireccion" text="Editar" OnClick="hplDireccion_Click" /></td>
-            </tr>
-        <tr>
-            <td></td>
-            <td><asp:Label ID="msgError" class="error" runat="server" Text="" /></td>
-        </tr>
-        <tr>
-            <td><br /><asp:Button class="btn" runat="server" Text="Guardar Cambios" ID="btnGuardar" OnClick="btnGuardar_Click"  /></td>
-            <td><br /><asp:Button class="btn" runat="server" Text="Cancelar" ID="btnCancelar"  NavigateUrl="~/Interfaz/Default.aspx" OnClick="btnCancelar_Click" /></td>
-        </tr>
+                <td>
+                   
+                    Cedúla Jurídica: <asp:Label runat="server" ID="CedulaJuridica2">Cedúla Jurídica</asp:Label>
+                    <br/>
+                    Correo Electronico: <asp:Label runat="server" ID="Mail2">ContactoEmpresa@mail.com</asp:Label>
+                    <br />
+                    Teléfonos: <asp:Label runat="server" ID="Telefonos2">telefonos</asp:Label>
+                    <br />
+                    Fax: <asp:Label runat="server" ID="fax2">Número Fax</asp:Label>
+                    <br />
+                    Ubicación: <asp:Label runat="server" ID="Ubicación2">Ubicación de la empresa</asp:Label>
+                </td>
+                <td>
+                    Pagina Web: <asp:Label runat="server" ID="PaginaWeb2">Empresa.com</asp:Label>
+                    <br />
+                    Descripción: <asp:Label runat="server" ID="Descripcion2">Descripción general de la empresa</asp:Label>
+                </td>
+             </tr>
         </table>
-    </form>
+        </div>
+        <div id="PuestosLaborales1" class="puestosLaboralesEmpresa">
+            
+        <h4>Puestos Laborales en Oferta</h4>
+        <hr/>
+            <table>
+                <tr>
+                    <td>
+                        <asp:GridView ID="GridView1" runat="server" >
+                            <Columns>
+                                <asp:CommandField ShowEditButton="True" />
+                                <asp:CommandField ShowDeleteButton="True" />
+                            </Columns>
+                        </asp:GridView>
+                    </td>
+                    <td>
+                        <asp:Button ID="btEliminarOfertasEmpleo" runat="server" CssClass="" Text="Eliminar" />
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+            
+        </form>
+    </div>
+
 </asp:Content>

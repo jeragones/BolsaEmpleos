@@ -102,8 +102,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Content Include="Interfaz\Empresa.aspx" />
+    <Content Include="Interfaz\ModificarPerfilEmpresa.aspx" />
     <Content Include="Interfaz\PerfilEmpresa.aspx" />
+    <Content Include="Interfaz\ModificarPersona.aspx" />
     <Content Include="Interfaz\PerfilPersona.aspx" />
+    <Content Include="Interfaz\Persona.aspx" />
     <Content Include="Interfaz\RegistroEmpresa.aspx" />
     <Content Include="Interfaz\RegistroPersona.aspx" />
     <Content Include="CSS\Site.css" />
@@ -113,6 +117,20 @@
     <Content Include="Scripts\js\jquery-easing-compatibility.1.2.pack.js" />
     <Content Include="Scripts\js\ycodaslider-2.0.pack.js" />
     <Content Include="Site.master" />
+    <Compile Include="Interfaz\Empresa.aspx.cs">
+      <DependentUpon>Empresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Empresa.aspx.designer.cs">
+      <DependentUpon>Empresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\ModificarPerfilEmpresa.aspx.cs">
+      <DependentUpon>ModificarPerfilEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interfaz\ModificarPerfilEmpresa.aspx.designer.cs">
+      <DependentUpon>ModificarPerfilEmpresa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\PerfilEmpresa.aspx.cs">
       <DependentUpon>PerfilEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -120,12 +138,26 @@
     <Compile Include="Interfaz\PerfilEmpresa.aspx.designer.cs">
       <DependentUpon>PerfilEmpresa.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\ModificarPersona.aspx.cs">
+      <DependentUpon>ModificarPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interfaz\ModificarPersona.aspx.designer.cs">
+      <DependentUpon>ModificarPersona.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\PerfilPersona.aspx.cs">
       <DependentUpon>PerfilPersona.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Interfaz\PerfilPersona.aspx.designer.cs">
       <DependentUpon>PerfilPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Persona.aspx.cs">
+      <DependentUpon>Persona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Persona.aspx.designer.cs">
+      <DependentUpon>Persona.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\RegistroEmpresa.aspx.cs">
       <DependentUpon>RegistroEmpresa.aspx</DependentUpon>

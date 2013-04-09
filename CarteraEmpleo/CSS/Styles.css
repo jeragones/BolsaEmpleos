@@ -151,3 +151,59 @@
 	{
 		color: #4A9586;
 	}
+
+.perfil {
+	border-width:10px;
+	border-radius: 10px 10px 10px 10px; 
+	border-color:lightgray; 
+	border-style:outset;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+}
+
+.borderPerfilEmpresaPersona {
+	border-width:5px;
+	border-style:outset;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:20px;
+	border-spacing:10px;
+}
+
+
+
+.datosBasicosEmpresa {
+	border-width:3px;
+	border-radius: 10px 10px 10px 10px; 
+	border-color:darkslateblue; 
+	border-style:solid;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+	border-spacing:10px;
+}
+
+.puestosLaboralesEmpresa {
+	border-width:3px;
+	border-radius: 10px 10px 10px 10px; 
+	border-color:darkslateblue; 
+	border-style:solid;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-spacing:50px 50px ;
+	
+}
+
+.datosBasicosPersona {
+}
+
+.infoLaboralPersona {
+}
+
+.btmodificarEmpr {
+float:right;
+border-spacing:50px 50px;
+}
