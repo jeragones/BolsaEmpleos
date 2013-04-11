@@ -23,8 +23,15 @@ namespace CarteraEmpleo
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            cCorreoComunicacion ins = new cCorreoComunicacion();
-            txtCorreo.Text = ins.SendMail("jeragones@hotmail.com", "jeragones@gmail.com", "Hola", "Si funciona !!!");
+            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion()", true);
+
+            //cCorreoComunicacion ins = new cCorreoComunicacion();
+            //txtCorreo.Text = ins.SendMail("jeragones@hotmail.com", "jeragones@gmail.com", "Hola", "Si funciona !!!");
+        }
+
+        protected void prueba_Click(object sender, EventArgs e)
+        {
+            
         }
 
     }

@@ -112,6 +112,7 @@
     <Content Include="Interfaz\RegistroEmpresa.aspx" />
     <Content Include="Interfaz\RegistroPersona.aspx" />
     <Content Include="CSS\Site.css" />
+    <Content Include="Scripts\jQueryDefault.js" />
     <Content Include="Scripts\js\coda-slider.1.1.1.pack.js" />
     <Content Include="Scripts\js\jquery-1.2.6.min.js" />
     <Content Include="Scripts\js\jquery-easing-1.3.pack.js" />

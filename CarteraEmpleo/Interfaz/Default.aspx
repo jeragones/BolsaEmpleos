@@ -7,6 +7,7 @@
     <script type="text/javascript" src="../Scripts/js/jquery-easing-1.3.pack.js"></script>
     <script type="text/javascript" src="../Scripts/js/jquery-easing-compatibility.1.2.pack.js"></script>
     <script type="text/javascript" src="../Scripts/js/coda-slider.1.1.1.pack.js"></script>
+    <script type="text/javascript" src="../Scripts/jQueryDefault.js"></script>
 
     <script type="text/javascript">
 
@@ -63,11 +64,11 @@
                     <li><a href="Default.aspx">Inicio</a></li>
                     <!--<li><a href="Default.aspx">Perfil</a></li>-->
                     <li><a href="Default.aspx">Buscar</a></li>
-                    <li><a href="Default.aspx">Contactar</a></li>
-                    <li><a href="Default.aspx">Acerca</a></li>
+                    <li><a href="RegistroEmpresa.aspx">Contactar</a></li>
+                    <li><asp:LinkButton runat="server" Text="Acerca" OnClick="prueba_Click" /></li>
                 </ul>
             </nav>
-            <div class="login">
+            <div id="Login" class="login">
                 <asp:TextBox class="txtLogin" ID="txtCorreo" TextMode="SingleLine" Placeholder="Correo" runat="server" Height="15px" />
                 <asp:TextBox class="txtLogin" ID="txtContrasena" TextMode="Password" Placeholder="Contraseña" runat="server" Height="15px" />
                 <asp:Button class="btn" ID="btnIniciarSesion" Text="Iniciar Sesión" runat="server" OnClick="btnIniciarSesion_Click" />
