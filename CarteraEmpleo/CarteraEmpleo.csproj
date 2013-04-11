@@ -89,6 +89,7 @@
     <Content Include="Interfaz\Default.aspx" />
     <Compile Include="Clases\cCorreoComunicacion.cs" />
     <Compile Include="Clases\cDBService.cs" />
+    <Compile Include="Clases\cEmpleosDatos.cs" />
     <Compile Include="Clases\cEmpresaDatos.cs" />
     <Compile Include="Clases\cPersonaDatos.cs" />
     <Compile Include="Interfaz\Default.aspx.cs">
