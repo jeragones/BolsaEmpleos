@@ -7,7 +7,7 @@ namespace CarteraEmpleo.Clases
 {
     public class cEmpleosDatos
     {
-        cDBService webService = new cDBService();
+        Service1 webService = new Service1();
         public string insertar(string p_IdCatEmpleo,string p_Descripcion) {
             int _iId_CatEmpleo;
             if (p_Descripcion != "" & p_IdCatEmpleo != ""){

@@ -17,7 +17,7 @@ namespace CarteraEmpleo
     public class cPersonaDatos
     {
         cCorreoComunicacion insCorreo = new cCorreoComunicacion();
-        cDBService webservice = new cDBService();
+        Service1 webservice = new Service1();
         public String insertar(String p_nombre, String p_correo, String p_telefono, 
                                String p_condicion, String p_contrasena, String p_confContrasena, 
                                String p_direccion) 

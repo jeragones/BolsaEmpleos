@@ -15,7 +15,7 @@ namespace CarteraEmpleo
 {
     public class cEmpresaDatos
     {
-        cDBService webservice = new cDBService();
+        Service1 webservice = new Service1();
         // telefono
         public String insertar(String p_nombre, String p_cedula, String p_correo, 
                                String p_sitio)

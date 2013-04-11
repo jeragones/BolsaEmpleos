@@ -1,5 +1,5 @@
 ﻿function Sesion(usuario) {
     var nombre = 'Jorge Rojas Aragones';
-    var user = '<a href="PerfilPersona.aspx">' + nombre + '</a>';
+    var user = '<div class="UsuarioLink"><a href="PerfilPersona.aspx">' + nombre + '</a></div>';
     document.getElementById("Login").innerHTML = user;
 }
