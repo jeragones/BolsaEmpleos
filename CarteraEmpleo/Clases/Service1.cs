@@ -78,6 +78,8 @@ public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProt
     
     private System.Threading.SendOrPostCallback Select_Persona_IdiomaOperationCompleted;
     
+    private System.Threading.SendOrPostCallback QuerryOperationCompleted;
+    
     /// <remarks/>
     public Service1() {
         this.Url = "http://www.webserviceitcrempleos.somee.com/Service1.asmx";
@@ -157,6 +159,9 @@ public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProt
     
     /// <remarks/>
     public event Select_Persona_IdiomaCompletedEventHandler Select_Persona_IdiomaCompleted;
+    
+    /// <remarks/>
+    public event QuerryCompletedEventHandler QuerryCompleted;
     
     /// <remarks/>
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Insert_Persona", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1325,6 +1330,47 @@ public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProt
     }
     
     /// <remarks/>
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Querry", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public System.Data.DataTable Querry(string tabla) {
+        object[] results = this.Invoke("Querry", new object[] {
+                    tabla});
+        return ((System.Data.DataTable)(results[0]));
+    }
+    
+    /// <remarks/>
+    public System.IAsyncResult BeginQuerry(string tabla, System.AsyncCallback callback, object asyncState) {
+        return this.BeginInvoke("Querry", new object[] {
+                    tabla}, callback, asyncState);
+    }
+    
+    /// <remarks/>
+    public System.Data.DataTable EndQuerry(System.IAsyncResult asyncResult) {
+        object[] results = this.EndInvoke(asyncResult);
+        return ((System.Data.DataTable)(results[0]));
+    }
+    
+    /// <remarks/>
+    public void QuerryAsync(string tabla) {
+        this.QuerryAsync(tabla, null);
+    }
+    
+    /// <remarks/>
+    public void QuerryAsync(string tabla, object userState) {
+        if ((this.QuerryOperationCompleted == null)) {
+            this.QuerryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnQuerryOperationCompleted);
+        }
+        this.InvokeAsync("Querry", new object[] {
+                    tabla}, this.QuerryOperationCompleted, userState);
+    }
+    
+    private void OnQuerryOperationCompleted(object arg) {
+        if ((this.QuerryCompleted != null)) {
+            System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+            this.QuerryCompleted(this, new QuerryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+        }
+    }
+    
+    /// <remarks/>
     public new void CancelAsync(object userState) {
         base.CancelAsync(userState);
     }
@@ -1967,6 +2013,32 @@ public partial class Select_Persona_IdiomaCompletedEventArgs : System.ComponentM
     private object[] results;
     
     internal Select_Persona_IdiomaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+            base(exception, cancelled, userState) {
+        this.results = results;
+    }
+    
+    /// <remarks/>
+    public System.Data.DataTable Result {
+        get {
+            this.RaiseExceptionIfNecessary();
+            return ((System.Data.DataTable)(this.results[0]));
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+public delegate void QuerryCompletedEventHandler(object sender, QuerryCompletedEventArgs e);
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+public partial class QuerryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    
+    private object[] results;
+    
+    internal QuerryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
             base(exception, cancelled, userState) {
         this.results = results;
     }
