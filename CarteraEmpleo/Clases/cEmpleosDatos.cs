@@ -10,11 +10,11 @@ namespace CarteraEmpleo.Clases
         cDBService webService = new cDBService();
         public string insertar(string p_IdCatEmpleo,string p_Descripcion) {
             int _iId_CatEmpleo;
-            if (p_Descripcion == "" | p_IdCatEmpleo == ""){
-                try {
+            if (p_Descripcion != "" & p_IdCatEmpleo != ""){
+               /* try {
                     _iId_CatEmpleo = Convert.ToInt32(p_IdCatEmpleo);
                 }
-                catch (Exception e) { }
+                catch (Exception e) { }*/
             }
             //webService.insertar_Empleos;
             return "";
