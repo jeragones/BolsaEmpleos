@@ -22,8 +22,9 @@
                     <asp:Image ID="Image2" runat="server" ImageUrl="/Images/head2.jpg" />
                 </asp:HyperLink>
             </div>  
+            
             <asp:ContentPlaceHolder ID="Body" runat="server">
-        
+                
             </asp:ContentPlaceHolder>
             <footer>
 

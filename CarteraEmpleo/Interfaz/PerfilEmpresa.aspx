@@ -2,13 +2,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-        <div id="2" class="borderPerfilEmpresaPersona">
+    <form runat="server">
+        <div runat="server">
+            <div class="inicio" runat="server">
+                <nav class="menu" runat="server">
+                    <ul>
+                        <li><a href="Default.aspx">Inicio</a></li>
+                        <!--<li><a href="Default.aspx">Perfil</a></li>-->
+                        <li><a href="Default.aspx">Buscar</a></li>
+                        <li><a href="Default.aspx">Contactar</a></li>
+                        <li><a href="Default.aspx">Acerca</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="borderPerfilEmpresaPersona">
         <div class="titulo">Perfil Empresa</div>
         <br />
         Nombre:
         <asp:Label runat="server" ID="lbl_NombreEmpresa">Nombre de la empresa</asp:Label>
         <br />        
-        <form id="Form1" runat="server">
+        <div runat="server">
         <br />        
         
          <div id="DatosBasicosEmpresa2" class="datosBasicosEmpresa">
@@ -60,7 +74,10 @@
             
         </div>
             
-        </form>
+        </div>
     </div>
+    </form>
+
+        
 
 </asp:Content>

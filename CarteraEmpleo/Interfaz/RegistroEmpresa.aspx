@@ -8,24 +8,38 @@
     </style>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="Body" runat="server">
-    <form class="registrar" runat="server">
+    <form runat="server">
+        <div runat="server">
+            <div class="inicio" runat="server">
+                <nav class="menu" runat="server">
+                    <ul>
+                        <li><a href="Default.aspx">Inicio</a></li>
+                        <!--<li><a href="Default.aspx">Perfil</a></li>-->
+                        <li><a href="Default.aspx">Buscar</a></li>
+                        <li><a href="Default.aspx">Contactar</a></li>
+                        <li><a href="Default.aspx">Acerca</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="registrar" runat="server">
         <div class="titulo">Registrar Empresa</div>
         <br/>
         <table>
             <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Nombre de empresa:" /></td>
+                <td><asp:Label ID="Label1" class="lblRegistrar" runat="server" Text="Nombre de empresa:" /></td>
                 <td><asp:TextBox class="txt" runat="server" ID="txtNombre" Height="20px" Width="200px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Cédula Jurídica:" /></td>
+                <td><asp:Label ID="Label2" class="lblRegistrar" runat="server" Text="Cédula Jurídica:" /></td>
                 <td><asp:TextBox class="txt" runat="server" placeholder="0" ID="txtCedula1" MaxLength="1" Height="20px" Width="15px" />
                     <asp:TextBox class="txt" runat="server" placeholder="000" ID="txtCedula2" MaxLength="3" Height="20px" Width="55px" />
                     <asp:TextBox class="txt" runat="server" placeholder="000000" ID="txtCedula3" MaxLength="6" Height="20px" Width="110px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
             <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Correo electrónico:" /></td>
+                <td><asp:Label ID="Label3" class="lblRegistrar" runat="server" Text="Correo electrónico:" /></td>
                 <td><asp:TextBox class="txt" runat="server" placeholder="example@mail.com" ID="txtCorreo" Height="20px" Width="200px" /></td>
                 <td><div class="asterisco"> *</div></td>
             </tr>
@@ -34,7 +48,7 @@
                 <td><asp:TextBox class="txt" runat="server" placeholder="8888-8888" ID="txtTelefono" /></td>
             </tr>-->
             <tr>
-                <td><asp:Label class="lblRegistrar" runat="server" Text="Sitio Web:" /></td>
+                <td><asp:Label ID="Label4" class="lblRegistrar" runat="server" Text="Sitio Web:" /></td>
                 <td><asp:TextBox class="txt" runat="server" placeholder="example.com" ID="txtWeb" Height="20px" Width="200px" /></td>
             </tr>
             <!--<tr>
@@ -59,5 +73,8 @@
                 <td><br /><asp:Button class="btn" runat="server" Text="Cancelar" ID="btnCancelar" OnClick="btnCancelar_Click" NavigateUrl="~/Default.aspx" /></td>
             </tr>
         </table>
+    </div>
     </form>
+
+    
 </asp:Content>
