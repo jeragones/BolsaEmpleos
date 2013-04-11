@@ -17,12 +17,17 @@ namespace CarteraEmpleo
 {
     public partial class _Default : System.Web.UI.Page
     {
+        cPersonaDatos persona = new cPersonaDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
         }
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
+            if (persona.IniciarSesion(txtCorreo.Text, txtContrasena.Text))
+            {
+            
+            }
             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion()", true);
 
             //cCorreoComunicacion ins = new cCorreoComunicacion();

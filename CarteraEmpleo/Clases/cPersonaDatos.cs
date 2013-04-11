@@ -8,6 +8,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using CarteraEmpleo.Clases;
@@ -18,7 +19,15 @@ namespace CarteraEmpleo
     {
         cCorreoComunicacion insCorreo = new cCorreoComunicacion();
         Service1 webservice = new Service1();
-        public String insertar(String p_nombre, String p_correo, String p_telefono, 
+
+        public Boolean IniciarSesion(String p_usuario, String p_contrasena) 
+        {
+            DataTable usuario = webservice.Select_Persona(p_usuario, p_contrasena);
+            //usuario.s
+            return true;
+        }
+
+        public String Insertar(String p_nombre, String p_correo, String p_telefono, 
                                String p_condicion, String p_contrasena, String p_confContrasena, 
                                String p_direccion) 
         {
@@ -74,7 +83,7 @@ namespace CarteraEmpleo
             String[] _sNombre = new String[3];
             char[] _cSeparadorNombre = { ' ' };
             _sFracmentar = Fragmentar(p_nombre, _cSeparadorNombre);
-            if (_sFracmentar.Length < 3) 
+            if (_sFracmentar.Length <= 3) 
             {
                 for (int i = 0; i < 3; i++) 
                 {
@@ -94,11 +103,13 @@ namespace CarteraEmpleo
                                            _sNombre[0], _sNombre[1], _sNombre[2], 
                                            _cCondicion, " ");
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                return ("Error Inserción de datos.");
+            }
             return ("");
         }
 
-        public void modificar(String p_nombre, String p_cedula, String p_correo, 
+        public void Modificar(String p_nombre, String p_cedula, String p_correo, 
                               String p_telefono, String p_idioma, String p_condicion, 
                               String p_contrasena, String p_direccion, String p_experiencia, 
                               String p_descripcion)
@@ -120,7 +131,9 @@ namespace CarteraEmpleo
                                           _sNombre[0], _sNombre[1], _sNombre[2], _cCondicion, 
                                           p_experiencia);
             }
-            catch (Exception e) { }
+            catch (Exception e) { 
+                
+            }
         }
 
         public void eliminar()
