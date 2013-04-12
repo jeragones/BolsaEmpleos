@@ -3,11 +3,11 @@
 </asp:Content>
 <asp:Content ContentPlaceHolderID="Body" runat="server">
     <form id="Form1" runat="server">
-        <div id="3" class="borderPerfilEmpresaPersona" >
+        <div id="4" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Candidato</div>
         <br/>
         <div><asp:Label ID="Label2" class="lblRegistrar" runat="server" Text="Nombre Completo:" /></div>
-         <div><asp:TextBox ID="txtNombre" class="txt" runat="server"  Visible="False" Height="20px" Width="160px"/>
+         <div><asp:TextBox ID="txtNombre" class="txt" runat="server"  Visible="False" Height="20px" Width="160px" />
                         <asp:Label ID="lblNombre" class="lblRegistrar" runat="server" Text="Nombre del Candidato" />
                     <asp:LinkButton class="Link" runat="server" ID="hplNombre" text="Editar" OnClick="hplNombre_Click" />
                  </div>  
