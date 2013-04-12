@@ -64,7 +64,7 @@
             <table>
                 <tr>
                     <td>
-                        <asp:GridView ID="GridView1" runat="server" >
+                        <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" >
                             <Columns>
                                 <asp:CommandField ShowEditButton="True" />
                                 <asp:CommandField ShowDeleteButton="True" />
