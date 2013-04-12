@@ -20,6 +20,10 @@ namespace CarteraEmpleo
         cPersonaDatos persona = new cPersonaDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (Site.USUARIO.equal("")) 
+            //{
+ 
+            //}
         }
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)

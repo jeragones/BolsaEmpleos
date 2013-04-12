@@ -10,39 +10,41 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using CarteraEmpleo.Clases;
 
 namespace CarteraEmpleo
 {
     public class cEmpresaDatos
     {
         Service1 webservice = new Service1();
+        cGeneralMetodos Metodos = new cGeneralMetodos();
         // telefono
         public String insertar(String p_nombre, String p_cedula, String p_correo, 
                                String p_sitio)
         {
             String[] _sFracmentar;
             char[] _cSeparadorCedula = { '-' };
-            _sFracmentar = Fragmentar(p_cedula, _cSeparadorCedula);
+            _sFracmentar = Metodos.Fragmentar(p_cedula, _cSeparadorCedula);
             if (p_nombre.Equals("") | p_correo.Equals("") | _sFracmentar[0].Equals("") | 
                 _sFracmentar[1].Equals("") | _sFracmentar[2].Equals(""))
             {
                 return ("Existen campos vacíos que son requeridos.");
             }
-            
-            if (_sFracmentar.Length != 3 | !Numero(_sFracmentar[0]) | !Numero(_sFracmentar[1]) |
-               !Numero(_sFracmentar[2]) | p_cedula.Length != 12) 
+
+            if (_sFracmentar.Length != 3 | !Metodos.Numero(_sFracmentar[0]) | !Metodos.Numero(_sFracmentar[1]) |
+               !Metodos.Numero(_sFracmentar[2]) | p_cedula.Length != 12) 
             {
                 return ("Cedula jurídica inválida.");
             }
             char[] _cSeparadorCorreo1 = { ' ', ',', '!', '#', '$', '%', '^', '&', '*', 
                                           '(', ')', '+', '/', ';', ':', '"', '/' };
             char[] _cSeparadorCorreo2 = { '@', '.' };
-            _sFracmentar = Fragmentar(p_correo, _cSeparadorCorreo1);
+            _sFracmentar = Metodos.Fragmentar(p_correo, _cSeparadorCorreo1);
             if (_sFracmentar.Length != 1)
             {
                 return ("Correo inválido.");
             }
-            _sFracmentar = Fragmentar(p_correo, _cSeparadorCorreo2);
+            _sFracmentar = Metodos.Fragmentar(p_correo, _cSeparadorCorreo2);
             if (_sFracmentar.Length != 3)
             {
                 return ("Correo inválido.");
@@ -72,18 +74,6 @@ namespace CarteraEmpleo
 
         public void eliminar()
         {
-        }
-
-        protected String[] Fragmentar(String p_cadena, char[] p_separador)
-        {
-            String[] vector = p_cadena.Split(p_separador);
-            return vector;
-        }
-
-        protected Boolean Numero(String p_numero)
-        {
-            int _iNumero = 0;
-            return (int.TryParse(p_numero, out _iNumero));
         }
     }
 }

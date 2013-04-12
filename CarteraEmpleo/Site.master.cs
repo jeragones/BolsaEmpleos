@@ -16,6 +16,18 @@ namespace CarteraEmpleo
 {
     public partial class Site : System.Web.UI.MasterPage
     {
+        public static string USUARIO = "";
+        Service1 webservice = new Service1();
 
+        public Boolean Usuario() {
+            if (USUARIO.Equals(""))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
