@@ -34,7 +34,7 @@
                     <h4>Datos Básicos</h4>
                     <hr/>
                     <div class="titulosDatosBasicos">Cedúla:</div> <asp:Label runat="server" ID="CedulaPersona">Cedúla Persona</asp:Label>
-                    <br/><br />
+                    <br/><br>
                     <div class="titulosDatosBasicos">Teléfonos:</div> <asp:Label runat="server" ID="Telefonos1">telefonos de contacto</asp:Label>
                     <br /><br />
                     <div class="titulosDatosBasicos">Idiomas:</div> <asp:Label runat="server" ID="Idiomas1">Español-Ingles-Frances</asp:Label>
