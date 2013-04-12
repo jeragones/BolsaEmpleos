@@ -28,27 +28,35 @@
         <div runat="server">
        
                
-        <table class="datosBasicosPersona">
+       <table class="datosBasicosPersona">
             <tr>
-                <td >
-                    <h4>Datos Básicos</h4>
-                    <hr/>
-                    <div class="titulosDatosBasicos">Cedúla:</div> <asp:Label runat="server" ID="CedulaPersona">Cedúla Persona</asp:Label>
-                    <br/><br>
-                    <div class="titulosDatosBasicos">Teléfonos:</div> <asp:Label runat="server" ID="Telefonos1">telefonos de contacto</asp:Label>
-                    <br /><br />
-                    <div class="titulosDatosBasicos">Idiomas:</div> <asp:Label runat="server" ID="Idiomas1">Español-Ingles-Frances</asp:Label>
-                    <br /><br />
-                    <div class="titulosDatosBasicos">Dirección:</div> <asp:Label runat="server" ID="Direccion1">Ubicación de la empresa</asp:Label>
-                </td>
-                <td class="infoLaboralPersona">
-                    <h4>Información Laboral</h4>
-                    <hr/>
-                    <div class="titulosDatosBasicos">Condición Laboral: </div><asp:Label runat="server" ID="PaginaWeb1">Empleado-Desempleado</asp:Label>
-                    <br /><br />
-                    <div class="titulosDatosBasicos">Resumen Laboral: </div> <asp:Label runat="server" ID="Descripcion1">Descripción de trabajos realizados</asp:Label>
-                </td>
+                <th colspan="2" class="auto-style1" >
+                    Datos Básicos
+                </th>
+                <th colspan="2" class="auto-style2">
+               Información Laboral
+                </th> 
              </tr>
+             <tr>
+                <td><asp:Label ID="Label4" runat="server">Cedúla:</asp:Label> </td>
+                <td><asp:Label ID="Label1" runat="server">Cedúla Persona</asp:Label></td>
+                <td><asp:Label ID="Label2" runat="server">Condición Laboral: </asp:Label></td>
+                <td><asp:Label ID="Label3" runat="server">Empleado-Desempleado</asp:Label></td>
+             </tr>
+             <tr>
+                <td><asp:Label ID="Label5" runat="server">Teléfonos:</asp:Label></td>
+                <td><div class="titulosDatosBasicos"><asp:Label ID="Label6" runat="server">telefonos de contacto</asp:Label></div></td>
+                <th rowspan="3"><asp:Label ID="Label7" runat="server">Resumen Laboral: </asp:Label></th>
+                <th rowspan="3"><asp:Label ID="Label8" runat="server">Descripción de trabajos realizados</asp:Label></th>
+              </tr>
+               <tr>
+                <td><asp:Label ID="Label9" runat="server">Idiomas:</asp:Label></td>
+                <td><div class="titulosDatosBasicos"><asp:Label ID="Label10" runat="server">Español-Ingles-Frances</asp:Label></div></td>
+               </tr>
+             <tr>
+                <td><asp:Label ID="Label13" runat="server">Idiomas:</asp:Label></td>
+                <td><asp:Label ID="Label14" runat="server">Ubicación de la empresa</asp:Label></td>
+              </tr>
         </table>
         </div>
     </div>
