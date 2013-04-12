@@ -2,68 +2,56 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-    <form runat="server">
-        <div runat="server">
-            <div class="inicio" runat="server">
-                <nav class="menu" runat="server">
-                    <ul>
-                        <li><a href="Default.aspx">Inicio</a></li>
-                        <!--<li><a href="Default.aspx">Perfil</a></li>-->
-                        <li><a href="Default.aspx">Buscar</a></li>
-                        <li><a href="Default.aspx">Contactar</a></li>
-                        <li><a href="Default.aspx">Acerca</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="borderPerfilEmpresaPersona">
+ <form id="Form1" runat="server">
+        <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Perfil Empresa</div>
-        <br />
+        <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Enviar Correo" />
+        <br/>
         <div class="titulosDatosBasicos">Nombre:</div>
-        <asp:Button ID="btModificarEmpresa" runat="server" CssClass="btmodificarEmprPers" Text="Editar Información" />
-        <asp:Label runat="server" ID="lbl_NombreEmpresa">Nombre de la empresa</asp:Label>
-        <br />        
-        <div runat="server">
-        <br />        
-        
-         <div id="DatosBasicosEmpresa2" class="datosBasicosEmpresa">
-         
-        <h4>Datos Básicos</h4>
-        
-        <hr/>        
-        <table >
+        <asp:Label runat="server" ID="lbl_NombreEmpresa" Text="Nombre de la empresa"/>
+        <br/>
+        <br/>
+               
+       <table class="datosBasicosPersona">
             <tr>
-                <td >                   
-                    <div class="titulosDatosBasicos">Cedúla Jurídica:</div> <asp:Label runat="server" ID="CedulaJuridica2">Cedúla Jurídica</asp:Label>
-                    <br/>
-                    <br/>
-                    <div class="titulosDatosBasicos">Correo Electronico:</div> <asp:Label runat="server" ID="Mail2">ContactoEmpresa@mail.com</asp:Label>
-                    <br />
-                    <br/>
-                    <div class="titulosDatosBasicos">Teléfonos:</div> <asp:Label runat="server" ID="Telefonos2">telefonos</asp:Label>
-                    <br />
-                    <br/>
-                    <div class="titulosDatosBasicos">Fax:</div> <asp:Label runat="server" ID="fax2">Número Fax</asp:Label>
-                    <br />
-                    <br/>
-                    <div class="titulosDatosBasicos">Ubicación: </div><asp:Label runat="server" ID="Ubicación2">Ubicación de la empresa</asp:Label>
-                </td>
-                <td class="infoLaboralPersona">
-                    <div class="titulosDatosBasicos">Pagina Web: </div><asp:Label runat="server" ID="PaginaWeb2">Empresa.com</asp:Label>
-                    <br />
-                    <br/>
-                    <div class="titulosDatosBasicos">Descripción:</div> <asp:Label runat="server" ID="Descripcion2">Descripción general de la empresa</asp:Label>
-                </td>
-             </tr>
+                <th class="tdborderbot"colspan="2">Datos Básicos</th>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label4" runat="server" Text="Cedúla Jurídica:"/></td>
+                <td class="tdleft"><asp:Label ID="Label1" runat="server" Text="Cedúla Jurídica"/></td>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label5" runat="server" Text="Correo Electronico"/></td>
+                <td class="tdleft"><asp:Label ID="Label6" runat="server" Text="ContactoEmpresa@mail.com"/></td>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label2" runat="server" Text="Teléfonos:"/></td>
+                <td class="tdleft"><div class="titulosDatosBasicos"><asp:Label  ID="Label3" runat="server" Text="telefonos de contacto" /></div></td>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label7" runat="server" Text="Fax:"/></td>
+                <td class="tdleft"><div class="titulosDatosBasicos"><asp:Label  ID="Label8" runat="server" Text="faxes de contacto" /></div></td>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label13" runat="server" Text="Dirección:"/></td>
+                <td class="tdleft"><asp:Label ID="Label14" runat="server" Text="Dirección de la empresa"/></td>
+            </tr>
+           <tr>
+                <td class="tdleft"><asp:Label ID="Label9" runat="server" Text="Pagina Web"/></td>
+                <td class="tdleft"><asp:Label ID="Label10" runat="server" Text="Empresa.com"/></td>
+            </tr>
+           <tr>
+                <td class="tdleft"><asp:Label ID="Label17" runat="server" Text="Descripción:"/></td>
+                <td class="tdleft"><asp:Label ID="Label18" runat="server" Text="Descripción de la empresa"/></td>
+            </tr>
+           <tr><td></td><td></td></tr>
         </table>
-        </div>
-        <div id="PuestosLaborales1" class="puestosLaboralesEmpresa">
-            
-        <h4>Puestos Laborales en Oferta</h4>
-        <hr/>
-            <table>
+             <table class="datosBasicosPersona">
+		        <tr>
+                    <th class="tdborderbot"colspan="2">Puestos Laborales en Oferta</th>
+		        </tr>
                 <tr>
-                    <td>
+                    <td class="tdleft">
                         <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" >
                             <Columns>
                                 <asp:CommandField ShowEditButton="True" />
@@ -76,13 +64,7 @@
                     </td>
                 </tr>
             </table>
-            
-        </div>
-            
-        </div>
     </div>
     </form>
-
-        
-
+         
 </asp:Content>

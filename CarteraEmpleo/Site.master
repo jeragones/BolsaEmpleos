@@ -11,7 +11,7 @@
         <link href="CSS/Images.css" rel="stylesheet" />
         <link href="CSS/sRegistrar.css" rel="stylesheet" />
         <link href="CSS/Site.css" rel="stylesheet" />
-
+        <link href="CSS/Tables.css" rel="stylesheet" />
         <asp:ContentPlaceHolder ID="head" runat="server">
         </asp:ContentPlaceHolder>
     </head>
@@ -21,8 +21,21 @@
                 <asp:HyperLink runat="server" NavigateUrl="~/Interfaz/Default.aspx">
                     <asp:Image ID="Image2" runat="server" ImageUrl="/Images/head2.jpg" />
                 </asp:HyperLink>
+
             </div>  
-            
+            <div id="Div1" runat="server">
+            <div id="Div2" class="inicio" runat="server">
+                <nav id="Nav1" class="menu" runat="server">
+                    <ul>
+                        <li><a href="Default.aspx">Inicio</a></li>
+                        <!--<li><a href="Default.aspx">Perfil</a></li>-->
+                        <li><a href="Default.aspx">Buscar</a></li>
+                        <li><a href="Default.aspx">Contactar</a></li>
+                        <li><a href="Default.aspx">Acerca</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
             <asp:ContentPlaceHolder ID="Body" runat="server">
                 
             </asp:ContentPlaceHolder>

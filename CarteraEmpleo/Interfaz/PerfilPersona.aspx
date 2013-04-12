@@ -1,64 +1,68 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="PerfilPersona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.PerfilPersona" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            margin-left: 10px;
+            text-align: left;
+            vertical-align: text-top;
+            height: 48px;
+        }
+        .auto-style2 {
+            margin-left: 10px;
+            text-align: left;
+            vertical-align: text-top;
+            height: 22px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <form runat="server">
-        <div runat="server">
-            <div class="inicio" runat="server">
-                <nav class="menu" runat="server">
-                    <ul>
-                        <li><a href="Default.aspx">Inicio</a></li>
-                        <!--<li><a href="Default.aspx">Perfil</a></li>-->
-                        <li><a href="Default.aspx">Buscar</a></li>
-                        <li><a href="Default.aspx">Contactar</a></li>
-                        <li><a href="Default.aspx">Acerca</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
         <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Candidato</div>
-        <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Editar Información" />
+        <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Enviar Correo" />
         <br/>
         <div class="titulosDatosBasicos">Nombre:</div>
-        <asp:Label runat="server" ID="lbl_NombreEmpresa">Nombre del Candidato</asp:Label>
+        <asp:Label runat="server" ID="lbl_NombreEmpresa" Text="Nombre del Candidato"/>
         <br/>
         <br/>
-
-        <div runat="server">
-       
                
        <table class="datosBasicosPersona">
             <tr>
-                <th colspan="2" class="auto-style1" >
+                <th class="tdborderbot"colspan="2">
                     Datos Básicos
                 </th>
-                <th colspan="2" class="auto-style2">
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label4" runat="server" Text="Cedúla:"/></td>
+                <td class="tdleft"><asp:Label ID="Label8" runat="server" Text="Cedúla Persona"/></td>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label5" runat="server" Text="Teléfonos:"/></td>
+                <td class="tdleft"><div class="titulosDatosBasicos"><asp:Label  ID="Label6" runat="server" Text="telefonos de contacto" /></div></td>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label9" runat="server" Text="Idiomas:"/></td>
+                <td class="tdleft"><div id="Idiomas" class="titulosDatosBasicos"><asp:Label ID="Label10" runat="server" Text="Español-Ingles-Frances"/></div></td>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label13" runat="server" Text="Dirección:"/></td>
+                <td class="tdleft"><asp:Label ID="Label14" runat="server" Text="Dirección de la persona" /></td>
+            </tr> 
+           <tr><td></td><td></td></tr>
+            <tr>
+                <th class="tdborderbot"colspan="2">
                Información Laboral
                 </th> 
-             </tr>
-             <tr>
-                <td><asp:Label ID="Label4" runat="server">Cedúla:</asp:Label> </td>
-                <td><asp:Label ID="Label1" runat="server">Cedúla Persona</asp:Label></td>
-                <td><asp:Label ID="Label2" runat="server">Condición Laboral: </asp:Label></td>
-                <td><asp:Label ID="Label3" runat="server">Empleado-Desempleado</asp:Label></td>
-             </tr>
-             <tr>
-                <td><asp:Label ID="Label5" runat="server">Teléfonos:</asp:Label></td>
-                <td><div class="titulosDatosBasicos"><asp:Label ID="Label6" runat="server">telefonos de contacto</asp:Label></div></td>
-                <th rowspan="3"><asp:Label ID="Label7" runat="server">Resumen Laboral: </asp:Label></th>
-                <th rowspan="3"><asp:Label ID="Label8" runat="server">Descripción de trabajos realizados</asp:Label></th>
-              </tr>
-               <tr>
-                <td><asp:Label ID="Label9" runat="server">Idiomas:</asp:Label></td>
-                <td><div id="Idiomas" class="titulosDatosBasicos"><asp:Label ID="Label10" runat="server">Español-Ingles-Frances</asp:Label></div></td>
-               </tr>
-             <tr>
-                <td><asp:Label ID="Label13" runat="server">Ubicación:</asp:Label></td>
-                <td><asp:Label ID="Label14" runat="server">Ubicación de la empresa</asp:Label></td>
-              </tr>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label15" runat="server" Text="Condición Laboral:"/></td>
+                <td class="tdleft"><asp:Label ID="Label16" runat="server" Text="Empleado-Desempleado"/></td>
+            </tr>
+            <tr>
+                <td class="tdleft"><asp:Label ID="Label11" runat="server" Text="Resumen Laboral:" /></td>
+                <td class="tdleft"><asp:Label ID="Label12" runat="server" Text="Descripción de trabajos realizados"/></td>
+            </tr>
         </table>
-        </div>
     </div>
     </form>
          

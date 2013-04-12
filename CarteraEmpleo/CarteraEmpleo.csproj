@@ -63,6 +63,7 @@
     <Content Include="CSS\sRegistrar.css" />
     <Content Include="CSS\style-news.css" />
     <Content Include="CSS\Styles.css" />
+    <Content Include="CSS\Tables.css" />
     <Content Include="HtmlPage1.html" />
     <Content Include="Images\btns-active.png" />
     <Content Include="Images\btns-hover.png" />

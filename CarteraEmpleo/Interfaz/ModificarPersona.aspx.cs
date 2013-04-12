@@ -46,6 +46,7 @@ namespace CarteraEmpleo.Interfaz
         protected void hplIdioma_Click(object sender, EventArgs e)
         {
             lblIdioma.Visible = false;
+            btnIdioma.Visible = true;
             cmbIdioma.Visible = true;
             cmbIdioma.Text = lblIdioma.Text;
             hplIdioma.Visible = false;
