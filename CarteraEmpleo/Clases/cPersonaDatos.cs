@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using CarteraEmpleo.Clases;
 
 namespace CarteraEmpleo
@@ -23,10 +24,13 @@ namespace CarteraEmpleo
         public String IniciarSesion(String p_usuario, String p_contrasena) 
         {
             DataTable usuario = webservice.Select_Persona(p_usuario, p_contrasena);
-            string user = "";
+            string user = "", nom, ape1, ape2;
             foreach (DataRow row in usuario.Rows) 
             {
-                user = row["TXT_NOMBRE"].ToString();   
+                nom = row["TXT_NOMBRE"].ToString();
+                ape1 = row["TXT_APELLIDO1"].ToString();
+                ape2 = row["TXT_APELLIDO2"].ToString();
+                user = nom + " " + ape1 + " " + ape2;
             }
             return user;
         }

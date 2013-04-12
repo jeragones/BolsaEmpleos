@@ -31,7 +31,7 @@ namespace CarteraEmpleo
             }
             else 
             {
-                ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion("+ usuario +")", true);
+                ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('"+ usuario +"')", true);
             }
             
 
