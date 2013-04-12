@@ -13,5 +13,10 @@ namespace CarteraEmpleo.Interfaz
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            // ClientScript.RegisterStartupScript(GetType(), "idiomas", "QuitarIdioma('idioma1')", true);
+        }
     }
 }
