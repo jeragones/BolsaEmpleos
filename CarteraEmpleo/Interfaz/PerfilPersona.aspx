@@ -51,10 +51,10 @@
               </tr>
                <tr>
                 <td><asp:Label ID="Label9" runat="server">Idiomas:</asp:Label></td>
-                <td><div class="titulosDatosBasicos"><asp:Label ID="Label10" runat="server">Español-Ingles-Frances</asp:Label></div></td>
+                <td><div id="Idiomas" class="titulosDatosBasicos"><asp:Label ID="Label10" runat="server">Español-Ingles-Frances</asp:Label></div></td>
                </tr>
              <tr>
-                <td><asp:Label ID="Label13" runat="server">Idiomas:</asp:Label></td>
+                <td><asp:Label ID="Label13" runat="server">Ubicación:</asp:Label></td>
                 <td><asp:Label ID="Label14" runat="server">Ubicación de la empresa</asp:Label></td>
               </tr>
         </table>
