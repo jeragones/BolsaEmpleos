@@ -19,7 +19,7 @@
         <div class="borderPerfilEmpresaPersona">
         <div class="titulo">Perfil Empresa</div>
         <br />
-        Nombre:
+        <div class="titulosDatosBasicos">Nombre:</div>
         <asp:Button ID="btModificarEmpresa" runat="server" CssClass="btmodificarEmprPers" Text="Editar Información" />
         <asp:Label runat="server" ID="lbl_NombreEmpresa">Nombre de la empresa</asp:Label>
         <br />        
@@ -48,7 +48,7 @@
                     <br/>
                     <div class="titulosDatosBasicos">Ubicación: </div><asp:Label runat="server" ID="Ubicación2">Ubicación de la empresa</asp:Label>
                 </td>
-                <td class="tableDatosBasicos">
+                <td class="infoLaboralPersona">
                     <div class="titulosDatosBasicos">Pagina Web: </div><asp:Label runat="server" ID="PaginaWeb2">Empresa.com</asp:Label>
                     <br />
                     <br/>
@@ -72,7 +72,7 @@
                         </asp:GridView>
                     </td>
                     <td>
-                        <asp:Button ID="btEliminarOfertasEmpleo" runat="server" CssClass="" Text="Eliminar" />
+                        <asp:Button ID="btEliminarOfertasEmpleo" runat="server" CssClass="btmodificarEmprPers" Text="Eliminar" />
                     </td>
                 </tr>
             </table>

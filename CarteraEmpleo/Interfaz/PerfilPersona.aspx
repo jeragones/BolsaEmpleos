@@ -18,7 +18,7 @@
         </div>
         <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Candidato</div>
-         <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Editar Información" />
+        <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Editar Información" />
         <br/>
         <div class="titulosDatosBasicos">Nombre:</div>
         <asp:Label runat="server" ID="lbl_NombreEmpresa">Nombre del Candidato</asp:Label>

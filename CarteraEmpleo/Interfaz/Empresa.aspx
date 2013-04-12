@@ -16,41 +16,45 @@
                 </nav>
             </div>
         </div>
-        <div runat="server">
+        <div runat="server" class="borderPerfilEmpresaPersona" >
             <div class="titulo" runat="server">Empresa</div>
             <br/>
-            Nombre:
+            <div class="titulosDatosBasicos">Nombre:</div>
+            <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers"  Text="Enviar Mensaje" />
             <asp:Label runat="server" ID="lbl_NombreEmpresa">Nombre de la empresa</asp:Label>
             <div runat="server">
-            <asp:Button ID="Button1" runat="server" CssClass="" Text="Enviar Mensaje" />
-        
-            <div id="DatosBasicosEmpresa1">
+            <br /> 
+            <div id="DatosBasicosEmpresa1" class="datosBasicosEmpresa" >
             <h4>Datos Básicos</h4>
             <hr/>
         
             <table>
                 <tr>
                     <td>
-                   
-                        Cedúla Jurídica: <asp:Label runat="server" ID="CedulaJuridica1">Cedúla Jurídica</asp:Label>
+                        <div class="titulosDatosBasicos">Cedúla Jurídica: </div> <asp:Label runat="server" ID="CedulaJuridica1">Cedúla Jurídica</asp:Label>
                         <br/>
-                        Correo Electronico: <asp:Label runat="server" ID="Mail1">ContactoEmpresa@mail.com</asp:Label>
                         <br />
-                        Teléfonos: <asp:Label runat="server" ID="Telefonos1">telefonos</asp:Label>
+                        <div class="titulosDatosBasicos">Correo Electronico: </div> <asp:Label runat="server" ID="Mail1">ContactoEmpresa@mail.com</asp:Label>
                         <br />
-                        Fax: <asp:Label runat="server" ID="fax1">Número Fax</asp:Label>
                         <br />
-                        Ubicación: <asp:Label runat="server" ID="Ubicación1">Ubicación de la empresa</asp:Label>
+                        <div class="titulosDatosBasicos">Teléfonos: </div> <asp:Label runat="server" ID="Telefonos1">telefonos</asp:Label>
+                        <br />
+                        <br />
+                        <div class="titulosDatosBasicos">Fax: </div> <asp:Label runat="server" ID="fax1">Número Fax</asp:Label>
+                        <br />
+                        <br />
+                        <div class="titulosDatosBasicos">Ubicación: </div> <asp:Label runat="server" ID="Ubicación1">Ubicación de la empresa</asp:Label>
                     </td>
-                    <td>
-                        Pagina Web: <asp:Label runat="server" ID="PaginaWeb1">Empresa.com</asp:Label>
+                    <td class="infoLaboralPersona" >
+                        <div class="titulosDatosBasicos">Pagina Web: </div> <asp:Label runat="server" ID="PaginaWeb1">Empresa.com</asp:Label>
                         <br />
-                        Descripción: <asp:Label runat="server" ID="Descripcion1">Descripción general de la empresa</asp:Label>
+                        <br />
+                        <div class="titulosDatosBasicos">Descripción: </div> <asp:Label runat="server" ID="Descripcion1">Descripción general de la empresa</asp:Label>
                     </td>
                  </tr>
             </table>
             </div>
-            <div id="PuestosLaborales1">
+            <div id="PuestosLaborales1" class="puestosLaboralesEmpresa" >
             
             <h4>Puestos Laborales en Oferta</h4>
             <hr/>
