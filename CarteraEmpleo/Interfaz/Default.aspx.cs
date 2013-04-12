@@ -24,11 +24,16 @@ namespace CarteraEmpleo
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            if (persona.IniciarSesion(txtCorreo.Text, txtContrasena.Text))
+            String usuario = persona.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
+            if (usuario.Equals(""))
             {
-            
+
             }
-            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion()", true);
+            else 
+            {
+                ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion("+ usuario +")", true);
+            }
+            
 
             //cCorreoComunicacion ins = new cCorreoComunicacion();
             //txtCorreo.Text = ins.SendMail("jeragones@hotmail.com", "jeragones@gmail.com", "Hola", "Si funciona !!!");

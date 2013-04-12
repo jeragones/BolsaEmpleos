@@ -20,11 +20,15 @@ namespace CarteraEmpleo
         cCorreoComunicacion insCorreo = new cCorreoComunicacion();
         Service1 webservice = new Service1();
 
-        public Boolean IniciarSesion(String p_usuario, String p_contrasena) 
+        public String IniciarSesion(String p_usuario, String p_contrasena) 
         {
             DataTable usuario = webservice.Select_Persona(p_usuario, p_contrasena);
-            //usuario.s
-            return true;
+            string user = "";
+            foreach (DataRow row in usuario.Rows) 
+            {
+                user = row["TXT_NOMBRE"].ToString();   
+            }
+            return user;
         }
 
         public String Insertar(String p_nombre, String p_correo, String p_telefono, 
@@ -102,11 +106,11 @@ namespace CarteraEmpleo
                 webservice.Insert_Persona(p_correo, p_contrasena, " ", p_direccion, 
                                            _sNombre[0], _sNombre[1], _sNombre[2], 
                                            _cCondicion, " ");
+                return ("");
             }
             catch (Exception e) {
                 return ("Error Inserción de datos.");
             }
-            return ("");
         }
 
         public void Modificar(String p_nombre, String p_cedula, String p_correo, 
