@@ -18,31 +18,35 @@
         </div>
         <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Candidato</div>
+         <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Editar Información" />
         <br/>
-        Nombre:
+        <div class="titulosDatosBasicos">Nombre:</div>
         <asp:Label runat="server" ID="lbl_NombreEmpresa">Nombre del Candidato</asp:Label>
+        <br/>
+        <br/>
+
         <div runat="server">
-        <asp:Button ID="Button1" runat="server" CssClass="" Text="Editar Información" />
+       
                
-        <table>
+        <table class="datosBasicosPersona">
             <tr>
-                <td>
+                <td >
                     <h4>Datos Básicos</h4>
                     <hr/>
-                    Cedúla: <asp:Label runat="server" ID="CedulaPersona">Cedúla Persona</asp:Label>
+                    <div class="titulosDatosBasicos">Cedúla:</div> <asp:Label runat="server" ID="CedulaPersona">Cedúla Persona</asp:Label>
                     <br/><br />
-                    Teléfonos: <asp:Label runat="server" ID="Telefonos1">telefonos de contacto</asp:Label>
+                    <div class="titulosDatosBasicos">Teléfonos:</div> <asp:Label runat="server" ID="Telefonos1">telefonos de contacto</asp:Label>
                     <br /><br />
-                    Idiomas: <asp:Label runat="server" ID="Idiomas1">Español-Ingles-Frances</asp:Label>
+                    <div class="titulosDatosBasicos">Idiomas:</div> <asp:Label runat="server" ID="Idiomas1">Español-Ingles-Frances</asp:Label>
                     <br /><br />
-                    Dirección: <asp:Label runat="server" ID="Direccion1">Ubicación de la empresa</asp:Label>
+                    <div class="titulosDatosBasicos">Dirección:</div> <asp:Label runat="server" ID="Direccion1">Ubicación de la empresa</asp:Label>
                 </td>
-                <td>
+                <td class="infoLaboralPersona">
                     <h4>Información Laboral</h4>
                     <hr/>
-                    Condición Laboral: <asp:Label runat="server" ID="PaginaWeb1">Empleado-Desempleado</asp:Label>
+                    <div class="titulosDatosBasicos">Condición Laboral: </div><asp:Label runat="server" ID="PaginaWeb1">Empleado-Desempleado</asp:Label>
                     <br /><br />
-                    Resumen Laboral: <asp:Label runat="server" ID="Descripcion1">Descripción de trabajos realizados</asp:Label>
+                    <div class="titulosDatosBasicos">Resumen Laboral: </div> <asp:Label runat="server" ID="Descripcion1">Descripción de trabajos realizados</asp:Label>
                 </td>
              </tr>
         </table>

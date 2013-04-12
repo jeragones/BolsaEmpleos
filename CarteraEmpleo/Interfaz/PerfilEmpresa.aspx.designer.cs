@@ -13,15 +13,6 @@ namespace CarteraEmpleo.Interfaz {
     public partial class PerfilEmpresa {
         
         /// <summary>
-        /// Control lbl_NombreEmpresa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_NombreEmpresa;
-        
-        /// <summary>
         /// Control btModificarEmpresa.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace CarteraEmpleo.Interfaz {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btModificarEmpresa;
+        
+        /// <summary>
+        /// Control lbl_NombreEmpresa.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_NombreEmpresa;
         
         /// <summary>
         /// Control CedulaJuridica2.
