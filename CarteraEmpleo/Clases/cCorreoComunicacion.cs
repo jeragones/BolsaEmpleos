@@ -13,34 +13,35 @@ namespace CarteraEmpleo.Clases
     public class cCorreoComunicacion
     {
 
-        public Boolean CorreoRegistro(String to, String from, String pass) 
+        public Boolean CorreoRegistro(String to, String from, String pass)
         {
             String asunto = "";
             String mensaje = "";
             return Correo(to, "Administrador", from, asunto, mensaje, pass, "");
         }
-        
+
         public Boolean Correo(String to, String sender, String from, String subject, String body, String pass, String archivo)
         {
 
             /*
              * cCorreoComunicacion insCorreo = new cCorreoComunicacion();
-            Boolean respuesta = tmp.Correo("leock123@gmail.com", "Nombre del que manda el Correo", "jeragones@gmail.com", "Mandando correo de prueba", "Hola pura que vida tuanis kakaroto, estoy bien, un helefante se balanceaba, fin de la historia", "Motta.666", "archivo");
+            Boolean respuesta = tmp.Correo("leock123@gmail.com", "Nombre del que manda el Correo", "jeragones@gmail.com", "Mandando correo de prueba", "Hola pura que vida tuanis kakaroto, estoy bien, un helefante se balanceaba, fin de la historia", "Contrasena", "archivo");
              */
 
 
             MailMessage msg = new MailMessage();
-            msg.From = new MailAddress(from,sender);
+            msg.From = new MailAddress(from, sender);
             msg.To.Add(new MailAddress(to));
             msg.Subject = subject;
             msg.Body = body;
             msg.IsBodyHtml = true;
 
-            if(/*archivo.HasFile*/false) {
+            if (/*archivo.HasFile*/false)
+            {
                 msg.Attachments.Add(new Attachment(archivo));
                 // archivo.PostedFile.InputStream, archivo.Filename
             }
-            
+
 
             SmtpClient smtp = new SmtpClient();
             //smtp.Host = "smtp.mail.yahoo.com"; // yahoo
@@ -48,7 +49,7 @@ namespace CarteraEmpleo.Clases
             //smtp.Host = "localhost"; // servidor local
             smtp.Host = "smtp.gmail.com"; // gmail
             smtp.Port = 25;
-            smtp.Credentials = new NetworkCredential(from,pass);
+            smtp.Credentials = new NetworkCredential(from, pass);
             smtp.EnableSsl = true;
             try
             {

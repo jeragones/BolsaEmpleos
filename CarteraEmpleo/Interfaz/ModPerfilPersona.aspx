@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="ModificarPersona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.ModificarPersona" %>
-<asp:Content ContentPlaceHolderID="head" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="ModPerfilPersona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.ModificarPersona" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" src="../Scripts/jQueryDefault.js"></script>
 </asp:Content>
-<asp:Content ContentPlaceHolderID="Body" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div id="4" class="borderPerfilEmpresaPersona" >
-        <div class="titulo">Candidato</div>
+        <div class="titulo">Perfil de Candidato</div>
         <br/>
         <div><asp:Label ID="Label2" class="lblRegistrar" runat="server" Text="Nombre Completo:" /></div>
         <div><asp:TextBox ID="txtNombre" class="txt" runat="server"  Visible="False" Height="20px" Width="160px" />

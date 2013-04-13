@@ -1,5 +1,4 @@
 ﻿function Sesion(usuario) {
-    alert(usuario);
-    var user = '<div class="UsuarioLink"><a href="PerfilPersona.aspx">' + usuario + '</a></div>';
+    var user = '<div class="UsuarioLink"><a href="/Interfaz/ModPerfilPersona.aspx">' + usuario + '</a></div>';
     document.getElementById("Login").innerHTML = user;
 }

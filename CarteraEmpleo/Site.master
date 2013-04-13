@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html lang="es">
-    <head runat="server">
+    <head id="Head1" runat="server">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
         <title>Empleos TEC</title>
@@ -13,13 +13,15 @@
         <link href="CSS/Site.css" rel="stylesheet" />
         <link href="CSS/Tables.css" rel="stylesheet" />
 
+        <script type="text/javascript" src="/Scripts/jQueryDefault.js"></script>
+
         <asp:ContentPlaceHolder ID="head" runat="server">
         </asp:ContentPlaceHolder>
     </head>
     <body class="fondo">
         <div class="body">
             <div class="imgp">
-                <asp:HyperLink runat="server" NavigateUrl="~/Interfaz/Default.aspx">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Interfaz/Default.aspx">
                     <asp:Image ID="Image2" runat="server" ImageUrl="/Images/head2.jpg" />
                 </asp:HyperLink>
 

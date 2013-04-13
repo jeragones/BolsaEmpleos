@@ -27,7 +27,8 @@ namespace CarteraEmpleo
         cEmpresaDatos insEmpresa = new cEmpresaDatos();
         cGeneralMetodos insMetodos = new cGeneralMetodos();
 
-        public Boolean Usuario() {
+        public Boolean Usuario()
+        {
             if (USUARIO.Equals(""))
             {
                 return false;
@@ -50,7 +51,9 @@ namespace CarteraEmpleo
             }
             else
             {
-                insDefault.Login(usuario);
+                //insDefault.Login(usuario);
+                ScriptManager.RegisterStartupScript(btnIniciarSesion, GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
+                //ScriptManager.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
             }
         }
     }

@@ -107,9 +107,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Content Include="Interfaz\Empresa.aspx" />
-    <Content Include="Interfaz\ModificarEmpresa.aspx" />
+    <Content Include="Interfaz\ModPerfilEmpresa.aspx" />
     <Content Include="Interfaz\PerfilEmpresa.aspx" />
-    <Content Include="Interfaz\ModificarPersona.aspx" />
+    <Content Include="Interfaz\ModPerfilPersona.aspx" />
     <Content Include="Interfaz\PerfilPersona.aspx" />
     <Content Include="Interfaz\Persona.aspx" />
     <Content Include="Interfaz\RegistroEmpresa.aspx" />
@@ -132,12 +132,12 @@
     <Compile Include="Interfaz\Empresa.aspx.designer.cs">
       <DependentUpon>Empresa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\ModificarEmpresa.aspx.cs">
-      <DependentUpon>ModificarEmpresa.aspx</DependentUpon>
+    <Compile Include="Interfaz\ModPerfilEmpresa.aspx.cs">
+      <DependentUpon>ModPerfilEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interfaz\ModificarEmpresa.aspx.designer.cs">
-      <DependentUpon>ModificarEmpresa.aspx</DependentUpon>
+    <Compile Include="Interfaz\ModPerfilEmpresa.aspx.designer.cs">
+      <DependentUpon>ModPerfilEmpresa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\PerfilEmpresa.aspx.cs">
       <DependentUpon>PerfilEmpresa.aspx</DependentUpon>
@@ -146,12 +146,12 @@
     <Compile Include="Interfaz\PerfilEmpresa.aspx.designer.cs">
       <DependentUpon>PerfilEmpresa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\ModificarPersona.aspx.cs">
-      <DependentUpon>ModificarPersona.aspx</DependentUpon>
+    <Compile Include="Interfaz\ModPerfilPersona.aspx.cs">
+      <DependentUpon>ModPerfilPersona.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interfaz\ModificarPersona.aspx.designer.cs">
-      <DependentUpon>ModificarPersona.aspx</DependentUpon>
+    <Compile Include="Interfaz\ModPerfilPersona.aspx.designer.cs">
+      <DependentUpon>ModPerfilPersona.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\PerfilPersona.aspx.cs">
       <DependentUpon>PerfilPersona.aspx</DependentUpon>

@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Empresa.aspx.cs" Inherits="CarteraEmpleo.Interfaz.Empresa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" src="../Scripts/jQueryDefault.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div class="borderPerfilEmpresaPersona" >
-        <div class="titulo" runat="server">Empresa</div>
+        <div id="Div1" class="titulo" runat="server">Empresa</div>
         <br/>
         <div class="titulosDatosBasicos">Nombre:</div>
         <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers"  Text="Enviar Mensaje" />
@@ -53,4 +54,3 @@
         </div>
     </div>
 </asp:Content>
-

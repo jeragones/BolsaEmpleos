@@ -1,10 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="ModificarEmpresa.aspx.cs" Inherits="CarteraEmpleo.Interfaz.ModificarEmpresa" %>
-<asp:Content ContentPlaceHolderID="head" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="ModPerfilEmpresa.aspx.cs" Inherits="CarteraEmpleo.Interfaz.ModificarEmpresa" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" src="../Scripts/jQueryDefault.js"></script>
 </asp:Content>
-<asp:Content ContentPlaceHolderID="Body" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div id="3" class="borderPerfilEmpresaPersona" >
-        <div class="titulo">Perfil</div>
-        <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers"  Text="Guardar Cambios" />
+        <div class="titulo">Perfil de Empresa</div>
+        <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers"  Text="Guardar Cambios" OnClick="Button1_Click" />
         <br/>
         <div><asp:Label ID="Label2" class="lblRegistrar" runat="server" Text="Nombre:" /></div>
         <div><asp:TextBox ID="txtNombre" class="txt" runat="server"  Visible="False" Height="20px" Width="160px" />
