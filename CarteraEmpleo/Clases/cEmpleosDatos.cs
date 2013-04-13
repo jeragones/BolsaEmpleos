@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using CarteraEmpleo.Clases;
 
 namespace CarteraEmpleo.Clases
 {
@@ -12,26 +13,30 @@ namespace CarteraEmpleo.Clases
         /**
          * inserta puestos
          */
-        public string insertar(string p_IdCatEmpleo, string p_Descripcion)
+        public string insertar(string p_Correo, string p_NumJornada, string p_Horario, string p_Conocimientos, string p_Salario)
         {
-            if (p_Descripcion != "" && p_IdCatEmpleo != "")
+            if (p_Correo != "" && p_NumJornada != "" && p_Horario != "" && p_Conocimientos != "" && p_Salario != "")
             {
-                if (Numero(p_IdCatEmpleo))
+                if (Numero(p_NumJornada) && Numero(p_Salario))
                 {
-                    int _iId_CatEmpleo = Convert.ToInt32(p_IdCatEmpleo);
+                    int _iNumJornada = Convert.ToInt32(p_NumJornada);
+                    int _iSalario = Convert.ToInt32(p_Salario);
                     try
                     {
-                        webService.Insert_Puesto(p_Descripcion, _iId_CatEmpleo);
+                        webService.Insert_Publicacion(p_Correo, _iNumJornada, p_Horario, p_Conocimientos, _iSalario);
                         return "Puesto Insertado con Exito";
                     }
-                    catch (Exception e) {
+                    catch (Exception e)
+                    {
                         return e.Message;
                     }
                 }
+                else {
+                    return "En el campo numero de jornada o salario no viene un valor numerico";
+                }
             }else {
-                return "Campos Incompletos";
+                return "Existen Campos sin Completar";
             }
-            return "";
         }
 
         /**

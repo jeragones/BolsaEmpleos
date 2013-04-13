@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
- <form id="Form1" runat="server">
+    <form id="Form1" runat="server">
         <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Perfil Empresa</div>
         <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Enviar Correo" />
@@ -52,17 +52,36 @@
 		        </tr>
                 <tr>
                     <td class="tdleft">
-                        <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" >
-                            <Columns>
-                                <asp:CommandField ShowEditButton="True" />
-                                <asp:CommandField ShowDeleteButton="True" />
-                            </Columns>
+                        <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" >
                         </asp:GridView>
                     </td>
                     <td>
-                        <asp:Button ID="btEliminarOfertasEmpleo" runat="server" CssClass="btmodificarEmprPers" Text="Eliminar" />
+                        <asp:Button ID="btEliminarOfertasEmpleo" runat="server" CssClass="btmodificarEmprPers" Text="Eliminar" OnClick="btEliminarOfertasEmpleo_Click" />
                     </td>
                 </tr>
+                 <tr>
+                     <td class="tdleft">
+                        <Table>
+                             <tr>
+                                 <td>
+                                     <asp:TextBox ID="NumJornada" runat="server" placeholder="Numero de Jornada"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                     <asp:TextBox ID="Horario" runat="server" placeholder="Horario"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                     <asp:TextBox ID="Conocimientos" runat="server" placeholder="Conocimientos"></asp:TextBox>
+                                 </td>
+                                 <td>
+                                     <asp:TextBox ID="Salario" runat="server" placeholder="Salario"></asp:TextBox>
+                                 </td>
+                                 
+                             </tr>
+                         </Table>
+                     </td>
+                     <td><asp:Button ID="InsertarPublicacion" runat="server" Text="Agregar" CssClass="btmodificarEmprPers" OnClick="InsertarPublicacion_Click"/></td>
+                     
+                 </tr>
             </table>
     </div>
     </form>
