@@ -107,7 +107,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Content Include="Interfaz\Empresa.aspx" />
-    <Content Include="Interfaz\ModificarPerfilEmpresa.aspx" />
+    <Content Include="Interfaz\ModificarEmpresa.aspx" />
     <Content Include="Interfaz\PerfilEmpresa.aspx" />
     <Content Include="Interfaz\ModificarPersona.aspx" />
     <Content Include="Interfaz\PerfilPersona.aspx" />
@@ -132,12 +132,12 @@
     <Compile Include="Interfaz\Empresa.aspx.designer.cs">
       <DependentUpon>Empresa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\ModificarPerfilEmpresa.aspx.cs">
-      <DependentUpon>ModificarPerfilEmpresa.aspx</DependentUpon>
+    <Compile Include="Interfaz\ModificarEmpresa.aspx.cs">
+      <DependentUpon>ModificarEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interfaz\ModificarPerfilEmpresa.aspx.designer.cs">
-      <DependentUpon>ModificarPerfilEmpresa.aspx</DependentUpon>
+    <Compile Include="Interfaz\ModificarEmpresa.aspx.designer.cs">
+      <DependentUpon>ModificarEmpresa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\PerfilEmpresa.aspx.cs">
       <DependentUpon>PerfilEmpresa.aspx</DependentUpon>

@@ -17,7 +17,7 @@ namespace CarteraEmpleo.Interfaz
 
         protected void QuitarIdioma(object sender, EventArgs e)
         {
-            ClientScript.RegisterStartupScript(GetType(), "idiomas", "QuitarIdioma('idioma1')", true);
+            ClientScript.RegisterStartupScript(GetType(), "Quitaridiomas", "QuitarIdioma('idioma1')", true);
         }
 
         protected void Button1_Click(object sender, EventArgs e)

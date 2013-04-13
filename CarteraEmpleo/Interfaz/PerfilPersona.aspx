@@ -17,16 +17,14 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-    <form runat="server">
-        <div id="3" class="borderPerfilEmpresaPersona" >
+    <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Candidato</div>
         <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Enviar Correo" OnClick="Button1_Click" />
         <div class="titulosDatosBasicos">Nombre:</div>
         <asp:Label runat="server" ID="lbl_NombreEmpresa" Text="Nombre del Candidato"/>
         <br/>
-        <br/>
-               
-       <table class="datosBasicosPersona">
+        <br/>           
+        <table class="datosBasicosPersona">
             <tr>
                 <th class="tdborderbot"colspan="2">
                     Datos Básicos
@@ -48,10 +46,10 @@
                 <td class="tdleft"><asp:Label ID="Label13" runat="server" Text="Dirección:"/></td>
                 <td class="tdleft"><asp:Label ID="Label14" runat="server" Text="Dirección de la persona" /></td>
             </tr> 
-           <tr><td></td><td></td></tr>
+            <tr><td></td><td></td></tr>
             <tr>
                 <th class="tdborderbot"colspan="2">
-               Información Laboral
+                Información Laboral
                 </th> 
             </tr>
             <tr>
@@ -63,7 +61,5 @@
                 <td class="tdleft"><asp:Label ID="Label12" runat="server" Text="Descripción de trabajos realizados"/></td>
             </tr>
         </table>
-    </div>
-    </form>
-         
+    </div>  
 </asp:Content>

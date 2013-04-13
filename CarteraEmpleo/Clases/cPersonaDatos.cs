@@ -22,21 +22,6 @@ namespace CarteraEmpleo
         cGeneralMetodos Metodos = new cGeneralMetodos();
         Service1 webservice = new Service1();
 
-        public String IniciarSesion(String p_usuario, String p_contrasena) 
-        {
-            DataTable usuario = webservice.Select_Persona(p_usuario, p_contrasena);
-            string user = "", nom, ape1, ape2;
-            foreach (DataRow row in usuario.Rows) 
-            {
-                nom = row["TXT_NOMBRE"].ToString();
-                ape1 = row["TXT_APELLIDO1"].ToString();
-                ape2 = row["TXT_APELLIDO2"].ToString();
-                user = nom + " " + ape1 + " " + ape2;
-                Site.USUARIO = p_usuario;
-            }
-            return user;
-        }
-
         public String Insertar(String p_nombre, String p_correo, String p_telefono, 
                                String p_condicion, String p_contrasena, String p_confContrasena, 
                                String p_direccion) 

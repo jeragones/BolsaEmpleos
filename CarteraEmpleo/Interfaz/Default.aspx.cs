@@ -17,36 +17,13 @@ namespace CarteraEmpleo
 {
     public partial class _Default : System.Web.UI.Page
     {
-        cPersonaDatos persona = new cPersonaDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Site.USUARIO.equal("")) 
-            //{
- 
-            //}
         }
 
-        protected void btnIniciarSesion_Click(object sender, EventArgs e)
+        public void Login(String usuario)
         {
-            String usuario = persona.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
-            if (usuario.Equals(""))
-            {
-
-            }
-            else 
-            {
-                ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('"+ usuario +"')", true);
-            }
-            
-
-            //cCorreoComunicacion ins = new cCorreoComunicacion();
-            //txtCorreo.Text = ins.SendMail("jeragones@hotmail.com", "jeragones@gmail.com", "Hola", "Si funciona !!!");
+            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
         }
-
-        protected void prueba_Click(object sender, EventArgs e)
-        {
-            
-        }
-
     }
 }
