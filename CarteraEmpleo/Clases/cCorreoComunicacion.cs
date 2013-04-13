@@ -12,31 +12,52 @@ namespace CarteraEmpleo.Clases
 {
     public class cCorreoComunicacion
     {
-        public String SendMail(String from, String to, String subject, String body)
+
+        public Boolean CorreoRegistro(String to, String from, String pass) 
         {
+            String asunto = "";
+            String mensaje = "";
+            return Correo(to, "Administrador", from, asunto, mensaje, pass, "");
+        }
+        
+        public Boolean Correo(String to, String sender, String from, String subject, String body, String pass, String archivo)
+        {
+
+            /*
+             * cCorreoComunicacion insCorreo = new cCorreoComunicacion();
+            Boolean respuesta = tmp.Correo("leock123@gmail.com", "Nombre del que manda el Correo", "jeragones@gmail.com", "Mandando correo de prueba", "Hola pura que vida tuanis kakaroto, estoy bien, un helefante se balanceaba, fin de la historia", "Motta.666", "archivo");
+             */
+
+
             MailMessage msg = new MailMessage();
-            msg.From = new MailAddress("jeragones@hotmail.com","Administrador");
-            msg.To.Add(new MailAddress("jeragones@gmail.com"));
-            msg.Subject = "Prueba";
-            msg.Body = "Hola";
+            msg.From = new MailAddress(from,sender);
+            msg.To.Add(new MailAddress(to));
+            msg.Subject = subject;
+            msg.Body = body;
             msg.IsBodyHtml = true;
 
-            SmtpClient smtp = new SmtpClient();
-            //smtp.Host = "smtp.gmail.com";
-            smtp.Host = "localhost";
-            smtp.Port = 25;
+            if(/*archivo.HasFile*/false) {
+                msg.Attachments.Add(new Attachment(archivo));
+                // archivo.PostedFile.InputStream, archivo.Filename
+            }
+            
 
-            smtp.Credentials = new NetworkCredential("jeragones@gmail.com","Contraseña");
+            SmtpClient smtp = new SmtpClient();
+            //smtp.Host = "smtp.mail.yahoo.com"; // yahoo
+            //smtp.Host = "smtp.live.com"; // hotmail
+            //smtp.Host = "localhost"; // servidor local
+            smtp.Host = "smtp.gmail.com"; // gmail
+            smtp.Port = 25;
+            smtp.Credentials = new NetworkCredential(from,pass);
             smtp.EnableSsl = true;
             try
             {
                 smtp.Send(msg);
-                return ("funciona");
+                return true;
             }
             catch (Exception ex)
             {
-                return ("no funciona");
-                //Label1.Text = ex.ToString();
+                return false;
             }
         }
         /*
@@ -69,20 +90,5 @@ namespace CarteraEmpleo.Clases
             smtp.Send(fromAddress, toAddress, subject, body);
         }
         */
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //here on button click what will done 
-                /*SendMail();
-                DisplayMessage.Text = "Your Comments after sending the mail";
-                DisplayMessage.Visible = true;
-                YourSubject.Text = "";
-                YourEmail.Text = "";
-                YourName.Text = "";
-                Comments.Text = "";*/
-            }
-            catch (Exception) { }
-        }
     }
 }
