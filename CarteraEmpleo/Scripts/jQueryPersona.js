@@ -1,15 +1,14 @@
 ﻿function Idiomas(lista) {
     var list = lista.split(",");
-    var code = '';
+    var code = '<table>';
     for (var i = 0; i < list.length; i++) {
-        code += '<div id="idioma' + i + '" runat="server">' +
-                '<asp:Label runat="server" class="lblRegistrar" Text="' + list[i] + '" />' +
-                '<asp:Button runat="server" onclick="QuitarIdioma("idioma' + i + '")">' +
-                '<asp:Image runat="server" ImageUrl="~/Images/eliminar.png" />' +
-                '</asp:Button>' +
-                '</div>';
+        code += '<tr>' +
+                '<td><div id="idioma' + i + '">' + list[i] + '</div></td>' +
+                '<td><img alt="" src="../Images/eliminar.png" width="20px" height="20px" onclick="QuitarIdioma" /></td>' +
+                '</tr>';
     }
-    document.getElementById("***********").innerHTML = code;
+    code += '</table>';
+    document.getElementById("Idiomas").innerHTML = code;
 }
 
 function Telefonos(lista) {

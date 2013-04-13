@@ -21,7 +21,6 @@
         <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Candidato</div>
         <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Enviar Correo" OnClick="Button1_Click" />
-        <br/>
         <div class="titulosDatosBasicos">Nombre:</div>
         <asp:Label runat="server" ID="lbl_NombreEmpresa" Text="Nombre del Candidato"/>
         <br/>
@@ -43,7 +42,7 @@
             </tr>
             <tr>
                 <td class="tdleft"><asp:Label ID="Label9" runat="server" Text="Idiomas:"/></td>
-                <td class="tdleft"><div id="Idiomas" class="titulosDatosBasicos"><asp:Label ID="Label10" runat="server" Text="Español-Ingles-Frances"/></div></td>
+                <td class="tdleft"><div id="Idiomas" class="titulosDatosBasicos"><br/></div></td>
             </tr>
             <tr>
                 <td class="tdleft"><asp:Label ID="Label13" runat="server" Text="Dirección:"/></td>
