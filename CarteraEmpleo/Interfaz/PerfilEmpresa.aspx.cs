@@ -78,5 +78,10 @@ using CarteraEmpleo.Clases;
             Conocimientos.Text = "";
             Salario.Text = "";
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

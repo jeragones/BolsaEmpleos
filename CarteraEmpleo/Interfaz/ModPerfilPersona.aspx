@@ -1,16 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="ModPerfilPersona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.ModificarPersona" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="../Scripts/jQueryDefault.js"></script>
+    <script type="text/javascript" src="../Scripts/jQueryPersona.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div id="4" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Perfil de Candidato</div>
+        <asp:Button ID="btnGuardar" runat="server" Class="btmodificarEmprPers" Text="Guardar Cambios" OnClick="btnGuardar_Click" />
         <br/>
         <div><asp:Label class="lblRegistrar" runat="server" Text="Nombre Completo:" /></div>
         <div><asp:TextBox ID="txtNombre" class="txt" runat="server"  Visible="False" Height="20px" Width="160px" />
              <asp:Label ID="lblNombre" class="lblRegistrar" runat="server" Text="Nombre del Candidato" />
              <asp:LinkButton class="Link" runat="server" ID="hplNombre" text="Editar" OnClick="hplNombre_Click" />
-        </div>  
+        </div> 
+        <asp:Image ID="imgError" Visible="false" class="imgError" runat="server" Width="12px" Height="12px" ImageUrl="/Images/error1.png" />
+                               &nbsp;<asp:Label ID="msgError" class="error" runat="server" Text="" /> 
         <br/><br/>
         <table class="datosBasicosPersona">
             <tr>
@@ -20,7 +24,7 @@
             </tr>
             <tr>   
                 <td class="tdleft">
-                    <asp:Label ID="Label1" class="lblRegistrar" runat="server" Text="Cédula:" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Cédula:" />
                 </td>
                 <td class="tdleft">
                     <asp:TextBox class="txt" runat="server" placeholder="0-0000-0000" ID="txtCedula"  Visible="False" Height="20px" />
@@ -32,11 +36,13 @@
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label3" class="lblRegistrar" runat="server" Text="Teléfono:" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Teléfono:" />
                 </td>
                 <td class="tdleft">
                     <asp:TextBox ID="txtTelefono" class="txt" runat="server" placeholder="0000-0000"  Visible="False" Height="20px" Width="160px" />
+                    &nbsp;<img ID="imgTelefono" alt="" src="../Images/agregar.png" runat="server" width="25" height="25" Visible="False"/>
                     <asp:Label ID="lblTelefono" class="lblRegistrar" runat="server" Text="telefonos de contacto" />
+                    <div id="Telefonos" class="telefono">hola</div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 </td>
                 <td class="tdleft">
                     <asp:LinkButton class="Link" runat="server" ID="hplTelefono" text="Editar" OnClick="hplTelefono_Click" />
@@ -44,18 +50,18 @@
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label4" class="lblRegistrar" runat="server" Text="Idioma(s):" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Idioma(s):" />
                 </td>
                 <td class="tdleft">
                     <asp:DropDownList ID="cmbIdioma" class="txt" runat="server"  Visible="False" Height="20px" Width="166px"/>
-                    <asp:Button ID="btnIdioma" runat="server" Text="+" Visible="False"/>
-                    <asp:Label ID="lblIdioma" class="lblRegistrar" runat="server" Text="Español-Ingles-Frances" />
+                    &nbsp;<img ID="imgIdioma" alt="" src="../Images/agregar.png" runat="server" width="25" height="25" Visible="False"/>
+                    <div id="Idiomas" class="idioma">hola</div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 </td>
                 <td class="tdleft"><asp:LinkButton class="Link" runat="server" ID="hplIdioma" text="Editar" OnClick="hplIdioma_Click" /></td>
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label7" class="lblRegistrar" runat="server" Text="Dirección:" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Dirección:" />
                 </td>
                 <td class="tdleft">
                     <asp:TextBox class="txta" runat="server" TextMode="MultiLine" ID="txtDireccion" Visible="False" Width="160px" />
@@ -73,7 +79,7 @@
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label5" class="lblRegistrar" runat="server" Text="Condicion Laboral:" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Condicion Laboral:" />
                 </td>
                 <td class="tdleft">
                     <asp:DropDownList ID="cmbCondicion" class="txt" runat="server" Visible="False" Height="20px" Width="166px">
@@ -88,7 +94,7 @@
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label6" class="lblRegistrar" runat="server" Text="Experiencia Laboral:" />
+                    <asp:Label class="lblRegistrar" runat="server" Text="Experiencia Laboral:" />
                 </td>
                 <td class="tdleft">
                     <asp:TextBox Class="txta" runat="server" TextMode="MultiLine" ID="txtExperiencia"  Visible="False" />

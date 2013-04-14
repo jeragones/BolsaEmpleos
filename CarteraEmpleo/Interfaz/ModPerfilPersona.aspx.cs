@@ -9,10 +9,33 @@ namespace CarteraEmpleo.Interfaz
 {
     public partial class ModificarPersona : System.Web.UI.Page
     {
+        cPersonaDatos insPersona = new cPersonaDatos();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            String idioma = "Turco,Romano,Haitiano,Español";
+            String telefono = "1234-1236,1278-5691";
             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cPersonaDatos.NOMBRE + "','3')", true);
-
+            lblNombre.Text = cPersonaDatos.NOMBRE;
+            lblDireccion.Text = cPersonaDatos.DIRECCION;
+            if (cPersonaDatos.CONDICION == 'd')
+            {
+                lblCondicion.Text = "Desempleado";
+            }
+            else 
+            {
+                lblCondicion.Text = "Empleado";
+            }
+            /*for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++) 
+            {
+                idioma += cPersonaDatos.IDIOMA[i] + ",";
+            }*/
+            ClientScript.RegisterStartupScript(GetType(), "AgregarIdioma", "Idiomas('" + idioma + "')", true);
+            /*for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
+            {
+                telefono += cPersonaDatos.TELEFONO[i] + ",";
+            }*/
+            ClientScript.RegisterStartupScript(GetType(), "AgregarTelefono", "Telefonos('" + telefono + "')", true);
         }
 
         protected void hplCedula_Click(object sender, EventArgs e)
@@ -46,10 +69,8 @@ namespace CarteraEmpleo.Interfaz
 
         protected void hplIdioma_Click(object sender, EventArgs e)
         {
-            lblIdioma.Visible = false;
-            btnIdioma.Visible = true;
+            imgIdioma.Visible = true;
             cmbIdioma.Visible = true;
-            cmbIdioma.Text = lblIdioma.Text;
             hplIdioma.Visible = false;
             DesactivarNombre();
             DesactivarTelefono();
@@ -119,9 +140,7 @@ namespace CarteraEmpleo.Interfaz
 
         protected void DesactivarIdioma()
         {
-            lblIdioma.Visible = true;
             cmbIdioma.Visible = false;
-            lblIdioma.Text = cmbIdioma.Text;
             hplIdioma.Visible = true;
         }
 
@@ -172,9 +191,25 @@ namespace CarteraEmpleo.Interfaz
             DesactivarCondicion();
             DesactivarContrasena();
             DesactivarDireccion();
-            cPersonaDatos ins = new cPersonaDatos();
-            //ins.modificar();
-            Response.Redirect("~/Interfaz/Default.aspx");
+
+            msgError.Text = insPersona.Modificar(txtContrasena1.Text, txtNombre.Text, "telefonos", cmbCondicion.Text,
+                                                 txtContrasena3.Text, txtContrasena2.Text, txtDireccion.Text,
+                                                 txtExperiencia.Text);
+            if (msgError.Text.Equals(""))
+            {
+                //persona.EnviarCorreo();
+                Response.Redirect("~/Interfaz/Default.aspx");
+            }
+            else 
+            {
+                imgError.Visible = true;
+            }
+            
+            //Response.Redirect("~/Interfaz/Default.aspx");
+
+            String tmp = "Ingles  ,Aleman  ,Ruso  ,Ucraniano  ,Velvet  ";
+            ClientScript.RegisterStartupScript(GetType(), "AgregarIdiomas", "Idiomas('"+ tmp +"')", true);
+
         }
     }
 }

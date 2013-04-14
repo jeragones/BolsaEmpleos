@@ -100,7 +100,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <asp:Image ID="imgError" Visible="false" class="imgError" runat="server" ImageUrl="/Images/error1.png" />
+                    <asp:Image ID="imgError" Visible="false" class="imgError" runat="server" Width="12" Height="12" ImageUrl="/Images/error1.png" />
                                &nbsp;<asp:Label ID="msgError" class="error" runat="server" Text="" />
                 </td>
             </tr>

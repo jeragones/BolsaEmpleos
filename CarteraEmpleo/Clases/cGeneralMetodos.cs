@@ -31,24 +31,30 @@ namespace CarteraEmpleo.Clases
                 }
                 tipo = 3;
             }
-            usuario = webservice.Select_Empresa(p_usuario, p_contrasena);
-            if (usuario.Rows.Count != 0)
+            else
             {
-                foreach (DataRow row in usuario.Rows)
+                usuario = webservice.Select_Empresa(p_usuario, p_contrasena);
+                if (usuario.Rows.Count != 0)
                 {
-                    user = row["TXT_NOMBRE"].ToString();
+                    foreach (DataRow row in usuario.Rows)
+                    {
+                        user = row["TXT_NOMBRE"].ToString();
+                    }
+                    tipo = 2;
                 }
-                tipo = 2;
+                else 
+                {
+                    //usuario = webservice.Select_Administrador(p_usuario, p_contrasena);
+                    /*if (usuario.Rows.Count != 0)if (usuario.Rows.Count != 0)
+                    {
+                        foreach (DataRow row in usuario.Rows)
+                        {
+                            user = "Administrador";
+                        }
+                        tipo = 1;
+                    }*/
+                }
             }
-            //usuario = webservice.Select_Administrador(p_usuario, p_contrasena);
-            /*if (usuario.Rows.Count != 0)if (usuario.Rows.Count != 0)
-            {
-                foreach (DataRow row in usuario.Rows)
-                {
-                    user = "Administrador";
-                }
-                tipo = 1;
-            }*/
             Site.USUARIO = p_usuario;
             Site.TIPO = tipo;
             return user;
@@ -108,6 +114,25 @@ namespace CarteraEmpleo.Clases
         {
             int _iNumero = 0;
             return (int.TryParse(p_numero, out _iNumero));
+        }
+
+        public Boolean ValidarTelefono(String telefono) 
+        {
+            String[] _sFracmentar;
+            char[] separador = { '-' };
+            _sFracmentar = Fragmentar(telefono, separador);
+            if (telefono.Length != 9 |
+                _sFracmentar.Length != 2 |
+                !Numero(_sFracmentar[0]) |
+                !Numero(_sFracmentar[1]) |
+                _sFracmentar[0].Length != _sFracmentar[1].Length)
+            {
+                return false;
+            }
+            else 
+            {
+                return true;
+            }
         }
     }
 }

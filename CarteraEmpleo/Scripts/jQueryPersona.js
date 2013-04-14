@@ -8,6 +8,7 @@
                 '</tr>';
     }
     code += '</table>';
+    alert(code);
     document.getElementById("Idiomas").innerHTML = code;
 }
 
@@ -22,5 +23,6 @@ function Telefonos(lista) {
                 '</asp:Button>' +
                 '</div>';
     }
-    document.getElementById("***********").innerHTML = code;
+    alert(code);
+    document.getElementById("Telefonos").innerHTML = code;
 }
