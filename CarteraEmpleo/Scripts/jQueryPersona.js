@@ -1,10 +1,11 @@
 ﻿function Idiomas(lista) {
+    alert(lista);
     var list = lista.split(",");
     var code = '<table>';
     for (var i = 0; i < list.length; i++) {
         code += '<tr>' +
                 '<td><div id="idioma' + i + '">' + list[i] + '</div></td>' +
-                '<td><img alt="" src="../Images/eliminar.png" width="20px" height="20px" onclick="QuitarIdioma" /></td>' +
+                '<td><img src="/Images/eliminar.png" width="20" height="20" onclick="QuitarIdioma" /></td>' +
                 '</tr>';
     }
     code += '</table>';

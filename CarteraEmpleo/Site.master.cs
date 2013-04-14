@@ -42,7 +42,7 @@ namespace CarteraEmpleo
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             String usuario = "";
-            usuario = insMetodos.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
+            /*usuario = insMetodos.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
             if (usuario.Equals(""))
             {
                 // mensaje error, no existe el usuario
@@ -51,10 +51,10 @@ namespace CarteraEmpleo
             }
             else
             {
-                //insDefault.Login(usuario);
+                //insDefault.Login(usuario);*/
                 ScriptManager.RegisterStartupScript(btnIniciarSesion, GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
                 //ScriptManager.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
-            }
+            //}
         }
     }
 }

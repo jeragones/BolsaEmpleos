@@ -121,6 +121,15 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.Label lblTelefono;
         
         /// <summary>
+        /// Control Telefonos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Telefonos;
+        
+        /// <summary>
         /// Control hplTelefono.
         /// </summary>
         /// <remarks>
@@ -146,6 +155,15 @@ namespace CarteraEmpleo.Interfaz {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlImage imgIdioma;
+        
+        /// <summary>
+        /// Control Idiomas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Idiomas;
         
         /// <summary>
         /// Control hplIdioma.

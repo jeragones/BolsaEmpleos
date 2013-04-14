@@ -30,7 +30,8 @@ namespace CarteraEmpleo.Interfaz
             {
                 idioma += cPersonaDatos.IDIOMA[i] + ",";
             }*/
-            ClientScript.RegisterStartupScript(GetType(), "AgregarIdioma", "Idiomas('" + idioma + "')", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "AgregaroIdioma", "Idiomas('" + idioma + "')", true);
+            //ClientScript.RegisterStartupScript(GetType(), "AgregarIdioma", "Idiomas('" + idioma + "')", true);
             /*for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
             {
                 telefono += cPersonaDatos.TELEFONO[i] + ",";
@@ -192,7 +193,7 @@ namespace CarteraEmpleo.Interfaz
             DesactivarContrasena();
             DesactivarDireccion();
 
-            msgError.Text = insPersona.Modificar(txtContrasena1.Text, txtNombre.Text, "telefonos", cmbCondicion.Text,
+            /*msgError.Text = insPersona.Modificar(txtContrasena1.Text, txtNombre.Text, "telefonos", cmbCondicion.Text,
                                                  txtContrasena3.Text, txtContrasena2.Text, txtDireccion.Text,
                                                  txtExperiencia.Text);
             if (msgError.Text.Equals(""))
@@ -203,12 +204,13 @@ namespace CarteraEmpleo.Interfaz
             else 
             {
                 imgError.Visible = true;
-            }
+            }*/
             
             //Response.Redirect("~/Interfaz/Default.aspx");
 
             String tmp = "Ingles  ,Aleman  ,Ruso  ,Ucraniano  ,Velvet  ";
             ClientScript.RegisterStartupScript(GetType(), "AgregarIdiomas", "Idiomas('"+ tmp +"')", true);
+            ScriptManager.RegisterStartupScript(btnGuardar, GetType(), "Idioma", "Idiomas('" + tmp + "')", true);
 
         }
     }

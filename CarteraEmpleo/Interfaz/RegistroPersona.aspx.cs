@@ -12,6 +12,8 @@ using CarteraEmpleo.Clases;
      public partial class RegistroPersona : System.Web.UI.Page
      {
         cGeneralMetodos insMetodos = new cGeneralMetodos();
+        cCorreoComunicacion insCorreo = new cCorreoComunicacion();
+        cPersonaDatos insPersona = new cPersonaDatos();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,19 +24,28 @@ using CarteraEmpleo.Clases;
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            cPersonaDatos persona = new cPersonaDatos();
-            msgError.Text = persona.Insertar(txtNombre.Text, txtCorreo.Text, txtTelefono.Text, cmbCondicion.Text, 
+            
+            /*msgError.Text = insPersona.Insertar(txtNombre.Text, txtCorreo.Text, txtTelefono.Text, cmbCondicion.Text, 
                                              txtContrasena.Text, txtConfirmarContrasena.Text, txtDireccion.Text);
             if (msgError.Text.Equals(""))
-            {
+            {*/
                 //persona.EnviarCorreo();
-                Response.Redirect("~/Interfaz/Default.aspx");
+
+                String us = txtCorreo.Text;
+                String asunto = "Registro de Cartera de Empleo";
+                String mensaje = "Buenos días "+ txtNombre.Text +
+                                 "<br/>" + "<br/>" + "Gracias por su registro de usuario en la Cartera de Empleos de Turísmo, para completar su registro ingrese al enlace que aparece a continuación: " +
+                                 "<br/>" + "<br/>" + "http://itcrtest.somee.com/Interfaz/Default.aspx?U=us";
+                Boolean respuesta = insCorreo.Correo(txtCorreo.Text, "Administrador", "correo del administrador", 
+                                                     asunto, mensaje, "Contrasena", "archivo");
+            
+            /*    Response.Redirect("~/Interfaz/Default.aspx");
                 Limpiar();
             }
             else 
             {
                 imgError.Visible = true;
-            }
+            }*/
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

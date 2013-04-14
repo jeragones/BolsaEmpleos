@@ -24,6 +24,7 @@ namespace CarteraEmpleo
             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "', '"+ usuario[1] +"')", true);
             if (!usuario[0].Equals(""))
             {
+                Response.Redirect("~/Interfaz/Default.aspx");
                 btnRegEmpresa.Visible = false;
                 btnRegPersona.Visible = false;
             }

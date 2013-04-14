@@ -12,6 +12,8 @@ namespace CarteraEmpleo.Clases
 {
     public class cCorreoComunicacion
     {
+        String CORREO = "turismo.empleos@gmail.com";
+        String CONTRASENA = "Turismo.123";
 
         public Boolean CorreoRegistro(String to, String from, String pass)
         {
@@ -22,15 +24,8 @@ namespace CarteraEmpleo.Clases
 
         public Boolean Correo(String to, String sender, String from, String subject, String body, String pass, String archivo)
         {
-
-            /*
-             * cCorreoComunicacion insCorreo = new cCorreoComunicacion();
-            Boolean respuesta = tmp.Correo("leock123@gmail.com", "Nombre del que manda el Correo", "jeragones@gmail.com", "Mandando correo de prueba", "Hola pura que vida tuanis kakaroto, estoy bien, un helefante se balanceaba, fin de la historia", "Contrasena", "archivo");
-             */
-
-
             MailMessage msg = new MailMessage();
-            msg.From = new MailAddress(from, sender);
+            msg.From = new MailAddress(CORREO, sender);
             msg.To.Add(new MailAddress(to));
             msg.Subject = subject;
             msg.Body = body;
@@ -49,7 +44,7 @@ namespace CarteraEmpleo.Clases
             //smtp.Host = "localhost"; // servidor local
             smtp.Host = "smtp.gmail.com"; // gmail
             smtp.Port = 25;
-            smtp.Credentials = new NetworkCredential(from, pass);
+            smtp.Credentials = new NetworkCredential(CORREO, CONTRASENA);
             smtp.EnableSsl = true;
             try
             {

@@ -42,7 +42,7 @@
                     <asp:TextBox ID="txtTelefono" class="txt" runat="server" placeholder="0000-0000"  Visible="False" Height="20px" Width="160px" />
                     &nbsp;<img ID="imgTelefono" alt="" src="../Images/agregar.png" runat="server" width="25" height="25" Visible="False"/>
                     <asp:Label ID="lblTelefono" class="lblRegistrar" runat="server" Text="telefonos de contacto" />
-                    <div id="Telefonos" class="telefono">hola</div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
+                    <div id="Telefonos" class="telefonos" runat="server">hola</div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 </td>
                 <td class="tdleft">
                     <asp:LinkButton class="Link" runat="server" ID="hplTelefono" text="Editar" OnClick="hplTelefono_Click" />
@@ -55,7 +55,7 @@
                 <td class="tdleft">
                     <asp:DropDownList ID="cmbIdioma" class="txt" runat="server"  Visible="False" Height="20px" Width="166px"/>
                     &nbsp;<img ID="imgIdioma" alt="" src="../Images/agregar.png" runat="server" width="25" height="25" Visible="False"/>
-                    <div id="Idiomas" class="idioma">hola</div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
+                    <div id="Idiomas" class="idiomas" runat="server">hola</div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 </td>
                 <td class="tdleft"><asp:LinkButton class="Link" runat="server" ID="hplIdioma" text="Editar" OnClick="hplIdioma_Click" /></td>
             </tr>
