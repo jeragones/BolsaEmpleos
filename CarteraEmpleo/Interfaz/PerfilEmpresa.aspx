@@ -81,7 +81,10 @@
 		</tr>
         <tr>
             <td class="tdleft">
-                <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" >
+                <asp:GridView ID="GridView1" runat="server" EnableModelValidation="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" class="grid" DataKeyNames="NUM_PUBLICACION">
+                    <Columns>
+                        <asp:CommandField SelectText="Eliminar" ShowSelectButton="True" />
+                    </Columns>
                 </asp:GridView>
             </td>
             <td>

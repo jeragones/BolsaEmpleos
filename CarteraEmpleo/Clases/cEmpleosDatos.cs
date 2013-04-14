@@ -32,7 +32,7 @@ namespace CarteraEmpleo.Clases
                     }
                 }
                 else {
-                    return "En el campo numero de jornada o salario no viene un valor numerico";
+                    return "En el campo 'Número de Jornada' o 'Salario' no se escribió un valor numérico";
                 }
             }else {
                 return "Existen Campos sin Completar";
@@ -60,13 +60,14 @@ namespace CarteraEmpleo.Clases
         /**
          * eliminar puesto
          */
-        public void eliminar(string p_IdPuesto) { 
-            if (Numero(p_IdPuesto)) {
-                int _iIdPuesto = Convert.ToInt32(p_IdPuesto);
-                try {
-                    webService.Delete_Puesto(_iIdPuesto);
-                }
-                catch(Exception e){}
+        public void eliminar(int p_IdPuesto) {
+            try
+            {
+                webService.Delete_Publicacion(p_IdPuesto);
+            }
+            catch (Exception e)
+            {
+                //e.Message;
             }
         }
 
