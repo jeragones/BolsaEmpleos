@@ -40,21 +40,31 @@ namespace CarteraEmpleo.Interfaz
 
         protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
         {
-            int _iNUM_PUBLIACIONES = Convert.ToInt32(GridView1.SelectedDataKey.Value);
-            Clases.cEmpleosDatos ins = new Clases.cEmpleosDatos();
-            ins.eliminar(_iNUM_PUBLIACIONES);
-            cargarGV1();
+            try
+            {
+                Clases.cEmpleosDatos ins = new Clases.cEmpleosDatos();
+                string indice = Convert.ToString(GridView1.SelectedDataKey.Value);
+                if (ins.Numero(indice))
+                {
+                    int _iNUM_PUBLIACIONES = Convert.ToInt32(indice);
+                    ins.eliminar(_iNUM_PUBLIACIONES);
+                    cargarGV1();
+                }
+            }
+            catch(Exception ex) { }
         }
 
         protected void InsertarPublicacion_Click(object sender, EventArgs e)
         {
             Clases.cEmpleosDatos ins = new Clases.cEmpleosDatos();
-            Response.Write("<script language=javascript>alert('" + ins.insertar("empresa@gmail.com", NumJornada.Text, Horario.Text, Conocimientos.Text, Salario.Text) + "');</script>");
-            limpiarTextBoxIP();
-            cargarGV1();
+            if (ins.insertar("empresa@gmail.com", NumJornada.Text, Horario.Text, Conocimientos.Text, Salario.Text))
+            { 
+                limpiarTextBoxIP();
+                cargarGV1();
+            }
         }
 
-        protected void limpiarTextBoxIP()
+        public void limpiarTextBoxIP()
         {
             NumJornada.Text = "";
             Horario.Text = "";

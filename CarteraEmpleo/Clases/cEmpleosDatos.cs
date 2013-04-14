@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using CarteraEmpleo.Clases;
+using System.Windows.Forms;
 
 namespace CarteraEmpleo.Clases
 {
@@ -13,7 +14,7 @@ namespace CarteraEmpleo.Clases
         /**
          * inserta puestos
          */
-        public string insertar(string p_Correo, string p_NumJornada, string p_Horario, string p_Conocimientos, string p_Salario)
+        public Boolean insertar(string p_Correo, string p_NumJornada, string p_Horario, string p_Conocimientos, string p_Salario)
         {
             if (p_Correo != "" && p_NumJornada != "" && p_Horario != "" && p_Conocimientos != "" && p_Salario != "")
             {
@@ -24,18 +25,21 @@ namespace CarteraEmpleo.Clases
                     try
                     {
                         webService.Insert_Publicacion(p_Correo, _iNumJornada, p_Horario, p_Conocimientos, _iSalario);
-                        return "Puesto Insertado con Exito";
+                        MessageBox.Show("Puesto Insertado con Exito", "Inserción de Publicaciones", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        return true;
                     }
                     catch (Exception e)
                     {
-                        return e.Message;
+                        return false;
                     }
                 }
                 else {
-                    return "En el campo 'Número de Jornada' o 'Salario' no se escribió un valor numérico";
+                    MessageBox.Show("En el campo 'Número de Jornada' o 'Salario' no se escribió un valor numérico", "Inserción de Publicaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
                 }
             }else {
-                return "Existen Campos sin Completar";
+                MessageBox.Show("Existen Campos sin Completar", "Inserción de Publicaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
             }
         }
 
@@ -63,7 +67,9 @@ namespace CarteraEmpleo.Clases
         public void eliminar(int p_IdPuesto) {
             try
             {
-                webService.Delete_Publicacion(p_IdPuesto);
+                if(MessageBox.Show("Desea Eliminar la Publicación?","Eliminar Publicación",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK ){
+                    webService.Delete_Publicacion(p_IdPuesto);
+                }
             }
             catch (Exception e)
             {
@@ -74,7 +80,7 @@ namespace CarteraEmpleo.Clases
         /**
          * valida si el parametro es un numero
          */
-        protected Boolean Numero(String p_numero)
+        public Boolean Numero(String p_numero)
         {
             int _iNumero = 0;
             return (int.TryParse(p_numero, out _iNumero));
