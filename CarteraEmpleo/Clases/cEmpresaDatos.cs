@@ -18,6 +18,11 @@ namespace CarteraEmpleo
     {
         Service1 webservice = new Service1();
         cGeneralMetodos Metodos = new cGeneralMetodos();
+
+        public static String CORREO;
+        public static String NOMBRE;
+        public static String CEDJURIDICA;
+        public static String PAGINA;
         // telefono
         public String insertar(String p_nombre, String p_cedula, String p_correo, 
                                String p_sitio)

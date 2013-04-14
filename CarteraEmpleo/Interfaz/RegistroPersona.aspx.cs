@@ -4,14 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CarteraEmpleo.Clases;
+ 
+ 
+ namespace CarteraEmpleo
+ {
+     public partial class RegistroPersona : System.Web.UI.Page
+     {
+        cGeneralMetodos insMetodos = new cGeneralMetodos();
 
-
-namespace CarteraEmpleo
-{
-    public partial class RegistroPersona : System.Web.UI.Page
-    {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String[] usuario = insMetodos.UsuarioLogin();
+ 
+                ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','0')", true);
             
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)

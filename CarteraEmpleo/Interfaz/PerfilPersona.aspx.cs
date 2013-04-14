@@ -10,9 +10,14 @@ namespace CarteraEmpleo.Interfaz
 {
     public partial class PerfilPersona : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        cGeneralMetodos insMetodos = new cGeneralMetodos();
 
+         protected void Page_Load(object sender, EventArgs e)
+         {
+            String[] usuario = insMetodos.UsuarioLogin();
+
+                ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
+            
         }
 
         protected void QuitarIdioma(object sender, EventArgs e)

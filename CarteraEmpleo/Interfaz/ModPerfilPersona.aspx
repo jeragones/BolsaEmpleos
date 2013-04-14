@@ -6,7 +6,7 @@
     <div id="4" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Perfil de Candidato</div>
         <br/>
-        <div><asp:Label ID="Label2" class="lblRegistrar" runat="server" Text="Nombre Completo:" /></div>
+        <div><asp:Label class="lblRegistrar" runat="server" Text="Nombre Completo:" /></div>
         <div><asp:TextBox ID="txtNombre" class="txt" runat="server"  Visible="False" Height="20px" Width="160px" />
              <asp:Label ID="lblNombre" class="lblRegistrar" runat="server" Text="Nombre del Candidato" />
              <asp:LinkButton class="Link" runat="server" ID="hplNombre" text="Editar" OnClick="hplNombre_Click" />

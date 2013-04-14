@@ -26,7 +26,7 @@ namespace CarteraEmpleo.Clases
                     cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
                     cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
                     //cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
-                    //cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
+                    cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
                     //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
                 }
                 tipo = 3;
@@ -41,44 +41,62 @@ namespace CarteraEmpleo.Clases
                 tipo = 2;
             }
             //usuario = webservice.Select_Administrador(p_usuario, p_contrasena);
-            if (usuario.Rows.Count != 0)
+            /*if (usuario.Rows.Count != 0)if (usuario.Rows.Count != 0)
             {
                 foreach (DataRow row in usuario.Rows)
                 {
                     user = "Administrador";
                 }
                 tipo = 1;
-            }
+            }*/
             Site.USUARIO = p_usuario;
             Site.TIPO = tipo;
             return user;
         }
 
-        public String UsuarioLogin()
+        public String[] UsuarioLogin()
         {
-            return Site.USUARIO;
+            String[] usuario = {"",""};
+            switch (Site.TIPO) 
+            {
+                case 1:
+                    usuario[0] = "Administrador";
+                    usuario[1] = "1";
+                    break;
+                case 2:
+                    usuario[0] = cEmpresaDatos.NOMBRE;
+                    usuario[1] = "2";
+                    break;
+                case 3:
+                    usuario[0] = cPersonaDatos.NOMBRE;
+                    usuario[1] = "3";
+                    break;
+            }
+            return usuario;
         }
 
-        /*protected String[] ConsultaIdiomas(String p_usuario) {
+        protected String[] ConsultaIdiomas(String p_usuario) {
             DataTable idiomas = webservice.Select_Persona_Idioma(p_usuario);
             string temp = "";
-            
             foreach (DataRow row in idiomas.Rows)
             {
-                
-                user = row["TXT_NOMBRE"].ToString() + " " +
-                        row["TXT_APELLIDO1"].ToString() + " " +
-                        row["TXT_APELLIDO2"].ToString();
-                cPersonaDatos.NOMBRE = user;
-                cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
-                cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
-                cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
-                cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
-                cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                temp += row["TXT_IDIOMA"].ToString() + ",";
             }
-                tipo = 3;
+            char[] separador = {','};
+            return Fragmentar(temp,separador);
+        }
+
+        protected String[] ConsultaTelefonos(String p_usuario)
+        {
+            DataTable telefonos = webservice.Select_Telefono(p_usuario);
+            string temp = "";
+            foreach (DataRow row in telefonos.Rows)
+            {
+                temp += row["TXT_TELEFONO"].ToString() + ",";
             }
-        }*/
+            char[] separador = { ',' };
+            return Fragmentar(temp, separador);
+        }
 
         public String[] Fragmentar(String p_cadena, char[] p_separador)
         {

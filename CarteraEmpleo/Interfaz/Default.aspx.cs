@@ -17,13 +17,22 @@ namespace CarteraEmpleo
 {
     public partial class _Default : System.Web.UI.Page
     {
+        cGeneralMetodos insMetodos = new cGeneralMetodos(); 
         protected void Page_Load(object sender, EventArgs e)
-        {
-        }
-
-        public void Login(String usuario)
-        {
-            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
+         {
+            String[] usuario = insMetodos.UsuarioLogin();
+            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "', '"+ usuario[1] +"')", true);
+            if (!usuario[0].Equals(""))
+            {
+                btnRegEmpresa.Visible = false;
+                btnRegPersona.Visible = false;
+            }
+            else 
+            {
+                btnRegEmpresa.Visible = true;
+                btnRegPersona.Visible = true;
+            }
+            
         }
     }
 }

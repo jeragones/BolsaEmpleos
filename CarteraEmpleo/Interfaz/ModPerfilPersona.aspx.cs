@@ -11,6 +11,7 @@ namespace CarteraEmpleo.Interfaz
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cPersonaDatos.NOMBRE + "','3')", true);
 
         }
 

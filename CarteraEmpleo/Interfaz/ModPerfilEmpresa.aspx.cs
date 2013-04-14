@@ -9,9 +9,11 @@ namespace CarteraEmpleo.Interfaz
 {
     public partial class ModificarEmpresa : System.Web.UI.Page
     {
+        cEmpresaDatos insEmpresa = new cEmpresaDatos(); 
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cEmpresaDatos.NOMBRE + "','2')", true);
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
