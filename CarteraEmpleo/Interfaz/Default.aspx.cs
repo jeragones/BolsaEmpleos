@@ -33,7 +33,6 @@ namespace CarteraEmpleo
                 btnRegEmpresa.Visible = true;
                 btnRegPersona.Visible = true;
             }
-            
         }
         
     }
