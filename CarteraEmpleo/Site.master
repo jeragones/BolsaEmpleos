@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" CodeBehind="Site.master.cs" Inherits="CarteraEmpleo.Site" %>
-
 <!DOCTYPE html>
 
 <html lang="es">
@@ -12,6 +11,7 @@
         <link href="CSS/sRegistrar.css" rel="stylesheet" />
         <link href="CSS/Site.css" rel="stylesheet" />
         <link href="CSS/Tables.css" rel="stylesheet" />
+        <link href="CSS/Buttons.css" rel="stylesheet" />
 
         <script type="text/javascript" src="/Scripts/jQueryDefault.js"></script>
         <script type="text/javascript" src="/Scripts/jQueryPersona.js"></script>
@@ -50,10 +50,10 @@
 
                 
             </asp:ContentPlaceHolder>
-            </form>
             <footer>
                 
             </footer>
+            </form>
         </div> 
     </body>
 </html>

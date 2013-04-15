@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="RegistroEmpresa.aspx.cs" Inherits="CarteraEmpleo.RegistroEmpresa" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="RegistroEmpresa.aspx.cs" Inherits="CarteraEmpleo.RegistroEmpresa" %>
 <asp:Content ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1

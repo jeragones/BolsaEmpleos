@@ -13,13 +13,13 @@ namespace CarteraEmpleo.Interfaz {
     public partial class ModificarEmpresa {
         
         /// <summary>
-        /// Control Button1.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
         
         /// <summary>
         /// Control Label2.
@@ -56,6 +56,15 @@ namespace CarteraEmpleo.Interfaz {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton hplNombre;
+        
+        /// <summary>
+        /// Control msgError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msgError;
         
         /// <summary>
         /// Control Label1.

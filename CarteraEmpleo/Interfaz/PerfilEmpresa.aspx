@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="PerfilEmpresa.aspx.cs" Inherits="CarteraEmpleo.Interfaz.PerfilEmpresa" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="PerfilEmpresa.aspx.cs" Inherits="CarteraEmpleo.Interfaz.PerfilEmpresa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="../Scripts/jQueryDefault.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Perfil Empresa</div>
-        <asp:Button ID="Button1" runat="server" CssClass="btmodificarEmprPers" Text="Enviar Correo" OnClick="Button1_Click" />
+        <asp:Button ID="btnCorreo" runat="server" Class="btmodificarEmprPers" Text="Enviar Correo" />
         <br/>
         <div class="titulosDatosBasicos">Nombre:</div>
         <asp:Label runat="server" ID="lbl_NombreEmpresa" Text="Nombre de la empresa"/>

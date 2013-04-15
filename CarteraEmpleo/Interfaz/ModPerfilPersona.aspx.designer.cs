@@ -103,31 +103,13 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
-        /// Control imgTelefono.
+        /// Control btnAgregarTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgTelefono;
-        
-        /// <summary>
-        /// Control lblTelefono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTelefono;
-        
-        /// <summary>
-        /// Control Telefonos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Telefonos;
+        protected global::System.Web.UI.WebControls.Button btnAgregarTelefono;
         
         /// <summary>
         /// Control hplTelefono.
@@ -148,22 +130,13 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.DropDownList cmbIdioma;
         
         /// <summary>
-        /// Control imgIdioma.
+        /// Control btnAgregarIdioma.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgIdioma;
-        
-        /// <summary>
-        /// Control Idiomas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Idiomas;
+        protected global::System.Web.UI.WebControls.Button btnAgregarIdioma;
         
         /// <summary>
         /// Control hplIdioma.
@@ -238,13 +211,13 @@ namespace CarteraEmpleo.Interfaz {
         protected global::System.Web.UI.WebControls.TextBox txtExperiencia;
         
         /// <summary>
-        /// Control Label8.
+        /// Control lblExperiencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
+        protected global::System.Web.UI.WebControls.Label lblExperiencia;
         
         /// <summary>
         /// Control hplExperiencia.

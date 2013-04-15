@@ -13,6 +13,7 @@ namespace CarteraEmpleo.Interfaz
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //ClientScript.RegisterStartupScript(GetType(), "Variable", "", true);
             String idioma = "Turco,Romano,Haitiano,Español";
             String telefono = "1234-1236,1278-5691";
             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cPersonaDatos.NOMBRE + "','3')", true);
@@ -30,13 +31,15 @@ namespace CarteraEmpleo.Interfaz
             {
                 idioma += cPersonaDatos.IDIOMA[i] + ",";
             }*/
-            ScriptManager.RegisterStartupScript(this, GetType(), "AgregaroIdioma", "Idiomas('" + idioma + "')", true);
-            //ClientScript.RegisterStartupScript(GetType(), "AgregarIdioma", "Idiomas('" + idioma + "')", true);
+            //ClientScript.RegisterStartupScript(GetType(), "AgregarTelefono", "Telefonos('" + telefono + "')", false);
+            //ScriptManager.RegisterStartupScript(btnGuardar, GetType(), "Idioma", "Idiomas('" + idioma + "')", true);
+
+            
             /*for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
             {
                 telefono += cPersonaDatos.TELEFONO[i] + ",";
             }*/
-            ClientScript.RegisterStartupScript(GetType(), "AgregarTelefono", "Telefonos('" + telefono + "')", true);
+            
         }
 
         protected void hplCedula_Click(object sender, EventArgs e)
@@ -53,31 +56,34 @@ namespace CarteraEmpleo.Interfaz
             DesactivarCondicion();
             DesactivarContrasena();
             DesactivarDireccion();
+            DesactivarExperiencia();
         }
 
         protected void hplTelefono_Click(object sender, EventArgs e)
         {
-            lblTelefono.Visible = false;
             txtTelefono.Visible = true;
-            txtTelefono.Text = lblTelefono.Text;
+            txtTelefono.Text = "";
+            btnAgregarTelefono.Visible = true;
             hplTelefono.Visible = false;
             DesactivarNombre();
             DesactivarIdioma();
             DesactivarCondicion();
             DesactivarContrasena();
             DesactivarDireccion();
+            DesactivarExperiencia();
         }
 
         protected void hplIdioma_Click(object sender, EventArgs e)
         {
-            imgIdioma.Visible = true;
             cmbIdioma.Visible = true;
             hplIdioma.Visible = false;
+            btnAgregarIdioma.Visible = true;
             DesactivarNombre();
             DesactivarTelefono();
             DesactivarCondicion();
             DesactivarContrasena();
             DesactivarDireccion();
+            DesactivarExperiencia();
         }
 
         protected void hplCondicion_Click(object sender, EventArgs e)
@@ -91,6 +97,7 @@ namespace CarteraEmpleo.Interfaz
             DesactivarIdioma();
             DesactivarContrasena();
             DesactivarDireccion();
+            DesactivarExperiencia();
         }
 
         protected void hplContrasena_Click(object sender, EventArgs e)
@@ -108,6 +115,7 @@ namespace CarteraEmpleo.Interfaz
             DesactivarIdioma();
             DesactivarCondicion();
             DesactivarDireccion();
+            DesactivarExperiencia();
         }
 
         protected void hplDireccion_Click(object sender, EventArgs e)
@@ -116,6 +124,21 @@ namespace CarteraEmpleo.Interfaz
             txtDireccion.Visible = true;
             txtDireccion.Text = lblDireccion.Text;
             hplDireccion.Visible = false;
+            DesactivarNombre();
+            DesactivarTelefono();
+            DesactivarIdioma();
+            DesactivarCondicion();
+            DesactivarContrasena();
+            DesactivarExperiencia();
+        }
+
+        protected void hplExperiencia_Click(object sender, EventArgs e)
+        {
+            lblExperiencia.Visible = false;
+            txtExperiencia.Visible = true;
+            txtExperiencia.Text = lblExperiencia.Text;
+            hplExperiencia.Visible = false;
+            DesactivarDireccion();
             DesactivarNombre();
             DesactivarTelefono();
             DesactivarIdioma();
@@ -133,15 +156,15 @@ namespace CarteraEmpleo.Interfaz
 
         protected void DesactivarTelefono()
         {
-            lblTelefono.Visible = true;
             txtTelefono.Visible = false;
-            lblTelefono.Text = txtTelefono.Text;
+            btnAgregarTelefono.Visible = false;
             hplTelefono.Visible = true;
         }
 
         protected void DesactivarIdioma()
         {
             cmbIdioma.Visible = false;
+            btnAgregarIdioma.Visible = false;
             hplIdioma.Visible = true;
         }
 
@@ -173,14 +196,22 @@ namespace CarteraEmpleo.Interfaz
             hplDireccion.Visible = true;
         }
 
-        protected void btnCancelar_Click(object sender, EventArgs e)
+        protected void DesactivarExperiencia()
         {
-            DesactivarNombre();
-            DesactivarTelefono();
-            DesactivarIdioma();
-            DesactivarCondicion();
-            DesactivarContrasena();
-            DesactivarDireccion();
+            lblExperiencia.Visible = true;
+            txtExperiencia.Visible = false;
+            lblExperiencia.Text = txtExperiencia.Text;
+            hplExperiencia.Visible = true;
+        }
+
+        protected void btnQuitarIdioma_Click(object sender, EventArgs e)
+        {
+            //DesactivarNombre();
+            //DesactivarTelefono();
+            //DesactivarIdioma();
+            //DesactivarCondicion();
+            //DesactivarContrasena();
+            //DesactivarDireccion();
             Response.Redirect("~/Interfaz/Default.aspx");
         }
 
@@ -192,26 +223,37 @@ namespace CarteraEmpleo.Interfaz
             DesactivarCondicion();
             DesactivarContrasena();
             DesactivarDireccion();
+            DesactivarExperiencia();
 
-            /*msgError.Text = insPersona.Modificar(txtContrasena1.Text, txtNombre.Text, "telefonos", cmbCondicion.Text,
+            msgError.Text = insPersona.Modificar(txtContrasena1.Text, txtNombre.Text, "telefonos", cmbCondicion.Text,
                                                  txtContrasena3.Text, txtContrasena2.Text, txtDireccion.Text,
                                                  txtExperiencia.Text);
             if (msgError.Text.Equals(""))
             {
-                //persona.EnviarCorreo();
-                Response.Redirect("~/Interfaz/Default.aspx");
+                imgError.Visible = false;
             }
             else 
             {
                 imgError.Visible = true;
-            }*/
+            }
             
-            //Response.Redirect("~/Interfaz/Default.aspx");
+            //ScriptManager.RegisterStartupScript(btnGuardar, GetType(), "Idioma", "Idiomas('" + tmp + "')", true);
+        }
 
-            String tmp = "Ingles  ,Aleman  ,Ruso  ,Ucraniano  ,Velvet  ";
-            ClientScript.RegisterStartupScript(GetType(), "AgregarIdiomas", "Idiomas('"+ tmp +"')", true);
-            ScriptManager.RegisterStartupScript(btnGuardar, GetType(), "Idioma", "Idiomas('" + tmp + "')", true);
+        protected void AgregarTelefono_Click(object sender, EventArgs e)
+        {
 
         }
+
+        protected void AgregarIdioma_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+    public static void ClosePage()
+    {
+
+    }
     }
 }

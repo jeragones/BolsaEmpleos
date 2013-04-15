@@ -36,7 +36,7 @@ using CarteraEmpleo.Clases;
                 String mensaje = "Buenos días "+ txtNombre.Text +
                                  '\n' + '\n' + "Gracias por su registro de usuario en la Cartera de Empleos de Turísmo, para completar su registro ingrese al enlace que aparece a continuación: " + 
                                  '\n' + '\n' + //"http://itcrtest.somee.com/Interfaz/Default.aspx?U=us";
-                                  "http://localhost:49367/Interfaz/Default.aspx?U=us"; 
+                                  "http://localhost:49367/Interfaz/ModPerfilPersona.aspx?U=" + us; 
                 Boolean respuesta = insCorreo.Correo(txtCorreo.Text, "Administrador", "correo del administrador", 
                                                      asunto, mensaje, "Contrasena", "archivo");
             

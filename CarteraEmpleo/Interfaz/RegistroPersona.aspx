@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="RegistroPersona.aspx.cs" Inherits="CarteraEmpleo.RegistroPersona" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="RegistroPersona.aspx.cs" Inherits="CarteraEmpleo.RegistroPersona" %>
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
 </asp:Content>

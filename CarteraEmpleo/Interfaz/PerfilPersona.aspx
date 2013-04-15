@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="PerfilPersona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.PerfilPersona" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="PerfilPersona.aspx.cs" Inherits="CarteraEmpleo.Interfaz.PerfilPersona" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="../Scripts/jQueryPersona.js"></script>
     <script type="text/javascript" src="../Scripts/jQueryDefault.js"></script>
@@ -20,7 +20,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div id="3" class="borderPerfilEmpresaPersona" >
         <div class="titulo">Candidato</div>
-        <asp:Button ID="Button1" runat="server" Class="btmodificarEmprPers" Text="Enviar Correo" OnClick="Button1_Click" />
+        <asp:Button ID="btnCorreo" runat="server" Class="btmodificarEmprPers" Text="Enviar Correo" />
         <div class="titulosDatosBasicos">Nombre:</div>
         <asp:Label runat="server" ID="lbl_NombreEmpresa" Text="Nombre del Candidato"/>
         <br/>

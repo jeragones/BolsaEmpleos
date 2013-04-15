@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Empresa.aspx.cs" Inherits="CarteraEmpleo.Interfaz.Empresa" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="Empresa.aspx.cs" Inherits="CarteraEmpleo.Interfaz.Empresa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="../Scripts/jQueryDefault.js"></script>
 </asp:Content>

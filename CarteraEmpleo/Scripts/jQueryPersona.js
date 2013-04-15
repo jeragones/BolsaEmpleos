@@ -1,29 +1,36 @@
 ﻿function Idiomas(lista) {
-    alert(lista);
     var list = lista.split(",");
+    var tmp = "idioma";
     var code = '<table>';
     for (var i = 0; i < list.length; i++) {
-        code += '<tr>' +
-                '<td><div id="idioma' + i + '">' + list[i] + '</div></td>' +
-                '<td><img src="/Images/eliminar.png" width="20" height="20" onclick="QuitarIdioma" /></td>' +
+        code += '<tr id="idioma' + i + '">' +
+                '<td>' + list[i] + '</td>' +
+                '<td><a href="javascript:QuitarIdioma(idioma' + i + ')"><img src="/Images/eliminar.png" width="20" height="20" /></a></td>' +
                 '</tr>';
-    }
+        // <button type="button" width="20" height="20" onClick="QuitarIdioma(' + 'idioma' + i + ')">
+    } // 
     code += '</table>';
-    alert(code);
+    alert('funciona');
     document.getElementById("Idiomas").innerHTML = code;
 }
 
 function Telefonos(lista) {
     var list = lista.split(",");
-    var code = '';
+    var code = '<table>';
     for (var i = 0; i < list.length; i++) {
-        code += '<div id="telefono' + i + '" runat="server">' +
-                '<asp:Label runat="server" class="lblRegistrar" Text="' + list[i] + '" />' +
-                '<asp:Button runat="server" onclick="QuitarTelefono("telefono' + i + '")">' +
-                '<asp:Image runat="server" ImageUrl="~/Images/eliminar.png" />' +
-                '</asp:Button>' +
-                '</div>';
+        code += '<tr>' +
+                '<td><div id="telefono' + i + '">' + list[i] + '</div></td>' +
+                '<td><img src="/Images/eliminar.png" width="20" height="20" onclick="QuitarTelefono" /></td>' +
+                '</tr>';
     }
-    alert(code);
+    code += '</table>';
+    alert('funciona');
     document.getElementById("Telefonos").innerHTML = code;
 }
+
+function QuitarIdioma(idioma) {
+    document.getElementById(idioma.id).innerHTML = '<div></div>';
+}
+
+
+// Metodos de la clases

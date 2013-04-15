@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" CodeBehind="Default.aspx.cs" Inherits="CarteraEmpleo._Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" CodeBehind="Default.aspx.cs" Inherits="CarteraEmpleo._Default" MaintainScrollPositionOnPostback="true" %>
 
 <asp:Content ID="head2" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="../CSS/style-news.css" />

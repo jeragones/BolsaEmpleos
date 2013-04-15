@@ -9,7 +9,7 @@ namespace CarteraEmpleo.Interfaz
 {
     public partial class ModificarEmpresa : System.Web.UI.Page
     {
-        cEmpresaDatos insEmpresa = new cEmpresaDatos(); 
+        cEmpresaDatos insEmpresa = new cEmpresaDatos();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -137,7 +137,7 @@ namespace CarteraEmpleo.Interfaz
             DesactivarDescripcion();
         }
 
-        protected void DesactivarNombre()  
+        protected void DesactivarNombre()
         {
             lblNombre.Visible = true;
             txtNombre.Visible = false;
@@ -215,6 +215,7 @@ namespace CarteraEmpleo.Interfaz
             DesactivarDescripcion();
             DesactivarDireccion();
             Response.Redirect("~/Interfaz/Default.aspx");
+
         }
     }
 }
