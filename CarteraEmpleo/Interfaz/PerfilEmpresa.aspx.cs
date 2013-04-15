@@ -15,16 +15,15 @@ using CarteraEmpleo.Clases;
 
          protected void Page_Load(object sender, EventArgs e)
          {
-            String[] usuario = insMetodos.UsuarioLogin();
-   
-                ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
-            
-            try {
-                cargarGV1();
-            }
-            catch(Exception ex){
-                //return ex.Message;
-            }
+             ClientScriptManager cs = Page.ClientScript;
+             String[] usuario = insMetodos.UsuarioLogin();
+             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
+             try {
+                 cargarGV1();
+             }
+             catch(Exception ex){
+                 //return ex.Message;
+             }
         }
 
         protected void cargarGV1() {

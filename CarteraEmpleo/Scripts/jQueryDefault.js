@@ -17,4 +17,5 @@
             document.getElementById("Login").innerHTML = user;
             break;
     }
+    //alert('funciona sesion')
 }

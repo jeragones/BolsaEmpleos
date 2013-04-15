@@ -30,14 +30,12 @@ namespace CarteraEmpleo.Clases
             msg.Subject = subject;
             msg.Body = body;
             msg.IsBodyHtml = true;
-
-            if (/*archivo.HasFile*/false)
+            /*
+            if (archivo.HasFile)
             {
                 msg.Attachments.Add(new Attachment(archivo));
-                // archivo.PostedFile.InputStream, archivo.Filename
-            }
-
-
+                //archivo.PostedFile.InputStream, archivo.Filename
+            }*/
             SmtpClient smtp = new SmtpClient();
             //smtp.Host = "smtp.mail.yahoo.com"; // yahoo
             //smtp.Host = "smtp.live.com"; // hotmail
@@ -56,35 +54,5 @@ namespace CarteraEmpleo.Clases
                 return false;
             }
         }
-        /*
-        public void SendMail(String p_correo)
-        {
-            // Gmail Address from where you send the mail
-            var fromAddress = "jeragones@gmail.com";
-            // any address where the email will be sending
-            var toAddress = p_correo.ToString();
-            //Password of your gmail address
-            const string fromPassword = "Password";
-            // Passing the values and make a email formate to display
-            //string subject = YourSubject.Text.ToString();
-            String subject = "Autentificación";
-            string body = "From: " + "Administrador" + "\n";
-            body += "Email: " + fromAddress.ToString() + "\n";
-            body += "Subject: " + "Hola pura vida" + "\n";
-            body += "Question: \n" + "desea autentificar su cuenta" + "\n";
-            // smtp settings
-            var smtp = new System.Net.Mail.SmtpClient();
-            {
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 25;//587;
-                smtp.EnableSsl = true;
-                smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-                smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
-                smtp.Timeout = 20000;
-            }
-            // Passing values to smtp object
-            smtp.Send(fromAddress, toAddress, subject, body);
-        }
-        */
     }
 }

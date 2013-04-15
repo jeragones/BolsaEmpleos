@@ -4,42 +4,78 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CarteraEmpleo.Clases;
 
 namespace CarteraEmpleo.Interfaz
 {
     public partial class ModificarPersona : System.Web.UI.Page
     {
+        
         cPersonaDatos insPersona = new cPersonaDatos();
+        cGeneralMetodos insMetodos = new cGeneralMetodos();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            CargarDatos();
+            //ClientScript.RegisterStartupScript(GetType(), "Idioma", "Idiomas('Ingles')", false);
+            //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cPersonaDatos.NOMBRE + "','3')", true);
             //ClientScript.RegisterStartupScript(GetType(), "Variable", "", true);
-            String idioma = "Turco,Romano,Haitiano,Español";
-            String telefono = "1234-1236,1278-5691";
-            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cPersonaDatos.NOMBRE + "','3')", true);
+            //String idioma = "Turco,Romano,Haitiano,Español";
+            //String telefono = "1234-1236,1278-5691";
+        }
+
+        protected void CargarDatos() 
+        {
+            String script1 = "InicioSesion";
+            String script2 = "ImpIdiomas";
+            String script3 = "ImpTelefonos";
+            Type sTipo = this.GetType();
+            ClientScriptManager cs = Page.ClientScript;
+            
+            String idioma = "";
+            String telefono = "";
+
+            String usuario = "jeragones@gmail.com";// Request.QueryString["U"];
+            String contrasena = "123456789"; //Request.QueryString["P"];
+            insMetodos.IniciarSesion(usuario, contrasena);
             lblNombre.Text = cPersonaDatos.NOMBRE;
             lblDireccion.Text = cPersonaDatos.DIRECCION;
-            if (cPersonaDatos.CONDICION == 'd')
+            lblExperiencia.Text = cPersonaDatos.EXPERIENCIA;
+            
+            if (cPersonaDatos.CONDICION == 'D')
             {
                 lblCondicion.Text = "Desempleado";
             }
-            else 
+            else
             {
                 lblCondicion.Text = "Empleado";
             }
-            /*for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++) 
+            /*if (cPersonaDatos.IDIOMA != null) 
             {
-                idioma += cPersonaDatos.IDIOMA[i] + ",";
-            }*/
-            //ClientScript.RegisterStartupScript(GetType(), "AgregarTelefono", "Telefonos('" + telefono + "')", false);
-            //ScriptManager.RegisterStartupScript(btnGuardar, GetType(), "Idioma", "Idiomas('" + idioma + "')", true);
-
-            
-            /*for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
+                for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
+                {
+                    idioma += cPersonaDatos.IDIOMA[i] + ",";
+                }
+                if (!cs.IsStartupScriptRegistered(sTipo, script2))
+                {
+                    cs.RegisterStartupScript(sTipo, script2, "Idiomas('" + idioma + "')", true);
+                }
+            }
+            if (cPersonaDatos.TELEFONO != null)
             {
-                telefono += cPersonaDatos.TELEFONO[i] + ",";
+                for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
+                {
+                    telefono += cPersonaDatos.TELEFONO[i] + ",";
+                }
+                if (!cs.IsStartupScriptRegistered(sTipo, script3))
+                {
+                    cs.RegisterStartupScript(sTipo, script3, "Telefonos('" + idioma + "')", true);
+                }
             }*/
-            
+            if (!cs.IsStartupScriptRegistered(sTipo, script1))
+            {
+                cs.RegisterStartupScript(sTipo, script1, "Sesion('" + cPersonaDatos.NOMBRE + "', '3')", true);
+            }
         }
 
         protected void hplCedula_Click(object sender, EventArgs e)
@@ -225,7 +261,7 @@ namespace CarteraEmpleo.Interfaz
             DesactivarDireccion();
             DesactivarExperiencia();
 
-            msgError.Text = insPersona.Modificar(txtContrasena1.Text, txtNombre.Text, "telefonos", cmbCondicion.Text,
+            msgError.Text = insPersona.Modificar(txtContrasena1.Text, txtNombre.Text, cmbCondicion.Text,
                                                  txtContrasena3.Text, txtContrasena2.Text, txtDireccion.Text,
                                                  txtExperiencia.Text);
             if (msgError.Text.Equals(""))

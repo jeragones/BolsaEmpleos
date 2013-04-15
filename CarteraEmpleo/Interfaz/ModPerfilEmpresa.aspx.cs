@@ -4,15 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CarteraEmpleo.Clases;
 
 namespace CarteraEmpleo.Interfaz
 {
     public partial class ModificarEmpresa : System.Web.UI.Page
     {
+        
         cEmpresaDatos insEmpresa = new cEmpresaDatos();
+        cGeneralMetodos insMetodos = new cGeneralMetodos();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cEmpresaDatos.NOMBRE + "','2')", true);
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -49,7 +53,7 @@ namespace CarteraEmpleo.Interfaz
             txtCedula3.Visible = true;
 
             char[] _cSeparador = { '-' };
-            String[] _sCedula = Fragmentar(lblCedula.Text, _cSeparador);
+            String[] _sCedula = insMetodos.Fragmentar(lblCedula.Text, _cSeparador);
 
             txtCedula1.Text = _sCedula[0];
             txtCedula2.Text = _sCedula[1];
@@ -199,13 +203,7 @@ namespace CarteraEmpleo.Interfaz
             hplDireccion.Visible = true;
         }
 
-        protected String[] Fragmentar(String p_cadena, char[] p_separador)
-        {
-            String[] vector = p_cadena.Split(p_separador);
-            return vector;
-        }
-
-        protected void btnGuardar_Click(object sender, EventArgs e)
+        protected void btnGuardar_Click1(object sender, EventArgs e)
         {
             DesactivarNombre();
             DesactivarCedula();
@@ -214,8 +212,18 @@ namespace CarteraEmpleo.Interfaz
             DesactivarContrasena();
             DesactivarDescripcion();
             DesactivarDireccion();
-            Response.Redirect("~/Interfaz/Default.aspx");
 
+            msgError.Text = insEmpresa.Modificar(lblNombre.Text, lblCedula.Text, lblCorreo.Text, lblSitio.Text, 
+                                                 txtContrasena1.Text, txtContrasena2.Text, txtContrasena3.Text, 
+                                                 lblDescripcion.Text, lblDireccion.Text);
+            if (msgError.Text.Equals(""))
+            {
+                imgError.Visible = false;
+            }
+            else
+            {
+                imgError.Visible = true;
+            }
         }
     }
 }

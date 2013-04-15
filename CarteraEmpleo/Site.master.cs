@@ -19,6 +19,7 @@ namespace CarteraEmpleo
     public partial class Site : System.Web.UI.MasterPage
     {
         public static string USUARIO = "";
+        public static string CONTRASENA = "";
         public static int TIPO = 0;
 
         Service1 webservice = new Service1();
@@ -42,7 +43,7 @@ namespace CarteraEmpleo
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             String usuario = "";
-            /*usuario = insMetodos.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
+            usuario = insMetodos.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
             if (usuario.Equals(""))
             {
                 // mensaje error, no existe el usuario
@@ -54,7 +55,7 @@ namespace CarteraEmpleo
                 //insDefault.Login(usuario);*/
                 ScriptManager.RegisterStartupScript(btnIniciarSesion, GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
                 //ScriptManager.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
-            //}
+            }
         }
     }
 }

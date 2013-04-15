@@ -10,10 +10,12 @@ using CarteraEmpleo.Clases;
  {
      public partial class RegistroEmpresa : System.Web.UI.Page
      {
-        cGeneralMetodos insMetodos = new cGeneralMetodos();
+         cGeneralMetodos insMetodos = new cGeneralMetodos();
+         cEmpresaDatos insEmpresa = new cEmpresaDatos();
 
          protected void Page_Load(object sender, EventArgs e)
          {
+             ClientScriptManager cs = Page.ClientScript;
             String[] usuario = insMetodos.UsuarioLogin();
    
                 ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','0')", true);
@@ -22,9 +24,9 @@ using CarteraEmpleo.Clases;
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            cEmpresaDatos empresa = new cEmpresaDatos();
+            
             String _sCedula = txtCedula1.Text + "-" + txtCedula2.Text + "-" + txtCedula3.Text;
-            msgError.Text = empresa.insertar(txtNombre.Text, _sCedula, txtCorreo.Text, txtWeb.Text);
+            msgError.Text = insEmpresa.insertar(txtNombre.Text, _sCedula, txtCorreo.Text, txtWeb.Text);
             if (msgError.Text.Equals(""))
             {
                 //persona.EnviarCorreo();

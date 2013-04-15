@@ -25,8 +25,11 @@ namespace CarteraEmpleo.Clases
                     cPersonaDatos.NOMBRE = user;
                     cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
                     cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
+                    char[] c = {','};
+                    cPersonaDatos.IDIOMA =  Fragmentar("Ingres,Mandarin,Frances", c);
+                    cPersonaDatos.TELEFONO = Fragmentar("8914-2348,8956-2347", c);
                     //cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
-                    cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
+                    //cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
                     //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
                 }
                 tipo = 3;
@@ -56,6 +59,7 @@ namespace CarteraEmpleo.Clases
                 }
             }
             Site.USUARIO = p_usuario;
+            Site.CONTRASENA = p_contrasena;
             Site.TIPO = tipo;
             return user;
         }
@@ -81,7 +85,35 @@ namespace CarteraEmpleo.Clases
             return usuario;
         }
 
-        protected String[] ConsultaIdiomas(String p_usuario) {
+        public String InsertarIdioma(String idioma)
+        {
+            try
+            {
+                //webservice.select_Idioma(.....);
+                //webservice.Insert_Persona_Idioma(Site.USUARIO, idioma);
+                return ("");
+            }
+            catch (Exception e)
+            {
+                return ("Error al añadir un nuevo idioma.");
+            }
+        }
+
+        public String InsertarTelefono(String telefono) {
+            String msg = "";
+            if (ValidarTelefono(telefono)) {
+                try {
+                    webservice.Insert_Telefono(Site.USUARIO, telefono);
+                } catch (Exception e) {
+                    msg = "Error al añadir un nuevo teléfono.";
+                }
+            } else {
+                msg = "Telefono incorrecto.";
+            }
+            return msg;
+        }
+
+        public String[] ConsultaIdiomas(String p_usuario) {
             DataTable idiomas = webservice.Select_Persona_Idioma(p_usuario);
             string temp = "";
             foreach (DataRow row in idiomas.Rows)
@@ -92,7 +124,7 @@ namespace CarteraEmpleo.Clases
             return Fragmentar(temp,separador);
         }
 
-        protected String[] ConsultaTelefonos(String p_usuario)
+        public String[] ConsultaTelefonos(String p_usuario)
         {
             DataTable telefonos = webservice.Select_Telefono(p_usuario);
             string temp = "";
@@ -102,18 +134,6 @@ namespace CarteraEmpleo.Clases
             }
             char[] separador = { ',' };
             return Fragmentar(temp, separador);
-        }
-
-        public String[] Fragmentar(String p_cadena, char[] p_separador)
-        {
-            String[] vector = p_cadena.Split(p_separador);
-            return vector;
-        }
-
-        public Boolean Numero(String p_numero)
-        {
-            int _iNumero = 0;
-            return (int.TryParse(p_numero, out _iNumero));
         }
 
         public Boolean ValidarTelefono(String telefono) 
@@ -133,6 +153,55 @@ namespace CarteraEmpleo.Clases
             {
                 return true;
             }
+        }
+        public String ValidarContrasena(String pass1, String pass2) {
+            if (pass1.Length >= 9)
+            {
+                if (!pass1.Equals(pass2))
+                {
+                    return ("Las contraseñas no coinciden.");
+                } else {
+                    return ("");
+                }
+            }
+            else
+            {
+                return ("Contraseña inválida.");
+            }
+        }
+
+        public Boolean ValidarCorreo(String correo) {
+            String[] _sFracmentar;
+            char[] _cSepCorreo1 = { ' ',',','!','#','$','%','^','&','*','(',
+                                            ')','+','/',';',':','"','/' };
+            char[] _cSepCorreo2 = { '@', '.' };
+            _sFracmentar = Fragmentar(correo, _cSepCorreo1);
+            if (_sFracmentar.Length > 1)
+            {
+                return(true);
+            }
+            _sFracmentar = Fragmentar(correo, _cSepCorreo2);
+            if (_sFracmentar.Length != 3)
+            {
+                return(true);
+            }
+            if (_sFracmentar[0].Equals("") | _sFracmentar[1].Equals("") | _sFracmentar[2].Equals(""))
+            {
+                return (true);
+            }
+            return (false);
+        }
+
+        public String[] Fragmentar(String p_cadena, char[] p_separador)
+        {
+            String[] vector = p_cadena.Split(p_separador);
+            return vector;
+        }
+
+        public Boolean Numero(String p_numero)
+        {
+            int _iNumero = 0;
+            return (int.TryParse(p_numero, out _iNumero));
         }
     }
 }

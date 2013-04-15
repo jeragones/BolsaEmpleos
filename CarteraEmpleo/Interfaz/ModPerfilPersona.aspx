@@ -2,10 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="../Scripts/jQueryDefault.js"></script>
     <script type="text/javascript" src="../Scripts/jQueryPersona.js"></script>
-    <?
-        echo "Variable $Usuario: $HTTP_GET_VARS["U"] <br>n";
-
-    ?>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div id="4" class="borderPerfilEmpresaPersona" >
@@ -45,7 +41,7 @@
                 <td class="tdleft">
                     <asp:TextBox ID="txtTelefono" class="txt" runat="server" placeholder="0000-0000"  Visible="False" Height="20px" Width="160px" />&nbsp;
                     <asp:Button ID="btnAgregarTelefono" CssClass="btnAgregar"  runat="server" onclick="AgregarTelefono_Click" Visible="false"/>
-                    <div id="Telefonos" class="telefonos">hola</div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
+                    <div id="Telefonos" class="telefonos"></div> <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 </td>
                 <td>
                     <asp:LinkButton class="Link" runat="server" ID="hplTelefono" text="Agregar" OnClick="hplTelefono_Click" />

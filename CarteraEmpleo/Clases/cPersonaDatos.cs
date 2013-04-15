@@ -30,51 +30,27 @@ namespace CarteraEmpleo
         public static String EXPERIENCIA;
         public static String CONTRASENA;
 
-        public String Insertar(String p_nombre, String p_correo, String p_telefono,
+        public String Insertar(String p_nombre, String p_correo,
                                String p_condicion, String p_contrasena, String p_confContrasena,
                                String p_direccion)
         {
-            if (p_nombre.Equals("") | p_correo.Equals("") | p_telefono.Equals("") |
+            if (p_nombre.Equals("") | p_correo.Equals("") |
                 p_contrasena.Equals("") | p_confContrasena.Equals(""))
             {
                 return ("Existen campos vacíos que son requeridos.");
             }
             String[] _sFracmentar;
-            char[] _cSeparadorCorreo1 = { ' ',',','!','#','$','%','^','&','*','(',
-                                            ')','+','/',';',':','"','/' };
-            char[] _cSeparadorCorreo2 = { '@', '.' };
-            _sFracmentar = insMetodos.Fragmentar(p_correo, _cSeparadorCorreo1);
-            if (_sFracmentar.Length > 1)
-            {
-                return ("Correo inválido.");
+
+            if (insMetodos.ValidarCorreo(p_correo)) { 
+                return("Correo inválido.");
             }
-            _sFracmentar = insMetodos.Fragmentar(p_correo, _cSeparadorCorreo2);
-            if (_sFracmentar.Length != 3)
+
+            String validContrasena = insMetodos.ValidarContrasena(p_contrasena,p_confContrasena); 
+            if(!validContrasena.Equals(""))
             {
-                return ("Correo inválido.");
+                return (validContrasena);
             }
-            if (_sFracmentar[0].Equals("") | _sFracmentar[1].Equals("") | _sFracmentar[2].Equals(""))
-            {
-                return ("Correo inválido.");
-            }
-            char[] _cSeparadorTelefono = { '-' };
-            _sFracmentar = insMetodos.Fragmentar(p_telefono, _cSeparadorTelefono);
-            if (p_telefono.Length != 9 | _sFracmentar.Length != 2 | !insMetodos.Numero(_sFracmentar[0]) |
-                !insMetodos.Numero(_sFracmentar[1]) | _sFracmentar[0].Length != _sFracmentar[1].Length)
-            {
-                return ("Teléfono inválido.");
-            }
-            if (p_contrasena.Length >= 9)
-            {
-                if (!p_contrasena.Equals(p_confContrasena))
-                {
-                    return ("Las contraseñas no coinciden.");
-                }
-            }
-            else
-            {
-                return ("Contraseña inválida.");
-            }
+            
             char _cCondicion = ' ';
             if (p_condicion.Equals("Desempleado"))
             {
@@ -115,29 +91,20 @@ namespace CarteraEmpleo
         }
 
         public String Modificar(String p_contrasenaV, String p_nombre, 
-                                String p_telefono, String p_condicion, String p_confContrasenaN,
+                                String p_condicion, String p_confContrasenaN,
                                 String p_contrasenaN, String p_direccion, String p_conocimientos)
         {
-            if (p_nombre.Equals("") | p_telefono.Equals("") |
-                p_contrasenaV.Equals("") | p_confContrasenaN.Equals("") | p_contrasenaN.Equals(""))
+            if (p_nombre.Equals("") | p_contrasenaV.Equals("") | p_confContrasenaN.Equals("") | p_contrasenaN.Equals(""))
             {
                 return ("Existen campos vacíos que son requeridos.");
             }
-            if(insMetodos.ValidarTelefono(p_telefono)) {
-                return ("Teléfono inválido.");
-            }
-            if (p_contrasenaN.Length >= 9)
+
+            String validContrasena = insMetodos.ValidarContrasena(p_contrasenaN, p_confContrasenaN);
+            if (!validContrasena.Equals("") | !p_contrasenaV.Equals(CONTRASENA))
             {
-                if (!p_contrasenaN.Equals(p_confContrasenaN) |
-                    !p_contrasenaV.Equals(CONTRASENA))
-                {
-                    return ("Las contraseña no coinciden.");
-                }
+                return (validContrasena);
             }
-            else
-            {
-                return ("Contraseña inválida.");
-            }
+            
             char _cCondicion = ' ';
             if (p_condicion.Equals("Desempleado"))
             {

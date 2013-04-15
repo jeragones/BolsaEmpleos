@@ -10,7 +10,7 @@
         // <button type="button" width="20" height="20" onClick="QuitarIdioma(' + 'idioma' + i + ')">
     } // 
     code += '</table>';
-    alert('funciona');
+    //alert('funciona idiomas');
     document.getElementById("Idiomas").innerHTML = code;
 }
 
@@ -24,7 +24,7 @@ function Telefonos(lista) {
                 '</tr>';
     }
     code += '</table>';
-    alert('funciona');
+    //alert('funciona telefonos');
     document.getElementById("Telefonos").innerHTML = code;
 }
 

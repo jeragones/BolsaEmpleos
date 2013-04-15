@@ -11,7 +11,7 @@ namespace CarteraEmpleo.Interfaz
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ClientScriptManager cs = Page.ClientScript;
         }
 
         protected void QuitarIdioma(object sender, EventArgs e)
