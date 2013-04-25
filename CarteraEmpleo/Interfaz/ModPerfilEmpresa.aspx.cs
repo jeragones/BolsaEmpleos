@@ -22,58 +22,41 @@ namespace CarteraEmpleo.Interfaz
 
         protected void CargarDatos()
         {
-            /*String script1 = "InicioSesion";
-            String script2 = "ImpIdiomas";
-            String script3 = "ImpTelefonos";
-            Type sTipo = this.GetType();
-            ClientScriptManager cs = Page.ClientScript;
+            //String script1 = "InicioSesion";
+            //String script3 = "ImpTelefonos";
+            //Type sTipo = this.GetType();
+            //ClientScriptManager cs = Page.ClientScript;
 
-            String idioma = "";
             String telefono = "";
 
-            String usuario = Request.QueryString["U"];
-            String contrasena = Request.QueryString["P"];
-            insMetodos.IniciarSesion(usuario, contrasena);
-            lblNombre.Text = cEmpleosDatos.NOMBRE;
-            lblDireccion.Text = cPersonaDatos.DIRECCION;
-
-            if (cPersonaDatos.CONDICION == 'D')
+            //String usuario = Request.QueryString["U"];
+            //String contrasena = Request.QueryString["P"];
+            //insMetodos.IniciarSesion(usuario, contrasena);
+            lblNombre.Text = cEmpresaDatos.NOMBRE;
+            lblDireccion.Text = cEmpresaDatos.DIRECCION;
+            lblCedula.Text = cEmpresaDatos.CEDJURIDICA;
+            lblCorreo.Text = cEmpresaDatos.CORREO;
+            lblSitio.Text = cEmpresaDatos.PAGINA;
+            lblDescripcion.Text = cEmpresaDatos.DESCRIPCION;
+            
+            if (cEmpresaDatos.TELEFONO != null)
             {
-                lblCondicion.Text = "Desempleado";
+                for (int i = 0; i < cEmpresaDatos.TELEFONO.Length; i++)
+                {
+                    telefono += cEmpresaDatos.TELEFONO[i] + ",";
+                }
+                //if (!cs.IsStartupScriptRegistered(sTipo, script3))
+                //{
+                //    cs.RegisterStartupScript(sTipo, script3, "Telefonos('" + idioma + "')", true);
+                //}
             }
-            else
-            {
-                lblCondicion.Text = "Empleado";
-            }
-            /*if (cPersonaDatos.IDIOMA != null) 
-            {
-                for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
-                {
-                    idioma += cPersonaDatos.IDIOMA[i] + ",";
-                }
-                if (!cs.IsStartupScriptRegistered(sTipo, script2))
-                {
-                    cs.RegisterStartupScript(sTipo, script2, "Idiomas('" + idioma + "')", true);
-                }
-            }
-            if (cPersonaDatos.TELEFONO != null)
-            {
-                for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
-                {
-                    telefono += cPersonaDatos.TELEFONO[i] + ",";
-                }
-                if (!cs.IsStartupScriptRegistered(sTipo, script3))
-                {
-                    cs.RegisterStartupScript(sTipo, script3, "Telefonos('" + idioma + "')", true);
-                }
-            }*/
             /*if (!cs.IsStartupScriptRegistered(sTipo, script1))
             {
                 cs.RegisterStartupScript(sTipo, script1, "Sesion('" + cPersonaDatos.NOMBRE + "', '3')", true);
             }*/
         }
 
-        protected void btnCancelar_Click(object sender, EventArgs e)
+        protected void btnGuardar_Click1(object sender, EventArgs e)
         {
             DesactivarNombre();
             DesactivarCedula();
@@ -82,7 +65,18 @@ namespace CarteraEmpleo.Interfaz
             DesactivarContrasena();
             DesactivarDescripcion();
             DesactivarDireccion();
-            Response.Redirect("~/Interfaz/Default.aspx");
+
+            msgError.Text = insEmpresa.Modificar(lblNombre.Text, lblCedula.Text, lblCorreo.Text, lblSitio.Text,
+                                                 txtContrasena1.Text, txtContrasena2.Text, txtContrasena3.Text,
+                                                 lblDescripcion.Text, lblDireccion.Text);
+            if (msgError.Text.Equals(""))
+            {
+                imgError.Visible = false;
+            }
+            else
+            {
+                imgError.Visible = true;
+            }
         }
 
         protected void hplNombre_Click(object sender, EventArgs e)
@@ -255,29 +249,6 @@ namespace CarteraEmpleo.Interfaz
             txtDireccion.Visible = false;
             lblDireccion.Text = txtDireccion.Text;
             hplDireccion.Visible = true;
-        }
-
-        protected void btnGuardar_Click1(object sender, EventArgs e)
-        {
-            DesactivarNombre();
-            DesactivarCedula();
-            DesactivarTelefono();
-            DesactivarSitio();
-            DesactivarContrasena();
-            DesactivarDescripcion();
-            DesactivarDireccion();
-
-            msgError.Text = insEmpresa.Modificar(lblNombre.Text, lblCedula.Text, lblCorreo.Text, lblSitio.Text, 
-                                                 txtContrasena1.Text, txtContrasena2.Text, txtContrasena3.Text, 
-                                                 lblDescripcion.Text, lblDireccion.Text);
-            if (msgError.Text.Equals(""))
-            {
-                imgError.Visible = false;
-            }
-            else
-            {
-                imgError.Visible = true;
-            }
         }
     }
 }

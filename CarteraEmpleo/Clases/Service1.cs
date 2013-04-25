@@ -84,6 +84,10 @@ public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProt
     
     private System.Threading.SendOrPostCallback Delete_PublicacionOperationCompleted;
     
+    private System.Threading.SendOrPostCallback Select_PublicacionOperationCompleted;
+    
+    private System.Threading.SendOrPostCallback Select_UsuarioOperationCompleted;
+    
     private System.Threading.SendOrPostCallback QuerryOperationCompleted;
     
     /// <remarks/>
@@ -174,6 +178,12 @@ public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProt
     
     /// <remarks/>
     public event Delete_PublicacionCompletedEventHandler Delete_PublicacionCompleted;
+    
+    /// <remarks/>
+    public event Select_PublicacionCompletedEventHandler Select_PublicacionCompleted;
+    
+    /// <remarks/>
+    public event Select_UsuarioCompletedEventHandler Select_UsuarioCompleted;
     
     /// <remarks/>
     public event QuerryCompletedEventHandler QuerryCompleted;
@@ -1495,6 +1505,88 @@ public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProt
     }
     
     /// <remarks/>
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Select_Publicacion", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public System.Data.DataTable Select_Publicacion(string mail) {
+        object[] results = this.Invoke("Select_Publicacion", new object[] {
+                    mail});
+        return ((System.Data.DataTable)(results[0]));
+    }
+    
+    /// <remarks/>
+    public System.IAsyncResult BeginSelect_Publicacion(string mail, System.AsyncCallback callback, object asyncState) {
+        return this.BeginInvoke("Select_Publicacion", new object[] {
+                    mail}, callback, asyncState);
+    }
+    
+    /// <remarks/>
+    public System.Data.DataTable EndSelect_Publicacion(System.IAsyncResult asyncResult) {
+        object[] results = this.EndInvoke(asyncResult);
+        return ((System.Data.DataTable)(results[0]));
+    }
+    
+    /// <remarks/>
+    public void Select_PublicacionAsync(string mail) {
+        this.Select_PublicacionAsync(mail, null);
+    }
+    
+    /// <remarks/>
+    public void Select_PublicacionAsync(string mail, object userState) {
+        if ((this.Select_PublicacionOperationCompleted == null)) {
+            this.Select_PublicacionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSelect_PublicacionOperationCompleted);
+        }
+        this.InvokeAsync("Select_Publicacion", new object[] {
+                    mail}, this.Select_PublicacionOperationCompleted, userState);
+    }
+    
+    private void OnSelect_PublicacionOperationCompleted(object arg) {
+        if ((this.Select_PublicacionCompleted != null)) {
+            System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+            this.Select_PublicacionCompleted(this, new Select_PublicacionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+        }
+    }
+    
+    /// <remarks/>
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Select_Usuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public System.Data.DataTable Select_Usuario(string Correo) {
+        object[] results = this.Invoke("Select_Usuario", new object[] {
+                    Correo});
+        return ((System.Data.DataTable)(results[0]));
+    }
+    
+    /// <remarks/>
+    public System.IAsyncResult BeginSelect_Usuario(string Correo, System.AsyncCallback callback, object asyncState) {
+        return this.BeginInvoke("Select_Usuario", new object[] {
+                    Correo}, callback, asyncState);
+    }
+    
+    /// <remarks/>
+    public System.Data.DataTable EndSelect_Usuario(System.IAsyncResult asyncResult) {
+        object[] results = this.EndInvoke(asyncResult);
+        return ((System.Data.DataTable)(results[0]));
+    }
+    
+    /// <remarks/>
+    public void Select_UsuarioAsync(string Correo) {
+        this.Select_UsuarioAsync(Correo, null);
+    }
+    
+    /// <remarks/>
+    public void Select_UsuarioAsync(string Correo, object userState) {
+        if ((this.Select_UsuarioOperationCompleted == null)) {
+            this.Select_UsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSelect_UsuarioOperationCompleted);
+        }
+        this.InvokeAsync("Select_Usuario", new object[] {
+                    Correo}, this.Select_UsuarioOperationCompleted, userState);
+    }
+    
+    private void OnSelect_UsuarioOperationCompleted(object arg) {
+        if ((this.Select_UsuarioCompleted != null)) {
+            System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+            this.Select_UsuarioCompleted(this, new Select_UsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+        }
+    }
+    
+    /// <remarks/>
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Querry", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     public System.Data.DataTable Querry(string tabla) {
         object[] results = this.Invoke("Querry", new object[] {
@@ -2265,6 +2357,58 @@ public partial class Delete_PublicacionCompletedEventArgs : System.ComponentMode
         get {
             this.RaiseExceptionIfNecessary();
             return ((string)(this.results[0]));
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+public delegate void Select_PublicacionCompletedEventHandler(object sender, Select_PublicacionCompletedEventArgs e);
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+public partial class Select_PublicacionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    
+    private object[] results;
+    
+    internal Select_PublicacionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+            base(exception, cancelled, userState) {
+        this.results = results;
+    }
+    
+    /// <remarks/>
+    public System.Data.DataTable Result {
+        get {
+            this.RaiseExceptionIfNecessary();
+            return ((System.Data.DataTable)(this.results[0]));
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+public delegate void Select_UsuarioCompletedEventHandler(object sender, Select_UsuarioCompletedEventArgs e);
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+public partial class Select_UsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    
+    private object[] results;
+    
+    internal Select_UsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+            base(exception, cancelled, userState) {
+        this.results = results;
+    }
+    
+    /// <remarks/>
+    public System.Data.DataTable Result {
+        get {
+            this.RaiseExceptionIfNecessary();
+            return ((System.Data.DataTable)(this.results[0]));
         }
     }
 }

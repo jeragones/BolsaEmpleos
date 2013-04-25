@@ -44,8 +44,9 @@ namespace CarteraEmpleo
         {
             String usuario = "";
             usuario = insMetodos.IniciarSesion(txtCorreo.Text, txtContrasena.Text);
-            if (usuario.Equals(""))
+            if (!usuario.Equals(""))
             {
+                /* tiene que mostrar un mensaje de error indicando que el usuario es invalido*/
                 // mensaje error, no existe el usuario
                 txtCorreo.Text = "";
                 txtContrasena.Text = "";
@@ -53,7 +54,7 @@ namespace CarteraEmpleo
             else
             {
                 //insDefault.Login(usuario);*/
-                ScriptManager.RegisterStartupScript(btnIniciarSesion, GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
+                ScriptManager.RegisterStartupScript(btnIniciarSesion, GetType(), "UsuarioActual", "Sesion('" + USUARIO + "')", true);
                 //ScriptManager.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
             }
         }

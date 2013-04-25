@@ -12,56 +12,54 @@ namespace CarteraEmpleo.Clases
 
         public String IniciarSesion(String p_usuario, String p_contrasena)
         {
-            DataTable usuario = webservice.Select_Persona("leock123@gmail.com", "123456789");
-            string user = "";
-            int tipo = 0;
+            DataTable usuario = webservice.Select_Usuario(p_usuario); //webservice.EndSelect_Usuario(p_usuario);        //.Select_Persona("leock123@gmail.com", "123456789");
+            string error = "";
             if (usuario.Rows.Count != 0)
             {
                 foreach (DataRow row in usuario.Rows)
                 {
-                    user = row["TXT_NOMBRE"].ToString() + " " +
-                           row["TXT_APELLIDO1"].ToString() + " " +
-                           row["TXT_APELLIDO2"].ToString();
-                    cPersonaDatos.NOMBRE = user;
-                    cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
-                    cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
-                    char[] c = {','};
-                    cPersonaDatos.IDIOMA =  Fragmentar("Ingres,Mandarin,Frances", c);
-                    cPersonaDatos.TELEFONO = Fragmentar("8914-2348,8956-2347", c);
-                    //cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
-                    //cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
-                    //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
-                }
-                tipo = 3;
-            }
-            else
-            {
-                usuario = webservice.Select_Empresa(p_usuario, p_contrasena);
-                if (usuario.Rows.Count != 0)
-                {
-                    foreach (DataRow row in usuario.Rows)
+                    if (row["TXT_ESTADO"].ToString().Equals("true"))
                     {
-                        user = row["TXT_NOMBRE"].ToString();
-                    }
-                    tipo = 2;
-                }
-                else 
-                {
-                    //usuario = webservice.Select_Administrador(p_usuario, p_contrasena);
-                    /*if (usuario.Rows.Count != 0)if (usuario.Rows.Count != 0)
-                    {
-                        foreach (DataRow row in usuario.Rows)
+                        Site.USUARIO = row["ID_CORREO"].ToString();
+                        Site.CONTRASENA = row["TXT_CONTRASEÑA"].ToString();
+
+                        if (usuario.Columns.Contains("TXT_CED_JURIDICA"))
                         {
-                            user = "Administrador";
+                            cEmpresaDatos.CEDJURIDICA = row["TXT_CED_JURIDICA"].ToString();
+                            cEmpresaDatos.CORREO = Site.USUARIO;
+                            cEmpresaDatos.NOMBRE = row["TXT_NOMBRE"].ToString();
+                            cEmpresaDatos.PAGINA = row["TXT_PAG_WEB"].ToString();
+                            cEmpresaDatos.DESCRIPCION = row["TXT_DESC"].ToString();
+                            cEmpresaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
+                            cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                            Site.TIPO = 2;
                         }
-                        tipo = 1;
-                    }*/
+                        else if (usuario.Columns.Contains("TXT_APELLIDO1"))
+                        {
+                            cPersonaDatos.NOMBRE = row["TXT_NOMBRE"].ToString() + " " +
+                                                   row["TXT_APELLIDO1"].ToString() + " " +
+                                                   row["TXT_APELLIDO2"].ToString();
+                            cPersonaDatos.CORREO = Site.USUARIO;
+                            cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
+                            cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
+                            cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
+                            cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
+                            cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                            Site.TIPO = 3;
+                        }
+                        //else {
+                        //    Site.TIPO = 1;
+                        //}
+                    }
+                    else {
+                        error = "No sea ha compleatado el registro.";
+                    }
                 }
             }
-            Site.USUARIO = p_usuario;
-            Site.CONTRASENA = p_contrasena;
-            Site.TIPO = tipo;
-            return user;
+            else {
+                error = "Nombre de usuario o contraseña incorrecta.";
+            }
+            return error;
         }
 
         public String[] UsuarioLogin()
@@ -154,6 +152,7 @@ namespace CarteraEmpleo.Clases
                 return true;
             }
         }
+
         public String ValidarContrasena(String pass1, String pass2) {
             if (pass1.Length >= 9)
             {
@@ -162,6 +161,25 @@ namespace CarteraEmpleo.Clases
                     return ("Las contraseñas no coinciden.");
                 } else {
                     return ("");
+                }
+            }
+            else
+            {
+                return ("Contraseña inválida.");
+            }
+        }
+
+        public String ValidarContrasena(String pass1, String pass2, String pass3)
+        {
+            if (pass1.Length >= 9)
+            {
+                if (!pass1.Equals(Site.CONTRASENA))
+                {
+                    return ("Contraseña incorrecta");
+                }
+                else
+                {
+                    return ValidarContrasena(pass2, pass3);
                 }
             }
             else

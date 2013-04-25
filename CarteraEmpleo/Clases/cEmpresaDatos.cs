@@ -23,6 +23,9 @@ namespace CarteraEmpleo
         public static String NOMBRE;
         public static String CEDJURIDICA;
         public static String PAGINA;
+        public static String DESCRIPCION;
+        public static String[] TELEFONO;
+        public static String DIRECCION;
         // telefono
         public String insertar(String p_nombre, String p_cedula, String p_correo, 
                                String p_sitio)
@@ -48,7 +51,7 @@ namespace CarteraEmpleo
             
             try
             {
-                webservice.Insert_Empresa(p_correo, "", "", "", p_nombre, p_cedula, p_sitio);
+                webservice.Insert_Empresa(p_correo, "", "", "", p_nombre, p_cedula, p_sitio/*, "false"*/);
             }
             catch (Exception e) { 
                 return("Error en el registro.");
@@ -60,6 +63,7 @@ namespace CarteraEmpleo
                              String p_contrasena1, String p_contrasena2, String p_contrasena3,
                              String p_descripcion, String p_direccion)
         {
+            String result;
             String[] _sFracmentar;
             char[] _cSeparadorCedula = { '-' };
 
@@ -82,10 +86,20 @@ namespace CarteraEmpleo
                 return ("Correo inválido.");
             }
 
+            result = insMetodos.ValidarContrasena(p_contrasena1, p_contrasena2, p_contrasena3);
+            if(!result.Equals("")) 
+            {
+                return result;
+            } 
+            else 
+            {
+                Site.CONTRASENA = p_contrasena2;
+            }
+
             try
             {
                 webservice.Update_Empresa(Site.USUARIO, Site.CONTRASENA, p_descripcion, p_direccion, 
-                                          p_nombre, p_cedula, p_sitio);
+                                          p_nombre, p_cedula, p_sitio /*, "True"*/);
                 return("");
             } 
             catch(Exception e) {

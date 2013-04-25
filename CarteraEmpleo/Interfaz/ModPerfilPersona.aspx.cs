@@ -78,6 +78,31 @@ namespace CarteraEmpleo.Interfaz
             }
         }
 
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            DesactivarNombre();
+            DesactivarTelefono();
+            DesactivarIdioma();
+            DesactivarCondicion();
+            DesactivarContrasena();
+            DesactivarDireccion();
+            DesactivarExperiencia();
+
+            msgError.Text = insPersona.Modificar(txtNombre.Text, cmbCondicion.Text, txtContrasena1.Text,
+                                                 txtContrasena2.Text, txtContrasena3.Text, txtDireccion.Text,
+                                                 txtExperiencia.Text);
+            if (msgError.Text.Equals(""))
+            {
+                imgError.Visible = false;
+            }
+            else
+            {
+                imgError.Visible = true;
+            }
+
+            //ScriptManager.RegisterStartupScript(btnGuardar, GetType(), "Idioma", "Idiomas('" + tmp + "')", true);
+        }
+
         protected void hplCedula_Click(object sender, EventArgs e)
         { }
 
@@ -249,31 +274,6 @@ namespace CarteraEmpleo.Interfaz
             //DesactivarContrasena();
             //DesactivarDireccion();
             Response.Redirect("~/Interfaz/Default.aspx");
-        }
-
-        protected void btnGuardar_Click(object sender, EventArgs e)
-        {
-            DesactivarNombre();
-            DesactivarTelefono();
-            DesactivarIdioma();
-            DesactivarCondicion();
-            DesactivarContrasena();
-            DesactivarDireccion();
-            DesactivarExperiencia();
-
-            msgError.Text = insPersona.Modificar(txtContrasena1.Text, txtNombre.Text, cmbCondicion.Text,
-                                                 txtContrasena3.Text, txtContrasena2.Text, txtDireccion.Text,
-                                                 txtExperiencia.Text);
-            if (msgError.Text.Equals(""))
-            {
-                imgError.Visible = false;
-            }
-            else 
-            {
-                imgError.Visible = true;
-            }
-            
-            //ScriptManager.RegisterStartupScript(btnGuardar, GetType(), "Idioma", "Idiomas('" + tmp + "')", true);
         }
 
         protected void AgregarTelefono_Click(object sender, EventArgs e)

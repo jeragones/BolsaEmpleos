@@ -22,6 +22,7 @@ namespace CarteraEmpleo
         cGeneralMetodos insMetodos = new cGeneralMetodos();
         Service1 webservice = new Service1();
 
+        public static String CORREO;
         public static String NOMBRE;
         public static String[] TELEFONO;
         public static String[] IDIOMA;
@@ -80,7 +81,7 @@ namespace CarteraEmpleo
             {
                 webservice.Insert_Persona(p_correo, p_contrasena, " ", p_direccion,
                                             _sNombre[0], _sNombre[1], _sNombre[2],
-                                            _cCondicion, " ");
+                                            _cCondicion, " "/*, "false"*/);
                 return ("");
             }
             catch (Exception e)
@@ -89,24 +90,24 @@ namespace CarteraEmpleo
             }
         }
 
-        public String Modificar(String p_contrasenaV, String p_nombre, 
-                                String p_condicion, String p_confContrasenaN,
-                                String p_contrasenaN, String p_direccion, String p_conocimientos)
+        public String Modificar(String p_nombre,
+                                String p_condicion, String p_contrasena1, String p_contrasena2,
+                                String p_contrasena3, String p_direccion, String p_conocimientos)
         {
             if (p_nombre.Equals(""))
             {
                 return ("Existen campos vacíos que son requeridos.");
             }
 
-            String validContrasena = insMetodos.ValidarContrasena(p_contrasenaN, p_confContrasenaN);
-            if (!p_contrasenaV.Equals("") | !p_contrasenaN.Equals("") | !p_confContrasenaN.Equals("")) {
-                if (!validContrasena.Equals("") | !p_contrasenaV.Equals(Site.CONTRASENA))
+            String validContrasena = insMetodos.ValidarContrasena(p_contrasena2, p_contrasena3);
+            if (!p_contrasena1.Equals("") | !p_contrasena2.Equals("") | !p_contrasena3.Equals("")) {
+                if (!validContrasena.Equals("") | !p_contrasena1.Equals(Site.CONTRASENA))
                 {
                     return (validContrasena);
                 }
                 else
                 {
-                    Site.CONTRASENA = p_contrasenaN;
+                    Site.CONTRASENA = p_contrasena2;
                 }
             }
             
