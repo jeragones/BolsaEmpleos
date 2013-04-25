@@ -15,10 +15,10 @@ using CarteraEmpleo.Clases;
 
          protected void Page_Load(object sender, EventArgs e)
          {
-             ClientScriptManager cs = Page.ClientScript;
+            ClientScriptManager cs = Page.ClientScript;
             String[] usuario = insMetodos.UsuarioLogin();
-   
-                ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','0')", true);
+            
+                //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','0')", true);
             
         }
 

@@ -62,7 +62,9 @@ namespace CarteraEmpleo
         {
             String[] _sFracmentar;
             char[] _cSeparadorCedula = { '-' };
+
             _sFracmentar = insMetodos.Fragmentar(p_cedula, _cSeparadorCedula);
+
             if (p_nombre.Equals("") | p_correo.Equals("") | _sFracmentar[0].Equals("") |
                 _sFracmentar[1].Equals("") | _sFracmentar[2].Equals(""))
             {

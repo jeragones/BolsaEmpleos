@@ -35,8 +35,8 @@ namespace CarteraEmpleo.Interfaz
             String idioma = "";
             String telefono = "";
 
-            String usuario = "jeragones@gmail.com";// Request.QueryString["U"];
-            String contrasena = "123456789"; //Request.QueryString["P"];
+            String usuario = Request.QueryString["U"];
+            String contrasena = Request.QueryString["P"];
             insMetodos.IniciarSesion(usuario, contrasena);
             lblNombre.Text = cPersonaDatos.NOMBRE;
             lblDireccion.Text = cPersonaDatos.DIRECCION;

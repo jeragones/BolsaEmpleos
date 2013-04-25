@@ -37,6 +37,7 @@ using CarteraEmpleo.Clases;
                 Boolean respuesta = insCorreo.Correo(txtCorreo.Text, "Administrador", "correo del administrador", 
                                                      asunto, mensaje, "Contrasena", "archivo");
                 Limpiar();
+                Response.Redirect("~/Interfaz/Default.aspx");
             }
             else 
             {
@@ -56,6 +57,8 @@ using CarteraEmpleo.Clases;
             txtNombre.Text = "";
             txtCorreo.Text = "";
             txtTelefono.Text = "";
+            txtContrasena.Text = "";
+            txtConfirmarContrasena.Text = "";
             cmbCondicion.SelectedIndex = 0;
             txtDireccion.Text = "";
             msgError.Text = "";

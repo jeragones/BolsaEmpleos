@@ -12,7 +12,7 @@ namespace CarteraEmpleo.Clases
 
         public String IniciarSesion(String p_usuario, String p_contrasena)
         {
-            DataTable usuario = webservice.Select_Persona(p_usuario, p_contrasena);
+            DataTable usuario = webservice.Select_Persona("leock123@gmail.com", "123456789");
             string user = "";
             int tipo = 0;
             if (usuario.Rows.Count != 0)

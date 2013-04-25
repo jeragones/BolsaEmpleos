@@ -28,7 +28,6 @@ namespace CarteraEmpleo
         public static char CONDICION;
         public static String DIRECCION;
         public static String EXPERIENCIA;
-        public static String CONTRASENA;
 
         public String Insertar(String p_nombre, String p_correo,
                                String p_condicion, String p_contrasena, String p_confContrasena,
@@ -94,15 +93,21 @@ namespace CarteraEmpleo
                                 String p_condicion, String p_confContrasenaN,
                                 String p_contrasenaN, String p_direccion, String p_conocimientos)
         {
-            if (p_nombre.Equals("") | p_contrasenaV.Equals("") | p_confContrasenaN.Equals("") | p_contrasenaN.Equals(""))
+            if (p_nombre.Equals(""))
             {
                 return ("Existen campos vacíos que son requeridos.");
             }
 
             String validContrasena = insMetodos.ValidarContrasena(p_contrasenaN, p_confContrasenaN);
-            if (!validContrasena.Equals("") | !p_contrasenaV.Equals(CONTRASENA))
-            {
-                return (validContrasena);
+            if (!p_contrasenaV.Equals("") | !p_contrasenaN.Equals("") | !p_confContrasenaN.Equals("")) {
+                if (!validContrasena.Equals("") | !p_contrasenaV.Equals(Site.CONTRASENA))
+                {
+                    return (validContrasena);
+                }
+                else
+                {
+                    Site.CONTRASENA = p_contrasenaN;
+                }
             }
             
             char _cCondicion = ' ';
@@ -133,7 +138,7 @@ namespace CarteraEmpleo
             }
             try
             {
-                webservice.Update_Persona(Site.USUARIO, p_contrasenaN, " ", p_direccion,
+                webservice.Update_Persona(Site.USUARIO, Site.CONTRASENA, " ", p_direccion,
                                             _sNombre[0], _sNombre[1], _sNombre[2],
                                             _cCondicion, p_conocimientos);
                 return ("");

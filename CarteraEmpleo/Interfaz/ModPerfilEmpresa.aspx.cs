@@ -16,9 +16,63 @@ namespace CarteraEmpleo.Interfaz
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cEmpresaDatos.NOMBRE + "','2')", true);
+            //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cEmpresaDatos.NOMBRE + "','2')", true);
+            CargarDatos();
         }
+
+        protected void CargarDatos()
+        {
+            /*String script1 = "InicioSesion";
+            String script2 = "ImpIdiomas";
+            String script3 = "ImpTelefonos";
+            Type sTipo = this.GetType();
+            ClientScriptManager cs = Page.ClientScript;
+
+            String idioma = "";
+            String telefono = "";
+
+            String usuario = Request.QueryString["U"];
+            String contrasena = Request.QueryString["P"];
+            insMetodos.IniciarSesion(usuario, contrasena);
+            lblNombre.Text = cEmpleosDatos.NOMBRE;
+            lblDireccion.Text = cPersonaDatos.DIRECCION;
+
+            if (cPersonaDatos.CONDICION == 'D')
+            {
+                lblCondicion.Text = "Desempleado";
+            }
+            else
+            {
+                lblCondicion.Text = "Empleado";
+            }
+            /*if (cPersonaDatos.IDIOMA != null) 
+            {
+                for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
+                {
+                    idioma += cPersonaDatos.IDIOMA[i] + ",";
+                }
+                if (!cs.IsStartupScriptRegistered(sTipo, script2))
+                {
+                    cs.RegisterStartupScript(sTipo, script2, "Idiomas('" + idioma + "')", true);
+                }
+            }
+            if (cPersonaDatos.TELEFONO != null)
+            {
+                for (int i = 0; i < cPersonaDatos.TELEFONO.Length; i++)
+                {
+                    telefono += cPersonaDatos.TELEFONO[i] + ",";
+                }
+                if (!cs.IsStartupScriptRegistered(sTipo, script3))
+                {
+                    cs.RegisterStartupScript(sTipo, script3, "Telefonos('" + idioma + "')", true);
+                }
+            }*/
+            /*if (!cs.IsStartupScriptRegistered(sTipo, script1))
+            {
+                cs.RegisterStartupScript(sTipo, script1, "Sesion('" + cPersonaDatos.NOMBRE + "', '3')", true);
+            }*/
+        }
+
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             DesactivarNombre();
