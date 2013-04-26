@@ -10,7 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
-        <asp:Button ID="btnAceptar" CssClass="btn" runat="server" Text="Button" OnClick="btnAceptar_Click" />
+        <asp:Button ID="btnAceptar" CssClass="btn" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
+        <asp:Button ID="btnRechazar" CssClass="btn" runat="server" Text="Rechazar" Visible="false" OnClick="btnAceptar_Click" />
     </form>
 </body>
 </html>

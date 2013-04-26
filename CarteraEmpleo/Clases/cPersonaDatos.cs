@@ -148,6 +148,31 @@ namespace CarteraEmpleo
             }
         }
 
+        public void AprobarPersona(String p_usuario)
+        {
+            String[] _sNombre = new String[3];
+            char[] _cSeparadorNombre = { ' ' };
+            String[] _sFracmentar = insMetodos.Fragmentar(NOMBRE, _cSeparadorNombre);
+            if (_sFracmentar.Length <= 3)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    if (i < _sFracmentar.Length)
+                    {
+                        _sNombre[i] = _sFracmentar[i];
+                    }
+                    else
+                    {
+                        _sNombre[i] = " ";
+                    }
+                }
+            }
+            insMetodos.UsuarioActual(p_usuario);
+            //webservice.Update_Persona(Site.USUARIO, Site.CONTRASENA, " ", DIRECCION,
+            //                                _sNombre[0], _sNombre[1], _sNombre[2],
+            //                                CONDICION, EXPERIENCIA, 'A');
+        }
+
         public void eliminar()
         {
         }

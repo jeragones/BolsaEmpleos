@@ -109,6 +109,13 @@ namespace CarteraEmpleo
             }
         }
 
+        public void AprobarEmpresa(String p_usuario) 
+        {
+            insMetodos.UsuarioActual(p_usuario);
+            //webservice.Update_Empresa(Site.USUARIO, Site.CONTRASENA, DESCRIPCION, DIRECCION,
+            //                          NOMBRE, CEDJURIDICA, PAGINA, 'A');
+        }
+
         public void eliminar()
         {
         }

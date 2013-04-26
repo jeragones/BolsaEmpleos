@@ -8,7 +8,7 @@
         <asp:Button ID="btnCorreo" runat="server" Class="btmodificarEmprPers" Text="Enviar Correo" />
         <br/>
         <div class="titulosDatosBasicos">Nombre:</div>
-        <asp:Label runat="server" ID="lbl_NombreEmpresa" Text="Nombre de la empresa"/>
+        <asp:Label runat="server" ID="lblNombre" Text="Nombre de la empresa"/>
         <br/><br/>   
         <table class="datosBasicosPersona">
             <tr>
@@ -16,23 +16,23 @@
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label4" runat="server" Text="Cedúla Jurídica:"/>
+                    <asp:Label runat="server" Text="Cedúla Jurídica:"/>
                 </td>
                 <td class="tdleft">
-                    <asp:Label ID="Label1" runat="server" Text="Cedúla Jurídica"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">
-                    <asp:Label ID="Label5" runat="server" Text="Correo Electronico"/>
-                </td>
-                <td class="tdleft">
-                    <asp:Label ID="Label6" runat="server" Text="ContactoEmpresa@mail.com"/>
+                    <asp:Label ID="lblCedula" runat="server" Text="Cedúla Jurídica"/>
                 </td>
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label2" runat="server" Text="Teléfonos:"/>
+                    <asp:Label runat="server" Text="Correo Electronico:"/>
+                </td>
+                <td class="tdleft">
+                    <asp:Label ID="lblCorreo" runat="server" Text="ContactoEmpresa@mail.com"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">
+                    <asp:Label runat="server" Text="Teléfonos:"/>
                 </td>
                 <td class="tdleft">
                     <div class="titulosDatosBasicos">
@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label7" runat="server" Text="Fax:"/>
+                    <asp:Label runat="server" Text="Fax:"/>
                 </td>
                 <td class="tdleft">
                     <div class="titulosDatosBasicos">
@@ -52,26 +52,26 @@
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label13" runat="server" Text="Dirección:"/>
+                    <asp:Label runat="server" Text="Dirección:"/>
                 </td>
                 <td class="tdleft">
-                    <asp:Label ID="Label14" runat="server" Text="Dirección de la empresa"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdleft">
-                    <asp:Label ID="Label9" runat="server" Text="Pagina Web"/>
-                </td>
-                <td class="tdleft">
-                    <asp:Label ID="Label10" runat="server" Text="Empresa.com"/>
+                    <asp:Label ID="lblDireccion" runat="server" Text="Dirección de la empresa"/>
                 </td>
             </tr>
             <tr>
                 <td class="tdleft">
-                    <asp:Label ID="Label17" runat="server" Text="Descripción:"/>
+                    <asp:Label runat="server" Text="Pagina Web"/>
                 </td>
                 <td class="tdleft">
-                    <asp:Label ID="Label18" runat="server" Text="Descripción de la empresa"/>
+                    <asp:Label ID="lblPagina" runat="server" Text="Empresa.com"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdleft">
+                    <asp:Label runat="server" Text="Descripción:"/>
+                </td>
+                <td class="tdleft">
+                    <asp:Label ID="lblDescripcion" runat="server" Text="Descripción de la empresa"/>
                 </td>
             </tr>
         </table>

@@ -17,9 +17,18 @@ using CarteraEmpleo;
 
          protected void Page_Load(object sender, EventArgs e)
          {
-             ClientScriptManager cs = Page.ClientScript;
-             String[] usuario = insMetodos.UsuarioLogin();
-             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
+             //ClientScriptManager cs = Page.ClientScript;
+             //String[] usuario = insMetodos.UsuarioLogin();
+             //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
+
+             insMetodos.UsuarioActual("empresa@gmail.com");
+             lblNombre.Text = cEmpresaDatos.NOMBRE;
+             lblDireccion.Text = cEmpresaDatos.DIRECCION;
+             lblCedula.Text = cEmpresaDatos.CEDJURIDICA;
+             lblCorreo.Text = cEmpresaDatos.CORREO;
+             lblPagina.Text = cEmpresaDatos.PAGINA;
+             lblDescripcion.Text = cEmpresaDatos.DESCRIPCION;
+             
              try {
                  cargarGV1();
              }

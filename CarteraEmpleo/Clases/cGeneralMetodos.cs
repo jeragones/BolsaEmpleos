@@ -9,10 +9,11 @@ namespace CarteraEmpleo.Clases
     public class cGeneralMetodos
     {
         Service1 webservice = new Service1();
+        cPersonaDatos insPersona = new cPersonaDatos();
 
         public String IniciarSesion(String p_usuario, String p_contrasena)
         {
-            DataTable usuario = webservice.Select_Usuario(p_usuario); //webservice.EndSelect_Usuario(p_usuario);        //.Select_Persona("leock123@gmail.com", "123456789");
+            DataTable usuario = webservice.Select_Usuario(p_usuario);
             string error = "";
             if (usuario.Columns.Count > 2)
             {
@@ -23,50 +24,62 @@ namespace CarteraEmpleo.Clases
                     {
                         if (p_contrasena.Equals(row["TXT_CONTRASEÑA"].ToString()))
                         {
-                            Site.USUARIO = row["ID_CORREO"].ToString();
-                            Site.CONTRASENA = row["TXT_CONTRASEÑA"].ToString();
-
-                            if (usuario.Columns.Contains("TXT_CED_JURIDICA"))
-                            {
-                                cEmpresaDatos.CEDJURIDICA = row["TXT_CED_JURIDICA"].ToString();
-                                cEmpresaDatos.CORREO = Site.USUARIO;
-                                cEmpresaDatos.NOMBRE = row["TXT_NOMBRE"].ToString();
-                                cEmpresaDatos.PAGINA = row["TXT_PAG_WEB"].ToString();
-                                cEmpresaDatos.DESCRIPCION = row["TXT_DESC"].ToString();
-                                cEmpresaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
-                                //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
-                                Site.TIPO = 2;
-                            }
-                            else if (usuario.Columns.Contains("TXT_APELLIDO1"))
-                            {
-                                cPersonaDatos.NOMBRE = row["TXT_NOMBRE"].ToString() + " " +
-                                                       row["TXT_APELLIDO1"].ToString() + " " +
-                                                       row["TXT_APELLIDO2"].ToString();
-                                cPersonaDatos.CORREO = Site.USUARIO;
-                                cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
-                                cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
-                                cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
-                                cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
-                                //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
-                                Site.TIPO = 3;
-                            }
-                            //else {
-                            //    Site.TIPO = 1;
-                            //}
+                            UsuarioActual(p_usuario);
                         }
-                        else {
+                        else 
+                        {
                             error = "Contraseña incorrecta.";
                         }
                     }
-                    else {
+                    else 
+                    {
                         error = "No sea ha compleatado el registro.";
                     }
                 }
             }
-            else {
+            else 
+            {
                 error = "El nombre de usuario no existe.";
             }
             return error;
+        }
+
+        public void UsuarioActual(String p_usuario) 
+        {
+            DataTable usuario = webservice.Select_Usuario(p_usuario);
+            foreach (DataRow row in usuario.Rows) 
+            {
+                Site.USUARIO = row["ID_CORREO"].ToString();
+                Site.CONTRASENA = row["TXT_CONTRASEÑA"].ToString();
+
+                if (usuario.Columns.Contains("TXT_CED_JURIDICA"))
+                {
+                    cEmpresaDatos.CEDJURIDICA = row["TXT_CED_JURIDICA"].ToString();
+                    cEmpresaDatos.CORREO = Site.USUARIO;
+                    cEmpresaDatos.NOMBRE = row["TXT_NOMBRE"].ToString();
+                    cEmpresaDatos.PAGINA = row["TXT_PAG_WEB"].ToString();
+                    cEmpresaDatos.DESCRIPCION = row["TXT_DESC"].ToString();
+                    cEmpresaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
+                    //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                    Site.TIPO = 2;
+                }
+                else if (usuario.Columns.Contains("TXT_APELLIDO1"))
+                {
+                    cPersonaDatos.NOMBRE = row["TXT_NOMBRE"].ToString() + " " +
+                                           row["TXT_APELLIDO1"].ToString() + " " +
+                                           row["TXT_APELLIDO2"].ToString();
+                    cPersonaDatos.CORREO = Site.USUARIO;
+                    cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
+                    cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
+                    cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
+                    cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
+                    //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                    Site.TIPO = 3;
+                }
+                //else {
+                //    Site.TIPO = 1;
+                //}
+            }
         }
 
         public String[] UsuarioLogin()
@@ -208,6 +221,18 @@ namespace CarteraEmpleo.Clases
         }
 
         public String Registrar(String usuario, int accion) {
+            switch(accion) {
+                case 1:
+                    return ("Por favor confirmar el registro de usuario con el mensaje que se envió a su correo.");
+                case 2:
+                    insPersona.AprobarPersona(usuario);
+                    // modificar la persona (usuario) activando el TXT_ESTADO
+                    return ("Gracias por registrarse en nuestro sitio, presione aceptar para finalizar.");
+                case 3:
+                    return ("¿Desea aprobar el registro de la empresa?");
+                case 4:
+                    return ("Gracias por registrarse en nuestro sitio. El administrador le avisará cuando su cuenta este lista.");
+            }
             return "";
         }
 
