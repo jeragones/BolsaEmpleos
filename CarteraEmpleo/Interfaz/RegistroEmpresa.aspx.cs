@@ -12,6 +12,7 @@ using CarteraEmpleo.Clases;
      {
          cGeneralMetodos insMetodos = new cGeneralMetodos();
          cEmpresaDatos insEmpresa = new cEmpresaDatos();
+         cCorreoComunicacion insCorreo = new cCorreoComunicacion();
 
          protected void Page_Load(object sender, EventArgs e)
          {
@@ -29,9 +30,14 @@ using CarteraEmpleo.Clases;
             msgError.Text = insEmpresa.insertar(txtNombre.Text, txtContrasena.Text, txtContrasena.Text, _sCedula, txtCorreo.Text, txtWeb.Text);
             if (msgError.Text.Equals(""))
             {
-                //persona.EnviarCorreo();
-                Response.Redirect("~/Interfaz/Default.aspx");
+                String asunto = "Solicitud de registro en Cartera de Empleo Turísmo";
+                String mensaje = "Cartera de Empleos de Turísmo " +
+                                 "<br />" + "La empresa "+ txtNombre.Text +" desea registrarse en el sitio web, a continuación aparece el enlace al perfil de la empresa: " +
+                                 "<br />" + "http://localhost:49367/Interfaz/PerfilEmpresa.aspx?U=" + txtCorreo.Text + ",T=3";
+                Boolean respuesta = insCorreo.Correo("turismo.empleos@gmail.com", "Cartera de Empleo de Turísmo", txtCorreo.Text,
+                                                     asunto, mensaje, txtContrasena.Text, "archivo");
                 Limpiar();
+                Response.Redirect("~/Interfaz/CompletarRegistro.aspx?T=4");
             }
             else
             {

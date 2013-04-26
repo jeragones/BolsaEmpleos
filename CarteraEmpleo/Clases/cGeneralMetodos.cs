@@ -161,7 +161,7 @@ namespace CarteraEmpleo.Clases
         }
 
         public Boolean ValidarContrasena(String pass1, String pass2) {
-            if (pass1.Length >= 9)
+            if (pass1.Length >= 8)
             {
                 if (!pass1.Equals(pass2))
                 {
@@ -182,18 +182,14 @@ namespace CarteraEmpleo.Clases
             {
                 return true;
             }
-            else if (pass2.Length >= 8)
-            {
-                return ValidarContrasena(pass2, pass3);
-            }
-            return true;
+            return ValidarContrasena(pass2, pass3);    
         }
 
         public Boolean ValidarCorreo(String correo) {
             String[] _sFracmentar;
             char[] _cSepCorreo1 = { ' ',',','!','#','$','%','^','&','*','(',
                                             ')','+','/',';',':','"','/' };
-            char[] _cSepCorreo2 = { '@', '.' };
+            char[] _cSepCorreo2 = { '@', '.' }; // arreglar lo del punto del correo
             _sFracmentar = Fragmentar(correo, _cSepCorreo1);
             if (_sFracmentar.Length > 1)
             {
@@ -209,6 +205,10 @@ namespace CarteraEmpleo.Clases
                 return (true);
             }
             return (false);
+        }
+
+        public String Registrar(String usuario, int accion) {
+            return "";
         }
 
         public String[] Fragmentar(String p_cadena, char[] p_separador)

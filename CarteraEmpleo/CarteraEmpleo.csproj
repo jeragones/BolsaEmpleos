@@ -120,6 +120,7 @@
     <Content Include="Interfaz\RegistroEmpresa.aspx" />
     <Content Include="Interfaz\RegistroPersona.aspx" />
     <Content Include="CSS\Site.css" />
+    <Content Include="Interfaz\CompletarRegistro.aspx" />
     <Content Include="Scripts\jQueryAdministrador.js" />
     <Content Include="Scripts\jQueryDefault.js" />
     <Content Include="Scripts\jQueryEmpresa.js" />
@@ -185,6 +186,13 @@
     </Compile>
     <Compile Include="Interfaz\RegistroPersona.aspx.designer.cs">
       <DependentUpon>RegistroPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\CompletarRegistro.aspx.cs">
+      <DependentUpon>CompletarRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CompletarRegistro.aspx.designer.cs">
+      <DependentUpon>CompletarRegistro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.master.cs">
       <DependentUpon>Site.master</DependentUpon>

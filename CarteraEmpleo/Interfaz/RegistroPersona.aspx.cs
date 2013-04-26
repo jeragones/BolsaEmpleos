@@ -31,13 +31,12 @@ using CarteraEmpleo.Clases;
             {
                 String asunto = "Registro de Cartera de Empleo";
                 String mensaje = "Buenos días "+ txtNombre.Text +
-                                 '\n' + '\n' + "Gracias por su registro de usuario en la Cartera de Empleos de Turísmo, para completar su registro ingrese al enlace que aparece a continuación: " + 
-                                 '\n' + '\n' + "http://localhost:49367/Interfaz/ModPerfilPersona.aspx?U=" + 
-                                 txtCorreo.Text + "&P=" + txtContrasena.Text; 
+                                 "<br />" + "Gracias por su registro de usuario en la Cartera de Empleos de Turísmo, para completar su registro ingrese al enlace que aparece a continuación: " +
+                                 "<br />" + "http://localhost:49367/Interfaz/CompletarRegistro.aspx?U=" + txtCorreo.Text + ",T=1"; 
                 Boolean respuesta = insCorreo.Correo(txtCorreo.Text, "Administrador", "correo del administrador", 
                                                      asunto, mensaje, "Contrasena", "archivo");
                 Limpiar();
-                Response.Redirect("~/Interfaz/Default.aspx");
+                Response.Redirect("~/Interfaz/CompletarRegistro.aspx?T=2");
             }
             else 
             {
