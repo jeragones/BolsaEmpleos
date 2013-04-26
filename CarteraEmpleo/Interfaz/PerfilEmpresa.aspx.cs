@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using CarteraEmpleo.Clases;
+using System.Windows.Forms;
+using CarteraEmpleo;
  
  namespace CarteraEmpleo.Interfaz
  {
@@ -28,7 +30,8 @@ using CarteraEmpleo.Clases;
 
         protected void cargarGV1() {
             Service1 webservice = new Service1();
-            DataTable dbResultado = webservice.Querry("Select * from CEPUBLICACIONES");
+            DataTable dbResultado = webservice.Select_Publicacion("empresa@gmail.com");
+            //DataTable dbResultado = webservice.Querry("Select * from CEPUBLICACIONES");
             GridView1.DataSource = dbResultado;
             GridView1.DataBind();
         }
