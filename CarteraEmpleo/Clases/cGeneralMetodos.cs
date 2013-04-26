@@ -14,42 +14,49 @@ namespace CarteraEmpleo.Clases
         {
             DataTable usuario = webservice.Select_Usuario(p_usuario); //webservice.EndSelect_Usuario(p_usuario);        //.Select_Persona("leock123@gmail.com", "123456789");
             string error = "";
-            if (usuario.Rows.Count != 0)
+            if (usuario.Columns.Count > 2)
             {
                 foreach (DataRow row in usuario.Rows)
                 {
-                    if (row["TXT_ESTADO"].ToString().Equals("true"))
+                    // if (row["TXT_ESTADO"].ToString().Equals("A"))
+                    if (row["TXT_ESTADO"].ToString().Equals(""))
                     {
-                        Site.USUARIO = row["ID_CORREO"].ToString();
-                        Site.CONTRASENA = row["TXT_CONTRASEÑA"].ToString();
+                        if (p_contrasena.Equals(row["TXT_CONTRASEÑA"].ToString()))
+                        {
+                            Site.USUARIO = row["ID_CORREO"].ToString();
+                            Site.CONTRASENA = row["TXT_CONTRASEÑA"].ToString();
 
-                        if (usuario.Columns.Contains("TXT_CED_JURIDICA"))
-                        {
-                            cEmpresaDatos.CEDJURIDICA = row["TXT_CED_JURIDICA"].ToString();
-                            cEmpresaDatos.CORREO = Site.USUARIO;
-                            cEmpresaDatos.NOMBRE = row["TXT_NOMBRE"].ToString();
-                            cEmpresaDatos.PAGINA = row["TXT_PAG_WEB"].ToString();
-                            cEmpresaDatos.DESCRIPCION = row["TXT_DESC"].ToString();
-                            cEmpresaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
-                            cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
-                            Site.TIPO = 2;
+                            if (usuario.Columns.Contains("TXT_CED_JURIDICA"))
+                            {
+                                cEmpresaDatos.CEDJURIDICA = row["TXT_CED_JURIDICA"].ToString();
+                                cEmpresaDatos.CORREO = Site.USUARIO;
+                                cEmpresaDatos.NOMBRE = row["TXT_NOMBRE"].ToString();
+                                cEmpresaDatos.PAGINA = row["TXT_PAG_WEB"].ToString();
+                                cEmpresaDatos.DESCRIPCION = row["TXT_DESC"].ToString();
+                                cEmpresaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
+                                //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                                Site.TIPO = 2;
+                            }
+                            else if (usuario.Columns.Contains("TXT_APELLIDO1"))
+                            {
+                                cPersonaDatos.NOMBRE = row["TXT_NOMBRE"].ToString() + " " +
+                                                       row["TXT_APELLIDO1"].ToString() + " " +
+                                                       row["TXT_APELLIDO2"].ToString();
+                                cPersonaDatos.CORREO = Site.USUARIO;
+                                cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
+                                cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
+                                cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
+                                cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
+                                //cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
+                                Site.TIPO = 3;
+                            }
+                            //else {
+                            //    Site.TIPO = 1;
+                            //}
                         }
-                        else if (usuario.Columns.Contains("TXT_APELLIDO1"))
-                        {
-                            cPersonaDatos.NOMBRE = row["TXT_NOMBRE"].ToString() + " " +
-                                                   row["TXT_APELLIDO1"].ToString() + " " +
-                                                   row["TXT_APELLIDO2"].ToString();
-                            cPersonaDatos.CORREO = Site.USUARIO;
-                            cPersonaDatos.CONDICION = char.Parse(row["TXT_COND_LABORAL"].ToString());
-                            cPersonaDatos.EXPERIENCIA = row["TXT_CONOCIMIENTOS"].ToString();
-                            cPersonaDatos.DIRECCION = row["DIR_DIRECCION"].ToString();
-                            cPersonaDatos.IDIOMA = ConsultaIdiomas(p_usuario);
-                            cPersonaDatos.TELEFONO = ConsultaTelefonos(p_usuario);
-                            Site.TIPO = 3;
+                        else {
+                            error = "Contraseña incorrecta.";
                         }
-                        //else {
-                        //    Site.TIPO = 1;
-                        //}
                     }
                     else {
                         error = "No sea ha compleatado el registro.";
@@ -57,7 +64,7 @@ namespace CarteraEmpleo.Clases
                 }
             }
             else {
-                error = "Nombre de usuario o contraseña incorrecta.";
+                error = "El nombre de usuario no existe.";
             }
             return error;
         }

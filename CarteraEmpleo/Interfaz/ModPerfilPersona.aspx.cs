@@ -26,21 +26,24 @@ namespace CarteraEmpleo.Interfaz
 
         protected void CargarDatos() 
         {
-            String script1 = "InicioSesion";
-            String script2 = "ImpIdiomas";
-            String script3 = "ImpTelefonos";
-            Type sTipo = this.GetType();
-            ClientScriptManager cs = Page.ClientScript;
+            //String script1 = "InicioSesion";
+            //String script2 = "ImpIdiomas";
+            //String script3 = "ImpTelefonos";
+            //Type sTipo = this.GetType();
+            //ClientScriptManager cs = Page.ClientScript;
             
             String idioma = "";
             String telefono = "";
 
-            String usuario = Request.QueryString["U"];
-            String contrasena = Request.QueryString["P"];
-            insMetodos.IniciarSesion(usuario, contrasena);
+            //String usuario = Request.QueryString["U"];
+            //String contrasena = Request.QueryString["P"];
+            //insMetodos.IniciarSesion(usuario, contrasena);
             lblNombre.Text = cPersonaDatos.NOMBRE;
+            txtNombre.Text = lblNombre.Text;
             lblDireccion.Text = cPersonaDatos.DIRECCION;
+            txtDireccion.Text = lblDireccion.Text;
             lblExperiencia.Text = cPersonaDatos.EXPERIENCIA;
+            txtExperiencia.Text = lblExperiencia.Text;
             
             if (cPersonaDatos.CONDICION == 'D')
             {
@@ -50,6 +53,7 @@ namespace CarteraEmpleo.Interfaz
             {
                 lblCondicion.Text = "Empleado";
             }
+            cmbCondicion.Text = lblCondicion.Text;
             /*if (cPersonaDatos.IDIOMA != null) 
             {
                 for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
@@ -72,10 +76,10 @@ namespace CarteraEmpleo.Interfaz
                     cs.RegisterStartupScript(sTipo, script3, "Telefonos('" + idioma + "')", true);
                 }
             }*/
-            if (!cs.IsStartupScriptRegistered(sTipo, script1))
-            {
-                cs.RegisterStartupScript(sTipo, script1, "Sesion('" + cPersonaDatos.NOMBRE + "', '3')", true);
-            }
+            //if (!cs.IsStartupScriptRegistered(sTipo, script1))
+            //{
+            //    cs.RegisterStartupScript(sTipo, script1, "Sesion('" + cPersonaDatos.NOMBRE + "', '3')", true);
+            //}
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -88,7 +92,7 @@ namespace CarteraEmpleo.Interfaz
             DesactivarDireccion();
             DesactivarExperiencia();
 
-            msgError.Text = insPersona.Modificar(txtNombre.Text, cmbCondicion.Text, txtContrasena1.Text,
+            msgError.Text = insPersona.Modificar(lblNombre.Text, cmbCondicion.Text, txtContrasena1.Text,
                                                  txtContrasena2.Text, txtContrasena3.Text, txtDireccion.Text,
                                                  txtExperiencia.Text);
             if (msgError.Text.Equals(""))
@@ -253,7 +257,7 @@ namespace CarteraEmpleo.Interfaz
         {
             lblDireccion.Visible = true;
             txtDireccion.Visible = false;
-            lblDireccion.Text = txtDireccion.Text;
+            lblDireccion.Text = "Sucre"; //txtDireccion.Text;
             hplDireccion.Visible = true;
         }
 

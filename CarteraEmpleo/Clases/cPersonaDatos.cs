@@ -98,16 +98,19 @@ namespace CarteraEmpleo
             {
                 return ("Existen campos vacíos que son requeridos.");
             }
-
-            String validContrasena = insMetodos.ValidarContrasena(p_contrasena2, p_contrasena3);
-            if (!p_contrasena1.Equals("") | !p_contrasena2.Equals("") | !p_contrasena3.Equals("")) {
-                if (!validContrasena.Equals("") | !p_contrasena1.Equals(Site.CONTRASENA))
+            if (!p_contrasena2.Equals("")) 
+            {
+                String validContrasena = insMetodos.ValidarContrasena(p_contrasena2, p_contrasena3);
+                if (!p_contrasena1.Equals("") | !p_contrasena2.Equals("") | !p_contrasena3.Equals(""))
                 {
-                    return (validContrasena);
-                }
-                else
-                {
-                    Site.CONTRASENA = p_contrasena2;
+                    if (!validContrasena.Equals("") | !p_contrasena1.Equals(Site.CONTRASENA))
+                    {
+                        return (validContrasena);
+                    }
+                    else
+                    {
+                        Site.CONTRASENA = p_contrasena2;
+                    }
                 }
             }
             

@@ -54,7 +54,17 @@ namespace CarteraEmpleo
             else
             {
                 //insDefault.Login(usuario);*/
-                ScriptManager.RegisterStartupScript(btnIniciarSesion, GetType(), "UsuarioActual", "Sesion('" + USUARIO + "')", true);
+                ScriptManager.RegisterStartupScript(btnIniciarSesion, GetType(), "UsuarioActual", "Sesion('" + USUARIO + "','"+ TIPO +"')", true);
+                switch (TIPO) { 
+                    case 1:
+                        break;
+                    case 2:
+                        Response.Redirect("~/Interfaz/ModPerfilEmpresa.aspx");
+                        break;
+                    case 3:
+                        Response.Redirect("~/Interfaz/ModPerfilPersona.aspx");
+                        break;
+                }
                 //ScriptManager.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario + "')", true);
             }
         }
