@@ -6,8 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using CarteraEmpleo.Clases;
-using System.Windows.Forms;
-using CarteraEmpleo;
  
  namespace CarteraEmpleo.Interfaz
  {
@@ -17,18 +15,9 @@ using CarteraEmpleo;
 
          protected void Page_Load(object sender, EventArgs e)
          {
-             //ClientScriptManager cs = Page.ClientScript;
-             //String[] usuario = insMetodos.UsuarioLogin();
-             //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
-
-             insMetodos.UsuarioActual("empresa@gmail.com");
-             lblNombre.Text = cEmpresaDatos.NOMBRE;
-             lblDireccion.Text = cEmpresaDatos.DIRECCION;
-             lblCedula.Text = cEmpresaDatos.CEDJURIDICA;
-             lblCorreo.Text = cEmpresaDatos.CORREO;
-             lblPagina.Text = cEmpresaDatos.PAGINA;
-             lblDescripcion.Text = cEmpresaDatos.DESCRIPCION;
-             
+             ClientScriptManager cs = Page.ClientScript;
+             String[] usuario = insMetodos.UsuarioLogin();
+             ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + usuario[0] + "','" + usuario[1] + "')", true);
              try {
                  cargarGV1();
              }
@@ -39,8 +28,7 @@ using CarteraEmpleo;
 
         protected void cargarGV1() {
             Service1 webservice = new Service1();
-            DataTable dbResultado = webservice.Select_Publicacion("empresa@gmail.com");
-            //DataTable dbResultado = webservice.Querry("Select * from CEPUBLICACIONES");
+            DataTable dbResultado = webservice.Querry("Select * from CEPUBLICACIONES");
             GridView1.DataSource = dbResultado;
             GridView1.DataBind();
         }
