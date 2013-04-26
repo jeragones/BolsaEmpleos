@@ -9,7 +9,7 @@
         <br/>
         <div><asp:Label ID="Label2" class="lblRegistrar" runat="server" Text="Nombre:" /></div>
         <div><asp:TextBox ID="txtNombre" class="txt" runat="server"  Visible="False" Height="20px" Width="160px" />
-             <asp:Label ID="lblNombre" class="lblRegistrar" runat="server" Text="Nombre de la Empresa" />
+             <asp:Label ID="lblNombre" class="lblRegistrar" runat="server" Text="Nombre" />
              <asp:LinkButton ID="hplNombre"  class="Link" runat="server" text="Editar" OnClick="hplNombre_Click" />
         </div>  
         <br/>

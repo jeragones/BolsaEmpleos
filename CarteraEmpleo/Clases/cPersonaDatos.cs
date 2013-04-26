@@ -105,7 +105,7 @@ namespace CarteraEmpleo
                 {
                     if (!validContrasena.Equals("") | !p_contrasena1.Equals(Site.CONTRASENA))
                     {
-                        return (validContrasena);
+                        return ("Contraseña inválida.");
                     }
                     else
                     {

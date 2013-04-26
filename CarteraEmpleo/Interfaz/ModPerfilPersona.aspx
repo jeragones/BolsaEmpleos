@@ -10,7 +10,7 @@
         <br/>
         <div><asp:Label class="lblRegistrar" runat="server" Text="Nombre Completo:" /></div>
         <div><asp:TextBox ID="txtNombre" class="txt" runat="server" Text="<?php echo htmlentities($Usuario); ?>"  Visible="False" Height="20px" Width="160px" />
-             <asp:Label ID="lblNombre" name="txtNombre" class="lblRegistrar" runat="server" Text="<?php echo htmlentities($Usuario); ?>" />
+             <asp:Label ID="lblNombre" name="txtNombre" class="lblRegistrar" runat="server" Text="Nombre" />
              <asp:LinkButton class="Link" runat="server" ID="hplNombre" text="Editar" OnClick="hplNombre_Click" />
         </div> 
         <asp:Image ID="imgError" Visible="false" class="imgError" runat="server" Width="12px" Height="12px" ImageUrl="/Images/error1.png" />
@@ -31,7 +31,7 @@
                     <asp:Label ID="lblCedula" class="lblRegistrar" runat="server" Text="Cedúla Persona" />
                 </td>
                 <td class="tdleft">
-                    <asp:LinkButton runat="server" ID="hplCedula" text="Editar" OnClick="hplCedula_Click" />
+                    <asp:LinkButton runat="server" ID="hplCedula" text="Editar" />
                 </td>
             </tr>-->
             <tr>

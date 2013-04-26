@@ -16,6 +16,7 @@ namespace CarteraEmpleo.Interfaz
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             CargarDatos();
             //ClientScript.RegisterStartupScript(GetType(), "Idioma", "Idiomas('Ingles')", false);
             //ClientScript.RegisterStartupScript(GetType(), "UsuarioActual", "Sesion('" + cPersonaDatos.NOMBRE + "','3')", true);
@@ -38,22 +39,26 @@ namespace CarteraEmpleo.Interfaz
             //String usuario = Request.QueryString["U"];
             //String contrasena = Request.QueryString["P"];
             //insMetodos.IniciarSesion(usuario, contrasena);
-            lblNombre.Text = cPersonaDatos.NOMBRE;
-            txtNombre.Text = lblNombre.Text;
-            lblDireccion.Text = cPersonaDatos.DIRECCION;
-            txtDireccion.Text = lblDireccion.Text;
-            lblExperiencia.Text = cPersonaDatos.EXPERIENCIA;
-            txtExperiencia.Text = lblExperiencia.Text;
+            if (lblNombre.Text.Equals("Nombre")) 
+            {
+                lblNombre.Text = cPersonaDatos.NOMBRE;
+                txtNombre.Text = lblNombre.Text;
+                lblDireccion.Text = cPersonaDatos.DIRECCION;
+                txtDireccion.Text = lblDireccion.Text;
+                lblExperiencia.Text = cPersonaDatos.EXPERIENCIA;
+                txtExperiencia.Text = lblExperiencia.Text;
+
+                if (cPersonaDatos.CONDICION == 'D')
+                {
+                    lblCondicion.Text = "Desempleado";
+                }
+                else
+                {
+                    lblCondicion.Text = "Empleado";
+                }
+                cmbCondicion.Text = lblCondicion.Text;
+            }
             
-            if (cPersonaDatos.CONDICION == 'D')
-            {
-                lblCondicion.Text = "Desempleado";
-            }
-            else
-            {
-                lblCondicion.Text = "Empleado";
-            }
-            cmbCondicion.Text = lblCondicion.Text;
             /*if (cPersonaDatos.IDIOMA != null) 
             {
                 for (int i = 0; i < cPersonaDatos.IDIOMA.Length; i++)
@@ -106,9 +111,6 @@ namespace CarteraEmpleo.Interfaz
 
             //ScriptManager.RegisterStartupScript(btnGuardar, GetType(), "Idioma", "Idiomas('" + tmp + "')", true);
         }
-
-        protected void hplCedula_Click(object sender, EventArgs e)
-        { }
 
         protected void hplNombre_Click(object sender, EventArgs e)
         {
@@ -257,7 +259,7 @@ namespace CarteraEmpleo.Interfaz
         {
             lblDireccion.Visible = true;
             txtDireccion.Visible = false;
-            lblDireccion.Text = "Sucre"; //txtDireccion.Text;
+            lblDireccion.Text = txtDireccion.Text;
             hplDireccion.Visible = true;
         }
 

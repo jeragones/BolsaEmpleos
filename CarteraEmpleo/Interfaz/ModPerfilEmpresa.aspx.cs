@@ -32,13 +32,17 @@ namespace CarteraEmpleo.Interfaz
             //String usuario = Request.QueryString["U"];
             //String contrasena = Request.QueryString["P"];
             //insMetodos.IniciarSesion(usuario, contrasena);
-            lblNombre.Text = cEmpresaDatos.NOMBRE;
-            lblDireccion.Text = cEmpresaDatos.DIRECCION;
-            lblCedula.Text = cEmpresaDatos.CEDJURIDICA;
-            lblCorreo.Text = cEmpresaDatos.CORREO;
-            lblSitio.Text = cEmpresaDatos.PAGINA;
-            lblDescripcion.Text = cEmpresaDatos.DESCRIPCION;
-            
+
+            if (lblNombre.Text.Equals("Nombre"))
+            {
+                lblNombre.Text = cEmpresaDatos.NOMBRE;
+                lblDireccion.Text = cEmpresaDatos.DIRECCION;
+                lblCedula.Text = cEmpresaDatos.CEDJURIDICA;
+                lblCorreo.Text = cEmpresaDatos.CORREO;
+                lblSitio.Text = cEmpresaDatos.PAGINA;
+                lblDescripcion.Text = cEmpresaDatos.DESCRIPCION;
+            }
+
             if (cEmpresaDatos.TELEFONO != null)
             {
                 for (int i = 0; i < cEmpresaDatos.TELEFONO.Length; i++)
@@ -50,6 +54,7 @@ namespace CarteraEmpleo.Interfaz
                 //    cs.RegisterStartupScript(sTipo, script3, "Telefonos('" + idioma + "')", true);
                 //}
             }
+
             /*if (!cs.IsStartupScriptRegistered(sTipo, script1))
             {
                 cs.RegisterStartupScript(sTipo, script1, "Sesion('" + cPersonaDatos.NOMBRE + "', '3')", true);
