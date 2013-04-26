@@ -27,8 +27,8 @@ namespace CarteraEmpleo
         public static String[] TELEFONO;
         public static String DIRECCION;
         // telefono
-        public String insertar(String p_nombre, String p_cedula, String p_correo, 
-                               String p_sitio)
+        public String insertar(String p_nombre, String p_contrasena1, String p_contrasena2,  String p_cedula, 
+                               String p_correo, String p_sitio)
         {
             String[] _sFracmentar;
             char[] _cSeparadorCedula = { '-' };
@@ -48,10 +48,15 @@ namespace CarteraEmpleo
             if (insMetodos.ValidarCorreo(p_correo)) {
                 return ("Correo inválido.");
             }
-            
+
+            if (insMetodos.ValidarContrasena(p_contrasena1, p_contrasena2))
+            {
+                return ("Las contraseñas no coinciden.");
+            }
+
             try
             {
-                webservice.Insert_Empresa(p_correo, "", "", "", p_nombre, p_cedula, p_sitio/*, "false"*/);
+                webservice.Insert_Empresa(p_correo, p_contrasena1, "", "", p_nombre, p_cedula, p_sitio/*, "false"*/);
             }
             catch (Exception e) { 
                 return("Error en el registro.");
@@ -59,7 +64,7 @@ namespace CarteraEmpleo
             return ("");
         }
 
-        public String Modificar(String p_nombre, String p_cedula, String p_correo, String p_sitio, 
+        public String Modificar(String p_nombre, String p_cedula, String p_sitio, 
                              String p_contrasena1, String p_contrasena2, String p_contrasena3,
                              String p_descripcion, String p_direccion)
         {
@@ -69,7 +74,7 @@ namespace CarteraEmpleo
 
             _sFracmentar = insMetodos.Fragmentar(p_cedula, _cSeparadorCedula);
 
-            if (p_nombre.Equals("") | p_correo.Equals("") | _sFracmentar[0].Equals("") |
+            if (p_nombre.Equals("") | _sFracmentar[0].Equals("") |
                 _sFracmentar[1].Equals("") | _sFracmentar[2].Equals(""))
             {
                 return ("Existen campos vacíos que son requeridos.");
@@ -81,19 +86,16 @@ namespace CarteraEmpleo
                 return ("Cedula jurídica inválida.");
             }
 
-            if (insMetodos.ValidarCorreo(p_correo))
+            if (!p_contrasena2.Equals(""))
             {
-                return ("Correo inválido.");
-            }
-
-            result = insMetodos.ValidarContrasena(p_contrasena1, p_contrasena2, p_contrasena3);
-            if(!result.Equals("")) 
-            {
-                return result;
-            } 
-            else 
-            {
-                Site.CONTRASENA = p_contrasena2;
+                if (insMetodos.ValidarContrasena(p_contrasena1, p_contrasena2, p_contrasena3))
+                {
+                    return ("Contraseña inválida.");
+                }
+                else
+                {
+                    Site.CONTRASENA = p_contrasena2;
+                }
             }
 
             try

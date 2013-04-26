@@ -26,7 +26,7 @@ using CarteraEmpleo.Clases;
         {
             
             String _sCedula = txtCedula1.Text + "-" + txtCedula2.Text + "-" + txtCedula3.Text;
-            msgError.Text = insEmpresa.insertar(txtNombre.Text, _sCedula, txtCorreo.Text, txtWeb.Text);
+            msgError.Text = insEmpresa.insertar(txtNombre.Text, txtContrasena.Text, txtContrasena.Text, _sCedula, txtCorreo.Text, txtWeb.Text);
             if (msgError.Text.Equals(""))
             {
                 //persona.EnviarCorreo();

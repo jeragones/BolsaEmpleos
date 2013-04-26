@@ -31,11 +31,11 @@ namespace CarteraEmpleo
         public static String EXPERIENCIA;
 
         public String Insertar(String p_nombre, String p_correo,
-                               String p_condicion, String p_contrasena, String p_confContrasena,
+                               String p_condicion, String p_contrasena1, String p_contrasena2,
                                String p_direccion)
         {
             if (p_nombre.Equals("") | p_correo.Equals("") |
-                p_contrasena.Equals("") | p_confContrasena.Equals(""))
+                p_contrasena1.Equals("") | p_contrasena2.Equals(""))
             {
                 return ("Existen campos vacíos que son requeridos.");
             }
@@ -45,10 +45,9 @@ namespace CarteraEmpleo
                 return("Correo inválido.");
             }
 
-            String validContrasena = insMetodos.ValidarContrasena(p_contrasena,p_confContrasena); 
-            if(!validContrasena.Equals(""))
+            if(insMetodos.ValidarContrasena(p_contrasena1, p_contrasena2))
             {
-                return (validContrasena);
+                return ("Las contraseñas no coinciden.");
             }
             
             char _cCondicion = ' ';
@@ -79,7 +78,7 @@ namespace CarteraEmpleo
             }
             try
             {
-                webservice.Insert_Persona(p_correo, p_contrasena, " ", p_direccion,
+                webservice.Insert_Persona(p_correo, p_contrasena1, " ", p_direccion,
                                             _sNombre[0], _sNombre[1], _sNombre[2],
                                             _cCondicion, " "/*, "false"*/);
                 return ("");
@@ -98,19 +97,15 @@ namespace CarteraEmpleo
             {
                 return ("Existen campos vacíos que son requeridos.");
             }
+
             if (!p_contrasena2.Equals("")) 
             {
-                String validContrasena = insMetodos.ValidarContrasena(p_contrasena2, p_contrasena3);
-                if (!p_contrasena1.Equals("") | !p_contrasena2.Equals("") | !p_contrasena3.Equals(""))
+                if (insMetodos.ValidarContrasena(p_contrasena1, p_contrasena2, p_contrasena3))
                 {
-                    if (!validContrasena.Equals("") | !p_contrasena1.Equals(Site.CONTRASENA))
-                    {
-                        return ("Contraseña inválida.");
-                    }
-                    else
-                    {
-                        Site.CONTRASENA = p_contrasena2;
-                    }
+                    return ("Contraseña inválida.");
+                }
+                else {
+                    Site.CONTRASENA = p_contrasena2;
                 }
             }
             

@@ -28,6 +28,8 @@ namespace CarteraEmpleo.Interfaz
             //ClientScriptManager cs = Page.ClientScript;
 
             String telefono = "";
+            char[] tmp = { '-' };
+            String[] cedula = insMetodos.Fragmentar(cEmpresaDatos.CEDJURIDICA, tmp);
 
             //String usuario = Request.QueryString["U"];
             //String contrasena = Request.QueryString["P"];
@@ -36,11 +38,18 @@ namespace CarteraEmpleo.Interfaz
             if (lblNombre.Text.Equals("Nombre"))
             {
                 lblNombre.Text = cEmpresaDatos.NOMBRE;
+                txtNombre.Text = lblNombre.Text;
                 lblDireccion.Text = cEmpresaDatos.DIRECCION;
+                txtDireccion.Text = lblDireccion.Text;
                 lblCedula.Text = cEmpresaDatos.CEDJURIDICA;
+                txtCedula1.Text = cedula[0];
+                txtCedula2.Text = cedula[1];
+                txtCedula3.Text = cedula[2];
                 lblCorreo.Text = cEmpresaDatos.CORREO;
                 lblSitio.Text = cEmpresaDatos.PAGINA;
+                txtSitio.Text = lblSitio.Text;
                 lblDescripcion.Text = cEmpresaDatos.DESCRIPCION;
+                txtDescripcion.Text = lblDescripcion.Text;
             }
 
             if (cEmpresaDatos.TELEFONO != null)
@@ -71,7 +80,7 @@ namespace CarteraEmpleo.Interfaz
             DesactivarDescripcion();
             DesactivarDireccion();
 
-            msgError.Text = insEmpresa.Modificar(lblNombre.Text, lblCedula.Text, lblCorreo.Text, lblSitio.Text,
+            msgError.Text = insEmpresa.Modificar(lblNombre.Text, lblCedula.Text, lblSitio.Text,
                                                  txtContrasena1.Text, txtContrasena2.Text, txtContrasena3.Text,
                                                  lblDescripcion.Text, lblDireccion.Text);
             if (msgError.Text.Equals(""))

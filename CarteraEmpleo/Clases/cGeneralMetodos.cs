@@ -160,39 +160,33 @@ namespace CarteraEmpleo.Clases
             }
         }
 
-        public String ValidarContrasena(String pass1, String pass2) {
+        public Boolean ValidarContrasena(String pass1, String pass2) {
             if (pass1.Length >= 9)
             {
                 if (!pass1.Equals(pass2))
                 {
-                    return ("Las contraseñas no coinciden.");
+                    return true; // ("Las contraseñas no coinciden.");
                 } else {
-                    return ("");
+                    return false; // ("");
                 }
             }
             else
             {
-                return ("Contraseña inválida.");
+                return true; // ("Contraseña inválida.");
             }
         }
 
-        public String ValidarContrasena(String pass1, String pass2, String pass3)
+        public Boolean ValidarContrasena(String pass1, String pass2, String pass3)
         {
-            if (pass1.Length >= 9)
+            if (!pass1.Equals(Site.CONTRASENA))
             {
-                if (!pass1.Equals(Site.CONTRASENA))
-                {
-                    return ("Contraseña incorrecta");
-                }
-                else
-                {
-                    return ValidarContrasena(pass2, pass3);
-                }
+                return true;
             }
-            else
+            else if (pass2.Length >= 8)
             {
-                return ("Contraseña inválida.");
+                return ValidarContrasena(pass2, pass3);
             }
+            return true;
         }
 
         public Boolean ValidarCorreo(String correo) {
